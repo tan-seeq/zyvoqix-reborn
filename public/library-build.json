@@ -4,22 +4,22 @@
     {
       "id": "space-pirates",
       "upstreamCommit": "8abceefbda9176be192e74ceb7030f5bd31d7ea5",
-      "sha256": "09ecfed47445e5a40e762d3d9e59c48334026902ce474a93dae6e86bf98098fc"
+      "sha256": "5e6e9cc5dbed08072bf1faca6a60bca027912c96dcb13e75a611da25d1808981"
     },
     {
       "id": "kart-royale",
       "upstreamCommit": "036c0efb025f5ecf8fc31c405e9d818c61e03e21",
-      "sha256": "eb7845a11729bae08f7b25483a9220c5204123950f1e330720718c478e411cc6"
+      "sha256": "1bfd6ee24a7259dc18154839f0bb1f9f2a5b7a5a719a4f305c21412437612c7e"
     },
     {
       "id": "dust-corridor",
       "upstreamCommit": "7f8a15ae54dd65e7ce22c80c074f9b1da7daee2f",
-      "sha256": "12e831feac5ce1038ab355650cb4221a93d28287f9474a9f5e1ab47fa015b176"
+      "sha256": "e63bd417418907657192b64a9cb61f0b841e6595d3c995d7b700cd2ef97d6641"
     },
     {
       "id": "sketchbook",
       "upstreamCommit": "62f4b7986fd1ce1e4f91daba89ef032c20a6ce55",
-      "sha256": "ef4334c8a8899f203989091d8d03b1a6074b36e42be1780fd8e69a79135c32b9"
+      "sha256": "676a10b3f8499d7bfdc45e7ed49d84635364e3ebabafd9851a5da5a72ddde682"
     }
   ],
   "runtime": "same-origin static files"
