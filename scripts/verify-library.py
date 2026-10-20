@@ -3,6 +3,9 @@ from html.parser import HTMLParser
 import json, struct, re
 root=Path(__file__).resolve().parents[1]/'public'
 games=json.loads((root/'library-catalog.json').read_text())
+assert 'zyvoqix_v6_profiles' in (root/'app.js').read_text(), 'Old profile storage contract changed'
+assert (root/'arcade/index.html').is_file()
+assert 'localStorage.clear' not in (root/'library.js').read_text()
 count=0
 class Assets(HTMLParser):
     def __init__(self, folder):super().__init__();self.folder=folder
