@@ -36,7 +36,7 @@ function showGameStatus(status,detail=''){
 }
 function launch(){
  if(!activeGame)return;clearTimeout(loadTimer);lastGameStatus=null;
- const f=document.createElement('iframe');f.title=activeGame.name;const url=new URL(activeGame.entry,location.origin);url.searchParams.set('zyvoqixRelease','11');f.src=url.pathname+url.search;f.allow='fullscreen; gamepad; autoplay';f.allowFullscreen=true;
+ const f=document.createElement('iframe');f.title=activeGame.name;const url=new URL(activeGame.entry,location.origin);url.searchParams.set('zyvoqixRelease','12');f.src=url.pathname+url.search;f.allow='fullscreen; gamepad; autoplay';f.allowFullscreen=true;
  $('playerArea').replaceChildren(f);$('restart').hidden=false;$('fullscreen').hidden=!$('player').requestFullscreen;$('directGameLink').hidden=false;$('directGameLink').href=f.src;showGameStatus('loading');
  loadTimer=setTimeout(()=>showGameStatus('slow'),60000);
  f.addEventListener('load',()=>{f.focus();});

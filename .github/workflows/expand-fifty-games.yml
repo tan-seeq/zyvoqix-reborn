@@ -1,0 +1,57 @@
+name: Build fifty locally hosted games
+on:
+  push:
+    branches: [library/self-hosted-v8]
+    paths: [scripts/package-bulk-games.py, scripts/localize-runtime.mjs, scripts/decompress-runtime.mjs, scripts/finalize-bulk-games.py, vendor/bulk-games.json, .github/workflows/expand-fifty-games.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: self-hosted-library
+  cancel-in-progress: false
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: library/self-hosted-v8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: python3 -m pip install Pillow==11.3.0
+      - run: npm install --prefix /tmp/zyvoqix-build-tools esbuild@0.28.2 @gltf-transform/core@4.2.1 @gltf-transform/extensions@4.2.1 draco3dgltf@1.5.7 --ignore-scripts --no-audit --no-fund
+      - name: Restore pinned dependency locks
+        run: |
+          python3 - <<'PYLOCK'
+          import base64,gzip,json
+          from pathlib import Path
+          root=Path('vendor');encoded=''.join(p.read_text() for p in sorted(root.glob('bulk-locks-*.b64')))
+          out=root/'bulk-locks';out.mkdir(exist_ok=True)
+          for name,content in json.loads(gzip.decompress(base64.b64decode(encoded))).items():(out/name).write_text(content)
+          PYLOCK
+      - name: Build independent games with exact source revisions
+        run: |
+          python3 scripts/package-bulk-games.py
+          python3 scripts/finalize-bulk-games.py
+      - name: Verify all fifty entries and dependencies
+        run: |
+          npm run build
+          python3 scripts/verify-library.py
+          node --check public/library.js
+          node --check public/game-bridge.js
+      - name: Commit immutable runtime archives
+        run: |
+          git config user.name "ZYVOQIX Library Build"
+          git config user.email "zyvoqix-library@users.noreply.github.com"
+          git add vendor/*.tar.gz vendor/bulk-locks/ public/licenses/ public/covers/ public/library-catalog.json public/library-build.json
+          git diff --cached --quiet || git commit -m "Vendor thirty-eight independent licensed games with source and attribution"
+          python3 - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          p=Path('library.lock.json');x=json.loads(p.read_text());x['archiveCommit']=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip();p.write_text(json.dumps(x,indent=2)+'\n')
+          PY
+          git add library.lock.json
+          git diff --cached --quiet || git commit -m "Pin complete fifty-game library"
+          git push origin HEAD:library/self-hosted-v8

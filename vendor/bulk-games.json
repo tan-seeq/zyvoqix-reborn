@@ -1,0 +1,598 @@
+[
+  {
+    "id": "stardust-isles",
+    "name": "Stardust Isles",
+    "nameAr": "جزر النجوم",
+    "repo": "Danzer1xxxxChan/Stardust_Isles",
+    "commit": "2c9473042be8a487e24bc4b3410b734444fa2b03",
+    "mode": "vite",
+    "categories": [
+      "adventure"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Explore floating islands and fight enemies in a procedural world.",
+    "descriptionAr": "استكشف جزرا عائمة وواجه الأعداء في عالم مولد."
+  },
+  {
+    "id": "mineworld",
+    "name": "MineWorld",
+    "nameAr": "عالم المناجم",
+    "repo": "EVEDensity/MineWorld",
+    "commit": "5ef2b328ea81524e12d8dbad3ced4af9ffaaeca2",
+    "mode": "static",
+    "categories": [
+      "sandbox"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Explore voxel terrain, mine blocks and build your world.",
+    "descriptionAr": "استكشف أرضا مكعبة واجمع الموارد وابن عالمك.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "hammas-3d",
+    "name": "Hammas 3D",
+    "nameAr": "معركة الهامستر",
+    "repo": "Jung217/Hammas3D",
+    "commit": "e367a62dde2b1d3ea391b5d06407758838c1e179",
+    "mode": "static",
+    "categories": [
+      "action"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Play a hamster-themed 3D shooter with four weapons and camera choices.",
+    "descriptionAr": "لعبة تصويب ثلاثية الأبعاد بشخصيات هامستر وأربع أسلحة وزوايا كاميرا متعددة.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "roundcraft",
+    "name": "Roundcraft",
+    "nameAr": "رحلة العالم الدائري",
+    "repo": "MarcusBiel/roundcraft",
+    "commit": "86cf314c62b24629adf8cec0b7e08ad2d14849c1",
+    "mode": "static",
+    "categories": [
+      "adventure"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Explore a curved voxel world in a colourful 3D adventure.",
+    "descriptionAr": "استكشف عالما دائريا من المكعبات في مغامرة ملونة."
+  },
+  {
+    "id": "decay",
+    "name": "Decay",
+    "nameAr": "البقاء في المدينة",
+    "repo": "RealAbdurRehman/decay",
+    "commit": "31c1e23133780d741019f6281b37ad84fa536147",
+    "mode": "vite",
+    "categories": [
+      "action"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Face waves of zombies, gather supplies and survive in a ruined environment.",
+    "descriptionAr": "واجه الزومبي واجمع المستلزمات وحاول البقاء في بيئة مدمرة."
+  },
+  {
+    "id": "obbyverse",
+    "name": "Obbyverse",
+    "nameAr": "تحدي الحواجز",
+    "repo": "RealAbdurRehman/obbyverse",
+    "commit": "088bcb138017a1b81c6509593c7cedb4e7929a61",
+    "mode": "vite",
+    "categories": [
+      "adventure"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Jump across platforms and moving obstacles in a 3D obstacle course.",
+    "descriptionAr": "اقفز بين المنصات وتجاوز الحواجز المتحركة في مسار ثلاثي الأبعاد."
+  },
+  {
+    "id": "overdrive",
+    "name": "Overdrive",
+    "nameAr": "تحدي قيادة السيارات",
+    "repo": "RealAbdurRehman/overdrive",
+    "commit": "cf7be4b7a0c43f33596ee06e5c11564c28b13416",
+    "mode": "vite",
+    "categories": [
+      "racing"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Drive through obstacles using vehicle physics and try to complete the course.",
+    "descriptionAr": "قد السيارة وتجاوز العوائق وحاول إكمال المسار بفيزياء حركة السيارات."
+  },
+  {
+    "id": "snack-hole",
+    "name": "Snack Hole",
+    "nameAr": "ابتلع المدينة",
+    "repo": "SamadiPour/snack-hole-game",
+    "commit": "270bdc403d776ebfbee485ad7ab740465ed24452",
+    "mode": "vite",
+    "categories": [
+      "arcade"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Control a growing hole and swallow city props across themed maps.",
+    "descriptionAr": "تحكم في حفرة تكبر كلما ابتلعت الأشياء في خرائط متنوعة.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "catapult-siege",
+    "name": "Catapult Siege",
+    "nameAr": "حصار المنجنيق",
+    "repo": "Sina-Ghiasi/threejs-catapult-game",
+    "commit": "5248c4de3fbe52065f582e6f43d3032eca58b5f2",
+    "mode": "vite",
+    "categories": [
+      "action"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Aim a catapult and use projectile physics to knock down targets.",
+    "descriptionAr": "صوب بالمنجنيق وأسقط الأهداف باستخدام فيزياء المقذوفات."
+  },
+  {
+    "id": "tricky-track",
+    "name": "Tricky Track",
+    "nameAr": "المسار الصعب",
+    "repo": "UstymUkhman/tricky-track",
+    "commit": "8f899eb7638f3b09cbc379a8d03244484ccb2177",
+    "mode": "vite",
+    "categories": [
+      "racing"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Navigate a twisting 3D track and avoid falling off the road.",
+    "descriptionAr": "قد على مسار متعرج ثلاثي الأبعاد وتجنب السقوط من الطريق."
+  },
+  {
+    "id": "connect-four-3d",
+    "name": "Connect Four 3D",
+    "nameAr": "أربعة على التوالي",
+    "repo": "amir-hossein-khodaei/connect4-webgl-mediapipe",
+    "commit": "6507f6fcc8e9a4bb63e2316fd00fe7f4d29f39b9",
+    "mode": "vite",
+    "categories": [
+      "puzzle"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Drop pieces into a 3D board and connect four of your colour.",
+    "descriptionAr": "ضع القطع على لوحة ثلاثية الأبعاد ووصل أربع قطع من لونك."
+  },
+  {
+    "id": "tower-of-hanoi",
+    "name": "Tower of Hanoi",
+    "nameAr": "برج هانوي",
+    "repo": "anisches/towerofHanoi",
+    "commit": "bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80",
+    "mode": "vite",
+    "categories": [
+      "puzzle"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Move stacked disks between towers while obeying the size rule.",
+    "descriptionAr": "انقل الأقراص بين الأبراج مع مراعاة ترتيب أحجامها."
+  },
+  {
+    "id": "fox-floe",
+    "name": "Fox Floe",
+    "nameAr": "الثعلب والجليد",
+    "repo": "atmirrr/fox-floe",
+    "commit": "21b78f4befe471284f0ce0b4f5cf4b5e956e04a3",
+    "mode": "static",
+    "categories": [
+      "adventure"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Guide a fox along an icy river and steer around hazards.",
+    "descriptionAr": "وجه الثعلب على النهر الجليدي وتفاد العوائق.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "apex-formula",
+    "name": "Apex Formula",
+    "nameAr": "سباق فورمولا",
+    "repo": "bridge-mind/apex-formula",
+    "commit": "e5292b85c9a8773fd2a5e2b55df570d5da963488",
+    "mode": "vite",
+    "categories": [
+      "racing"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Drive a Formula-style car and race around a 3D circuit.",
+    "descriptionAr": "قد سيارة فورمولا وتسابق على حلبة ثلاثية الأبعاد."
+  },
+  {
+    "id": "horror-house",
+    "name": "Horror House",
+    "nameAr": "الهروب من المنزل",
+    "repo": "bridge-mind/bridge-horror-house",
+    "commit": "c63aa7ca07109ac73736917db15543d363549400",
+    "mode": "vite",
+    "categories": [
+      "adventure"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Search a haunted house for three keys and find a way out.",
+    "descriptionAr": "ابحث عن ثلاثة مفاتيح داخل منزل مسكون واعثر على طريق للخروج."
+  },
+  {
+    "id": "dead-signal",
+    "name": "Dead Signal",
+    "nameAr": "إشارة الخطر",
+    "repo": "bridge-mind/claude-opus-5.5-zombies-game",
+    "commit": "9805c3ef6297e8f518fdfb75f58a7af599334013",
+    "mode": "vite",
+    "categories": [
+      "action"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Explore an exclusion zone and survive hostile encounters in an extraction shooter.",
+    "descriptionAr": "استكشف منطقة خطرة وواجه الأعداء في لعبة تصويب وبقاء."
+  },
+  {
+    "id": "turbo-kart-rally",
+    "name": "Turbo Kart Rally",
+    "nameAr": "رالي الكارت",
+    "repo": "bridge-mind/turbo-kart-rally",
+    "commit": "c52aca3f10c7995884c316810cac6514daa40e9c",
+    "mode": "static",
+    "categories": [
+      "racing"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Race a kart through a colourful 3D rally course.",
+    "descriptionAr": "تسابق بعربة كارت في مسار رالي ثلاثي الأبعاد."
+  },
+  {
+    "id": "voxelcraft-survival",
+    "name": "Voxelcraft Survival",
+    "nameAr": "بناء وبقاء",
+    "repo": "bridge-mind/voxelcraft",
+    "commit": "30e8a2a2f7c8be9450983fa1d57aa197e875faf6",
+    "mode": "static",
+    "categories": [
+      "sandbox"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Gather resources, craft and build in a voxel survival world.",
+    "descriptionAr": "اجمع الموارد واصنع الأدوات وابن في عالم مكعبات للبقاء."
+  },
+  {
+    "id": "sushi-paws",
+    "name": "Sushi Paws",
+    "nameAr": "تحدي السوشي",
+    "repo": "clydejuniorscripts/sushi-paws-conveyor-clash",
+    "commit": "0e9ce991c9a834d0bc7a6d70af1d45620dd39e96",
+    "mode": "vite",
+    "categories": [
+      "arcade"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Compete with AI cats in a conveyor-belt sushi party game.",
+    "descriptionAr": "نافس قططا يتحكم بها الكمبيوتر في تحدي سوشي على سير متحرك.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "nightmare-trigger",
+    "name": "Nightmare Trigger",
+    "nameAr": "معركة الكوابيس",
+    "repo": "devesh-talreja/nightmare-trigger",
+    "commit": "a88826562bfad76705073b000140026231129972",
+    "mode": "static",
+    "categories": [
+      "action"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Fight monsters in a dark 3D first-person shooter.",
+    "descriptionAr": "واجه الوحوش في لعبة تصويب ثلاثية الأبعاد من منظور أول.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "obi-farm",
+    "name": "Obi Farm",
+    "nameAr": "مطاردة في المزرعة",
+    "repo": "drwjkirkpatrick-web/obi-farm-3d",
+    "commit": "9939d7d513769abb2f4c16b3512046077ada4198",
+    "mode": "vite",
+    "categories": [
+      "adventure"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Chase Obi around the farm and tag him before he reaches the chickens.",
+    "descriptionAr": "طارد أوبي في المزرعة وأمسكه قبل وصوله إلى الدجاج.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "apex-velocity",
+    "name": "Apex Velocity",
+    "nameAr": "سرعة الحلبة",
+    "repo": "gpreethish08/apex-velocity-racing",
+    "commit": "ef8277af4520f5ae7c15989014e4000361db73d1",
+    "mode": "vite",
+    "categories": [
+      "racing"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Race on a 3D circuit and work to improve your driving.",
+    "descriptionAr": "تسابق على حلبة ثلاثية الأبعاد وحسن قيادتك."
+  },
+  {
+    "id": "boat-chase",
+    "name": "Boat Chase",
+    "nameAr": "مطاردة القوارب",
+    "repo": "hammadshakeelai/Boat-Chase",
+    "commit": "a466207df8ef724f98f279b0ec1f3b14f66cc4f6",
+    "mode": "static",
+    "categories": [
+      "racing"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Steer a boat through canals and escape pursuit.",
+    "descriptionAr": "قد القارب بين القنوات واهرب من المطاردة."
+  },
+  {
+    "id": "desire-path",
+    "name": "Desire Path",
+    "nameAr": "طريق التسلق",
+    "repo": "jerrychan7/desire_path",
+    "commit": "0022da4c546d280c4ceca920fb2b2174c34f864f",
+    "mode": "static",
+    "categories": [
+      "adventure"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Climb a path of 3D obstacles and try to reach the top.",
+    "descriptionAr": "تسلق مسارا من العوائق ثلاثية الأبعاد وحاول الوصول للقمة."
+  },
+  {
+    "id": "mastermind-3d",
+    "name": "Mastermind 3D",
+    "nameAr": "شفرة الألوان",
+    "repo": "joeseesun/mastermind-3d",
+    "commit": "c10c5525376e3b94538b7f6f1e75a78f33590ca8",
+    "mode": "static",
+    "categories": [
+      "puzzle"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Crack a secret colour sequence using a 3D marble puzzle board.",
+    "descriptionAr": "اكتشف تسلسل الألوان السري على لوحة ألغاز بكرات ثلاثية الأبعاد.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "niulai-arena",
+    "name": "Niulai Arena",
+    "nameAr": "ساحة القتال",
+    "repo": "liyupi/niulai-game",
+    "commit": "0a71c5a5944d6abca88393fb8825660fb70ffd0f",
+    "mode": "static",
+    "categories": [
+      "action"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Choose a fighter and battle locally across three arenas.",
+    "descriptionAr": "اختر مقاتلا وخض المعارك المحلية في ثلاث ساحات.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "vibe-basketball",
+    "name": "Vibe Basketball",
+    "nameAr": "تحدي كرة السلة",
+    "repo": "mike007jd/vibebasketball",
+    "commit": "184a5b27ee259869744f0b32de9954ab7983c1bb",
+    "mode": "vite",
+    "categories": [
+      "sports"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Play a basketball match or try the three-point challenge.",
+    "descriptionAr": "العب مباراة كرة سلة أو جرب تحدي الرميات الثلاثية.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "tiny-town",
+    "name": "Tiny Town",
+    "nameAr": "بناء المدينة",
+    "repo": "nazariitaran/tiny-town-threejs-game",
+    "commit": "4bd0ce62918aff6a7ca118555920b18059ece734",
+    "mode": "vite",
+    "categories": [
+      "sandbox"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Build roads, place buildings and grow your own small town.",
+    "descriptionAr": "ابن الطرق وضع المباني وطور مدينتك الصغيرة."
+  },
+  {
+    "id": "neon-drift-kart",
+    "name": "Neon Drift Kart",
+    "nameAr": "سباق كارت النيون",
+    "repo": "pacphi/neon-drift",
+    "commit": "52c7c0e43adc0dc9b70390a51417dc51ce753ef9",
+    "mode": "vite",
+    "categories": [
+      "racing"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Race neon karts across synthwave-style tracks.",
+    "descriptionAr": "تسابق بعربات كارت مضيئة على حلبات بأجواء النيون."
+  },
+  {
+    "id": "3d-ping-pong",
+    "name": "3D Ping Pong",
+    "nameAr": "تنس الطاولة",
+    "repo": "rsamwilson2323-cloud/3d-ping-pong-game",
+    "commit": "cf1af9d6921ef5e783dca3f9e36b5c0067aa6293",
+    "mode": "vite",
+    "categories": [
+      "sports"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Move your paddle and challenge a computer opponent in 3D table tennis.",
+    "descriptionAr": "حرك المضرب ونافس الكمبيوتر في تنس طاولة ثلاثي الأبعاد.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "block-snake-3d",
+    "name": "Block Snake 3D",
+    "nameAr": "الثعبان المكعب",
+    "repo": "rsamwilson2323-cloud/BLOCK-SNAKE-3D",
+    "commit": "38b9546207bb0bd0783e174c9dd3f4ae7591ab83",
+    "mode": "static",
+    "categories": [
+      "arcade"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Guide a blocky snake, collect food and avoid collisions.",
+    "descriptionAr": "وجه الثعبان المكعب واجمع الطعام وتجنب الاصطدام.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "genesis-defend",
+    "name": "Genesis Defend",
+    "nameAr": "الدفاع عن الأبراج",
+    "repo": "rsamwilson2323-cloud/open-world-tower-defense",
+    "commit": "f53db1cc2d835494dce22e319b303ffcc4bbfe54",
+    "mode": "static",
+    "categories": [
+      "action"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Place towers and defend against incoming waves in an open 3D world.",
+    "descriptionAr": "ضع الأبراج ودافع ضد موجات الأعداء في عالم ثلاثي الأبعاد."
+  },
+  {
+    "id": "valley",
+    "name": "Valley",
+    "nameAr": "ألغاز الوادي",
+    "repo": "rsamwilson2323-cloud/valley",
+    "commit": "0b02bfee93782bdf0f236b2bd469edb5da1e1222",
+    "mode": "vite",
+    "categories": [
+      "puzzle"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Explore a valley and solve spatial puzzles with blocks and teleporters.",
+    "descriptionAr": "استكشف الوادي وحل الألغاز باستخدام المكعبات وبوابات الانتقال."
+  },
+  {
+    "id": "voxel-island",
+    "name": "Voxel Island",
+    "nameAr": "جزيرة البناء",
+    "repo": "rsamwilson2323-cloud/voxel-island-game",
+    "commit": "3d92745c58f5960115092cf51e8fa7af1f7f9f85",
+    "mode": "vite",
+    "categories": [
+      "sandbox"
+    ],
+    "entry": "index.html",
+    "desktop": false,
+    "description": "Shape a voxel island, build structures and keep progress locally.",
+    "descriptionAr": "شكل جزيرة مكعبات وابن منشآت واحفظ تقدمك محليا.",
+    "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+    "controlsAr": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة."
+  },
+  {
+    "id": "courier-city",
+    "name": "Courier City",
+    "nameAr": "مدينة التوصيل",
+    "repo": "shubhransh-gupta/courier-city",
+    "commit": "43c70ea24c2b8a375dcd01d07c9a2496439c4324",
+    "mode": "vite",
+    "categories": [
+      "sandbox"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Explore a city using cars, aircraft and helicopters.",
+    "descriptionAr": "استكشف المدينة بالسيارات والطائرات والمروحيات."
+  },
+  {
+    "id": "neon-drift-city",
+    "name": "Neon Drift City",
+    "nameAr": "مطاردة مدينة النيون",
+    "repo": "trustworthy-coder/Neon-Drift",
+    "commit": "2210b0a3ddb76162dd2efa33af76196d000bdc6b",
+    "mode": "static",
+    "categories": [
+      "racing"
+    ],
+    "entry": "neon-drift-2-1-10.html",
+    "desktop": true,
+    "description": "Drive around a neon city, escape police and unlock vehicles.",
+    "descriptionAr": "قد في مدينة نيون واهرب من الشرطة وافتح سيارات جديدة."
+  },
+  {
+    "id": "skyline-rush",
+    "name": "Skyline Rush",
+    "nameAr": "باركور الأسطح",
+    "repo": "zzuli-ljz/skyline-rush",
+    "commit": "b8cd5ed13a577d89220f4d8ee07abce929d4f5c0",
+    "mode": "static",
+    "categories": [
+      "adventure"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Jump across city rooftops in a first-person parkour challenge.",
+    "descriptionAr": "اقفز فوق أسطح المدينة في تحدي باركور من منظور أول."
+  },
+  {
+    "id": "stardust-drifter",
+    "name": "Stardust Drifter",
+    "nameAr": "مغامرة الكواكب",
+    "repo": "zzuli-ljz/stardust-drifter",
+    "commit": "8c77f03c634099c1bff29fe908a91de12d8c6b15",
+    "mode": "static",
+    "categories": [
+      "adventure"
+    ],
+    "entry": "index.html",
+    "desktop": true,
+    "description": "Travel across small planets in a gravity-based 3D adventure.",
+    "descriptionAr": "تنقل بين كواكب صغيرة في مغامرة ثلاثية الأبعاد تعتمد على الجاذبية."
+  }
+]

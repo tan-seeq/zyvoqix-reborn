@@ -1,6 +1,15 @@
 // ZYVOQIX browser runtime bridge: surface real startup failures, including inside same-origin frames.
 (()=>{
  const ar=(()=>{try{return localStorage.getItem('zyvoqix_language')==='ar';}catch{return false;}})();
+ // New library games receive their own save namespace; existing twelve retain their saves.
+ const gameId=location.pathname.split('/')[2];
+ const originalGames=new Set(['space-pirates','kart-royale','dust-corridor','sketchbook','parapet','blockverse','island-survival','flight-sim','circuit-sprint','bowling','contra-run','beachy-ball']);
+ if(gameId&&!originalGames.has(gameId))try{
+  const storage=window.localStorage,prefix='zyvoqix_game_'+gameId+'_';
+  const keys=()=>Array.from({length:storage.length},(_,i)=>storage.key(i)).filter(k=>k?.startsWith(prefix));
+  const methods={getItem:k=>storage.getItem(prefix+k),setItem:(k,v)=>storage.setItem(prefix+k,String(v)),removeItem:k=>storage.removeItem(prefix+k),clear:()=>keys().forEach(k=>storage.removeItem(k)),key:i=>keys()[i]?.slice(prefix.length)||null};
+  Object.defineProperty(window,'localStorage',{configurable:true,value:new Proxy({}, {get:(_,k)=>k==='length'?keys().length:methods[k]||(typeof k==='string'?methods.getItem(k):undefined),set:(_,k,v)=>{methods.setItem(k,v);return true;},deleteProperty:(_,k)=>{methods.removeItem(k);return true;},ownKeys:()=>keys().map(k=>k.slice(prefix.length)),getOwnPropertyDescriptor:()=>({enumerable:true,configurable:true})})});
+ }catch{/* Browser storage restrictions are handled by the original game. */}
  const space=location.pathname.includes('/space-pirates/');let ready=false,failed=false,panel,timer;
  const send=(status,detail='')=>{if(parent!==window)parent.postMessage({type:'zyvoqix-game-status',status,detail:String(detail).slice(0,600)},location.origin);};
  function notice(kind,detail){

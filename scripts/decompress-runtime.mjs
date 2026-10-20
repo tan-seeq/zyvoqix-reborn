@@ -1,0 +1,5 @@
+import fs from 'node:fs/promises';import path from 'node:path';import{createRequire}from'node:module';
+const require=createRequire('/tmp/zyvoqix-build-tools/package.json');const{NodeIO}=require('@gltf-transform/core');const{ALL_EXTENSIONS}=require('@gltf-transform/extensions');const draco=require('draco3dgltf');
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'draco3d.decoder':await draco.createDecoderModule()});
+async function walk(dir){for(const x of await fs.readdir(dir,{withFileTypes:true})){const f=path.join(dir,x.name);if(x.isDirectory())await walk(f);else if(x.name.endsWith('.glb')){const b=await fs.readFile(f);if(b.length<20)continue;const n=b.readUInt32LE(12);const meta=JSON.parse(b.subarray(20,20+n).toString());if(!(meta.extensionsRequired||[]).includes('KHR_draco_mesh_compression'))continue;const doc=await io.read(f);for(const ext of doc.getRoot().listExtensionsUsed())if(ext.extensionName==='KHR_draco_mesh_compression')ext.dispose();await io.write(f,doc);console.log('Decompressed',f);}}}
+await walk(path.resolve(process.argv[2]));
