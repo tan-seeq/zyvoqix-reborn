@@ -1,13 +1,19 @@
 import {randomBytes} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
-import path from 'node:path';
 import catalog from '../public/library-catalog.json' with {type:'json'};
 import {config,openSession,verifyCredentials,authenticated,sameOrigin,equal,SESSION_SECONDS,createLoginLimiter,loginPath,safeNext} from '../server/admin-auth.mjs';
 import {adminPage} from '../server/admin-pages.mjs';
 const take=createLoginLimiter();let activeLogins=0;
 function privateHeaders(res){for(const [k,v]of Object.entries({'Cache-Control':'private, no-store, max-age=0','CDN-Cache-Control':'no-store','Vercel-CDN-Cache-Control':'no-store','Pragma':'no-cache','Vary':'Cookie','X-Content-Type-Options':'nosniff','X-Frame-Options':'DENY','X-Robots-Tag':'noindex, nofollow, noarchive','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"}))res.setHeader(k,v);}
 const fail=(res,status,code)=>res.status(status).json({ok:false,code});
-async function metadata(file){try{return JSON.parse(await readFile(path.join(process.cwd(),'public',file),'utf8'));}catch{return null;}}
+async function metadata(){
+ // Keep literal file paths: a dynamic public/* read makes the function tracer include every game runtime.
+ const [release,pages,library]=await Promise.all([
+  readFile(new URL('../public/source-release.json',import.meta.url),'utf8').catch(()=>'null'),
+  readFile(new URL('../public/page-build.json',import.meta.url),'utf8').catch(()=>'null'),
+  readFile(new URL('../public/library-build.json',import.meta.url),'utf8').catch(()=>'null')
+ ]);return {release:JSON.parse(release),pageBuild:JSON.parse(pages),libraryBuild:JSON.parse(library)};
+}
 export default async function handler(req,res){
  privateHeaders(res);
  try{
@@ -24,7 +30,7 @@ export default async function handler(req,res){
    if(view){if(!['dashboard','backup'].includes(view))return fail(res,404,'NOT_FOUND');res.setHeader('Content-Type','text/html; charset=utf-8');return res.status(200).send(adminPage(lang,view,cfg.email));}
    const operation=u.searchParams.get('operation')||'session';
    if(operation==='session')return res.status(200).json({ok:true,role:'super-admin',csrf:session.csrf,email:cfg.email,expiresAt:session.expiresAt});
-   if(operation==='status')return res.status(200).json({ok:true,games:catalog.length,touch:catalog.filter(g=>!g.desktop).length,desktop:catalog.filter(g=>g.desktop).length,localizedGamePages:catalog.length*2,release:await metadata('source-release.json'),pageBuild:await metadata('page-build.json'),libraryBuild:await metadata('library-build.json'),cloudSaves:Boolean(process.env.BLOB_READ_WRITE_TOKEN||(process.env.BLOB_STORE_ID&&process.env.VERCEL_OIDC_TOKEN)),backupScope:'this-browser-localStorage',checkedAt:new Date().toISOString()});
+   if(operation==='status')return res.status(200).json({ok:true,games:catalog.length,touch:catalog.filter(g=>!g.desktop).length,desktop:catalog.filter(g=>g.desktop).length,localizedGamePages:catalog.length*2,...await metadata(),cloudSaves:Boolean(process.env.BLOB_READ_WRITE_TOKEN||(process.env.BLOB_STORE_ID&&process.env.VERCEL_OIDC_TOKEN)),backupScope:'this-browser-localStorage',checkedAt:new Date().toISOString()});
    if(operation==='catalog')return res.status(200).json({ok:true,games:catalog.map(g=>({id:g.id,name:g.name,desktop:!!g.desktop,runtimeMB:g.runtimeMB,categories:g.categories,device:g.device,i18n:g.i18n,entry:g.entry}))});
    return fail(res,404,'NOT_FOUND');
   }
