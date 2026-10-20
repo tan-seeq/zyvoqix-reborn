@@ -1804,30 +1804,31 @@
       "action"
     ],
     "description": "طهر ساحة الحاويات من عشرة أعداء قبل انتهاء ثلاث دقائق، بأربع أسلحة وتغطية وتصويب وتحديات حركة.",
-    "controls": "WASD حركة · الماوس تصويب · الزر الأيسر إطلاق · الأيمن تقريب · R تعبئة · 1–4 أسلحة · Esc إيقاف.",
+    "controls": "كمبيوتر: WASD حركة وماوس تصويب. لمس: عصا يسار للحركة، اسحب يمينا للتصويب، وأزرار إطلاق وتعبئة وقفز وتقريب وتغيير السلاح.",
     "genre": "عملية آيرونهولد",
     "tag": "3D",
     "kind": "لعبة مستقلة",
     "search": "Operation Ironhold عملية آيرونهولد action",
-    "desktop": true,
+    "desktop": false,
     "webgl2": true,
-    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "device": "كمبيوتر ولمس · الوضع الأفقي أفضل",
     "source": "https://github.com/StarKnightt/operation-ironhold/tree/4098330664d66085cb1775c0783597070c32172b",
     "entry": "/games/operation-ironhold/index.html",
     "cover": "/covers/operation-ironhold.webp",
     "runtimeMB": 1.8,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور. أضيف تحكم لمس وتكييف الدقة للموبايل بواسطة ZYVOQIX.",
     "i18n": {
       "en": {
         "description": "Clear a container yard of ten hostiles before the three-minute timer ends. Four weapons, cover, aiming and movement challenges.",
-        "controls": "WASD move · Mouse aim · Left click fire · Right click aim down sights · R reload · 1–4 weapons · Esc pause.",
+        "controls": "Desktop: WASD move, mouse aim. Touch: left pad moves, drag on the right to aim; buttons fire, reload, jump, aim and switch weapons.",
         "genre": "ACTION",
         "tag": "3D",
         "kind": "Independent game",
-        "device": "Keyboard & mouse",
-        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+        "device": "Keyboard & mouse / Touch · landscape recommended",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved. ZYVOQIX adds touch controls and a mobile resolution cap."
       }
-    }
+    },
+    "sourceArchive": "/sources/operation-ironhold-mobile.tar.gz"
   },
   {
     "id": "regolith",

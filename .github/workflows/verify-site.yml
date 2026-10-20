@@ -2,7 +2,7 @@ name: Verify bilingual player experience
 on:
   push:
     branches: [library/self-hosted-v8]
-    paths: [public/**, scripts/generate-game-pages.mjs, scripts/data-page-content.mjs, scripts/templates/**, tests/**, library.lock.json, .github/workflows/verify-site.yml]
+    paths: [api/**, server/**, package.json, package-lock.json, vercel.json, public/**, scripts/generate-game-pages.mjs, scripts/data-page-content.mjs, scripts/ironhold-mobile.mjs, scripts/templates/**, tests/**, library.lock.json, .github/workflows/verify-site.yml]
   workflow_dispatch:
 permissions:
   contents: read
@@ -17,7 +17,9 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
-      - name: Test backup integrity and tier filters
+      - name: Install pinned dependencies
+        run: npm ci
+      - name: Test admin security, backups and game controls
         run: node --test tests/*.test.mjs
       - name: Build the complete pinned library
         run: npm run build

@@ -50,6 +50,74 @@
           "value": "public, max-age=3600"
         }
       ]
+    },
+    {
+      "source": "/(ar/)?(super-admin|admin|data)(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "api/admin.js": {
+      "includeFiles": "public/{source-release,page-build,library-build}.json"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/data/:path*",
+      "destination": "/super-admin/backup/",
+      "permanent": false
+    },
+    {
+      "source": "/ar/data/:path*",
+      "destination": "/ar/super-admin/backup/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/super-admin",
+      "destination": "/api/admin?view=dashboard&lang=en"
+    },
+    {
+      "source": "/super-admin/",
+      "destination": "/api/admin?view=dashboard&lang=en"
+    },
+    {
+      "source": "/super-admin/backup",
+      "destination": "/api/admin?view=backup&lang=en"
+    },
+    {
+      "source": "/super-admin/backup/",
+      "destination": "/api/admin?view=backup&lang=en"
+    },
+    {
+      "source": "/ar/super-admin",
+      "destination": "/api/admin?view=dashboard&lang=ar"
+    },
+    {
+      "source": "/ar/super-admin/",
+      "destination": "/api/admin?view=dashboard&lang=ar"
+    },
+    {
+      "source": "/ar/super-admin/backup",
+      "destination": "/api/admin?view=backup&lang=ar"
+    },
+    {
+      "source": "/ar/super-admin/backup/",
+      "destination": "/api/admin?view=backup&lang=ar"
     }
   ]
 }

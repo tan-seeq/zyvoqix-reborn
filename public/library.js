@@ -30,7 +30,7 @@ function applyLanguage(value){
   document.documentElement.dataset.locale=lang;
   const canonical=document.querySelector('link[rel=canonical]');if(canonical){const publicOrigin=new URL(canonical.href).origin;canonical.href=publicOrigin+localePath;document.querySelector('meta[property="og:url"]')?.setAttribute('content',publicOrigin+localePath);}
  }
- document.querySelectorAll('[data-data-link]').forEach(a=>a.href=(lang==='ar'?'/ar':'')+'/data/');
+ document.querySelectorAll('[data-data-link]').forEach(a=>a.href=(lang==='ar'?'/ar':'')+'/super-admin/');
  document.title=t('title');document.querySelector('meta[name="description"]').content=t('description');
  document.querySelectorAll('[data-t]').forEach(el=>el.textContent=t(el.dataset.t));
  document.querySelectorAll('[data-t-label]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.tLabel)));

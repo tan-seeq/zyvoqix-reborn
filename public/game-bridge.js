@@ -20,7 +20,7 @@
   if(kind==='error'){const retry=document.createElement('button');retry.textContent=ar?'أعد المحاولة':'Retry';retry.style.cssText='font:inherit;padding:10px 24px;border:0;border-radius:8px;background:#6dd7ff;color:#081020;cursor:pointer';retry.onclick=()=>location.reload();panel.append(retry);const back=document.createElement('a');back.textContent=ar?'العودة للمكتبة':'Back to library';back.href='/#library';back.target='_top';back.style.cssText='color:#9cdbff;margin-top:18px';panel.append(back);}
   document.body.append(panel);};document.body?paint():document.addEventListener('DOMContentLoaded',paint,{once:true});
  }
- function error(detail){if(failed)return;failed=true;clearTimeout(timer);send('error',detail);notice('error',detail);}
+ function error(detail){if(failed)return;failed=true;clearTimeout(timer);send('error',detail);if(parent===window)notice('error',detail);}
  window.addEventListener('error',e=>{if(e.message)error(e.message);else if(e.target?.tagName==='SCRIPT')error('Script failed to load: '+e.target.getAttribute('src'));},true);
  window.addEventListener('unhandledrejection',e=>error(e.reason?.message||String(e.reason)));
  window.addEventListener('zyvoqix-game-error',e=>error(e.detail));

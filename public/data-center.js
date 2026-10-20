@@ -1,3 +1,5 @@
+import {requireAdmin} from './admin-session.js';
+await requireAdmin();
 import './page-language.js';
 import './navigation.js';
 import {setLanguage} from './language.js';
@@ -9,10 +11,10 @@ function current(){return snapshot(localStorage,location.origin);}
 function stats(){try{$('dataCount').textContent=current().entries.length+' '+w.local;}catch{say(w.unavailable,true);}}
 function download(data,label){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='zyvoqix-'+label+'-'+new Date().toISOString().slice(0,10)+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);}
 function invalidate(){backup=null;preview=null;$('restoreBackup').disabled=true;$('backupPreview').replaceChildren();}
-function inspect(){invalidate();try{backup=parseBackup($('backupText').value);paintPlan();say(w.loaded);}catch{say(w.invalid,true);}}
+async function inspect(){invalidate();try{await requireAdmin();backup=parseBackup($('backupText').value);paintPlan();say(w.loaded);}catch{say(w.invalid,true);}}
 function paintPlan(){if(!backup)return;try{preview=restorePlan(localStorage,backup,$('replaceExisting').checked);const lines=[backup.entries.length+' '+w.summary,preview.entries.length+' '+w.add,preview.kept.length+' '+w.keep];if(backup.createdAt)lines.push(w.date+': '+backup.createdAt);$('backupPreview').replaceChildren(...lines.map(line=>{const p=document.createElement('p');p.textContent=line;return p;}));$('restoreBackup').disabled=preview.entries.length===0;if(!preview.entries.length)say(w.noChange);}catch{say(w.unavailable,true);}}
-$('downloadBackup').addEventListener('click',()=>{try{const data=current();if(!data.entries.length){say(w.empty);return;}download(data,'player-backup');say(w.downloaded);}catch{say(w.unavailable,true);}});
+$('downloadBackup').addEventListener('click',async()=>{try{await requireAdmin();const data=current();if(!data.entries.length){say(w.empty);return;}download(data,'player-backup');say(w.downloaded);}catch{say(w.unavailable,true);}});
 $('inspectBackup').addEventListener('click',inspect);$('backupText').addEventListener('input',invalidate);$('replaceExisting').addEventListener('change',paintPlan);
 $('backupFile').addEventListener('change',async e=>{invalidate();const file=e.target.files[0];if(!file)return;if(file.size>32*1024*1024){say(w.invalid,true);return;}try{$('backupText').value=await file.text();inspect();}catch{say(w.invalid,true);}});
-$('restoreBackup').addEventListener('click',()=>{if(!backup||!preview)return;try{if($('replaceExisting').checked)download(current(),'before-import');const count=applyRestore(localStorage,preview);invalidate();stats();say(count?w.success:w.noChange);}catch(e){invalidate();say(w[e.message]||w.unavailable,true);}});
+$('restoreBackup').addEventListener('click',async()=>{if(!backup||!preview)return;try{await requireAdmin();if($('replaceExisting').checked)download(current(),'before-import');const count=applyRestore(localStorage,preview);invalidate();stats();say(count?w.success:w.noChange);}catch(e){invalidate();say(w[e.message]||w.unavailable,true);}});
 window.addEventListener('storage',()=>{stats();if(backup){preview=null;$('restoreBackup').disabled=true;say(w.changed,true);}});stats();

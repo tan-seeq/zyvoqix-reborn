@@ -1,0 +1,31 @@
+<!-- Input excerpt from MIT upstream 4098330664d66085cb1775c0783597070c32172b -->
+document.addEventListener('pointerlockchange', ()=>{
+  const locked = document.pointerLockElement === document.body;
+  if (!locked && G.started && !G.over){
+    G.paused = true; G.running=false;
+    player.ads=false; player.adsK=0; player.adsEase=0;
+    UI._scopeK=-1; UI.scope.style.opacity=0; compMat.uniforms.scope.value=0;
+    UI.cross.classList.remove('hidden'); vmRoot.visible=true;
+    UI.pause.classList.add('on');
+    SFX.suspend();
+  } else if (locked){
+    G.paused = false;
+    UI.pause.classList.remove('on');
+    if (G.started && !G.over){ G.running = true; SFX.resume(); }
+  }
+});
+function requestLock(){
+  const p = document.body.requestPointerLock();
+  if (p && p.catch) p.catch(()=>{});
+  /* a denied request fires no pointerlockchange, which would leave the round
+     live but with no mouse look. fall back to the pause overlay so a second
+     click can try again. */
+  clearTimeout(requestLock._t);
+  requestLock._t = setTimeout(()=>{
+    if (document.pointerLockElement === document.body) return;
+    if (!G.started || G.over) return;
+    G.paused = true; G.running = false;
+    UI.pause.classList.add('on');
+  }, 350);
+}
+UI.startScreen.addEventListener('click', ()=>{ SFX.init(); startGame(); });
