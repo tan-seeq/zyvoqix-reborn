@@ -7,6 +7,8 @@ repo=Path(__file__).resolve().parents[1]
 base=repo.parent
 stage=base/'pack-staging'
 stage.mkdir(exist_ok=True)
+for folder in ('vendor','licenses','public/covers','public/licenses'):
+ (repo/folder).mkdir(parents=True,exist_ok=True)
 items=[
 dict(id='space-pirates',name='Space Pirates',categories=['action','flying'],genre='SPACE COMBAT',tag='BABYLON.JS',author='Babylon.js team',license='Apache-2.0',kind='عرض قتالي تفاعلي',device='كمبيوتر · لمس',desktop=False,webgl2=False,description='معارك سفن فضائية، صواريخ ومطاردات وسط الكويكبات. عرض تفاعلي من فريق Babylon.js.',controls='الماوس للتوجيه · الزر الأيسر للإطلاق · راجع Controls داخل اللعبة. يدعم التحكم باللمس.',search='فضاء طيران اكشن صواريخ سفن',source='https://github.com/BabylonJS/SpacePirates',entry='/games/space-pirates/index.html',cover='/covers/space-pirates.webp',notice='عرض Babylon.js 5.0 الأصلي؛ عُدلت مسارات الملفات والخطوط لتعمل من استضافة Zyvoqix.',required=['index.html','bundle.js','assets/missions.json','assets/gltf/valkyrie_mesh.glb']),
 dict(id='kart-royale',name='Kart Royale',categories=['racing'],genre='KART RACING',tag='3D RACING',author='Ryan Campbell',license='MIT',kind='سباق كارت',device='كمبيوتر · لمس',desktop=False,webgl2=True,description='سباق كارت ثلاثي الأبعاد مع منافسين آليين، درِفت وتيربو، في مضمار يمر بالقرية والساحل.',controls='الأسهم أو WASD للقيادة · Shift للدرِفت · Space لاستخدام الأدوات.',search='سباق سيارات عربيات كارت درفت',source='https://github.com/ryancampbell/kart-royale',entry='/games/kart-royale/index.html',cover='/covers/kart-royale.webp',notice='الرسوم والأصوات مولدة من كود المشروع. نسخة ثابتة تضم المكتبات محليًا.',required=['index.html']),
