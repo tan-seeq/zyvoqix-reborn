@@ -1,6 +1,6 @@
 {
-  "version": 8,
-  "archiveCommit": "48eb85c6e5ea147605968b6c08572f2865b7a54a",
+  "version": 9,
+  "archiveCommit": "913cfcb84a703e77be777b8a8cecc3060a1b40f4",
   "games": [
     {
       "id": "space-pirates",
@@ -49,6 +49,50 @@
         "build/assets/boxman.glb"
       ],
       "bytes": 27223254
+    },
+    {
+      "id": "parapet",
+      "archive": "vendor/parapet.tar.gz",
+      "sha256": "c4095b2ac4cc60ce8b48d39afeff9fabd8ddbcf60c80a84c56cf79cfe46370f4",
+      "upstreamCommit": "a45e4a651600d4d35f0738829470c356191d0694",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ],
+      "bytes": 1292321
+    },
+    {
+      "id": "blockverse",
+      "archive": "vendor/blockverse.tar.gz",
+      "sha256": "67f28682323fe6dbd463140296b7a47d6b39dcfd5557e9deb3e2b932495e2503",
+      "upstreamCommit": "05089a00606fd9def7e7f1578841596ca6a55377",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ],
+      "bytes": 406105
+    },
+    {
+      "id": "island-survival",
+      "archive": "vendor/island-survival.tar.gz",
+      "sha256": "fd50ea6753448d4c9ad0d1a54e9568ed6fcef99b79f901808df2ae0fd0c54015",
+      "upstreamCommit": "9140b5b94f60b5f67da58cf546850b24e65bff69",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ],
+      "bytes": 1160173
+    },
+    {
+      "id": "flight-sim",
+      "archive": "vendor/flight-sim.tar.gz",
+      "sha256": "ab6fb1646384430b2d0d43239bf94e9d3abda7f6b8f4a194ea07e36182526d9f",
+      "upstreamCommit": "11d94d03a5b4b4947f6b6859c999bf0bb62451c0",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ],
+      "bytes": 1515872
     }
   ]
 }
