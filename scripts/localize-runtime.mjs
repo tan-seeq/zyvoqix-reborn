@@ -14,6 +14,8 @@ const plugin={name:'observed-http-deps',setup(build){
 }};
 const assetRoots=(await fs.readdir(root,{withFileTypes:true})).filter(x=>x.isDirectory()&&!['node_modules','.git'].includes(x.name)).map(x=>x.name);
 async function localizeStrings(text,base){
+ for(const m of [...text.matchAll(/["'`]\/([^"'`\n]+)["'`]/g)]){const local=m[1].split(/[?#]/)[0];if(local.startsWith('/')||local.includes('..'))continue;try{if((await fs.stat(path.join(root,local))).isFile())text=text.replaceAll(m[0],m[0][0]+'/games/'+id+'/'+m[1]+m[0].slice(-1));}catch{}}
+
  for(const folder of assetRoots){const safe=folder.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');text=text.replace(new RegExp("([\"'`])/"+safe+"/",'g'),(_m,q)=>q+'/games/'+id+'/'+folder+'/');}
 
  for(const m of [...text.matchAll(/new URL\(\s*["']([^"']+)["']\s*,\s*import\.meta\.url\s*\)/g)]){
@@ -27,9 +29,11 @@ async function localizeStrings(text,base){
 // Rewrite import.meta-relative local assets before bundling changes module locations.
 for(const p of await files(root))if(/\.(m?js|ts)$/.test(p)&&!p.includes('/node_modules/')&&!p.includes('/vendor/')){const s=await fs.readFile(p,'utf8');const out=await localizeStrings(s,p);if(out!==s)await fs.writeFile(p,out);}
 async function files(dir){let out=[];for(const x of await fs.readdir(dir,{withFileTypes:true})){if(x.name==='.git'||x.name==='node_modules')continue;const p=path.join(dir,x.name);if(x.isDirectory())out.push(...await files(p));else out.push(p);}return out;}
+for(const m of [...html.matchAll(/\b(src|href)=["']\/([^"']+)["']/g)]){try{if((await fs.stat(path.join(root,m[2].split('?')[0]))).isFile())html=html.replace(m[0],m[1]+'="./'+m[2]+'"');}catch{}}
+for(const m of [...html.matchAll(/<link\b[^>]*>/gi)]){const href=m[0].match(/href=["']([^"']+)["']/i)?.[1];if(href&&/rel=["'](?:shortcut )?icon["']/i.test(m[0])&&!/^https?:/.test(href)){try{await fs.stat(path.join(root,href.replace(/^\//,'')));}catch{html=html.replace(m[0],'<link rel="icon" href="/assets/icon.png">');}}}
 let index=0;for(const m of [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]){
  const attrs=m[1],src=attrs.match(/\bsrc\s*=\s*["']([^"']+)["']/i)?.[1];
- if(src&&/umami|google-analytics|googletagmanager|vconsole/.test(src)){html=html.replace(m[0],'<!-- Optional third-party analytics/debug loader removed. -->');continue;}
+ if(src&&/umami|google-?analytics|googletagmanager|vconsole|\/_vercel\//i.test(src)){html=html.replace(m[0],'<!-- Optional third-party analytics/debug loader removed. -->');continue;}
  if(/\btype\s*=\s*["']module["']/i.test(attrs)){
   if(built&&src&&!/^https?:/.test(src))continue;
   let entry;if(src){if(/^https?:/.test(src)){entry=path.join(root,'vendor','input-'+index+'.js');await fs.writeFile(entry,`import ${JSON.stringify(src)}`);}else entry=path.resolve(root,src.replace(/^\//,''));}else{entry=path.join(root,'.zy-entry-'+index+'.js');await fs.writeFile(entry,await localizeStrings(m[2],path.join(root,'index.html')));}

@@ -1,7 +1,7 @@
 {
   "name": "ZYVOQIX - Gaming Universe",
   "short_name": "ZYVOQIX",
-  "description": "Eight self-hosted 3D games and experiences, with English and Arabic site controls.",
+  "description": "Independent browser games and 3D experiences, with English and Arabic site controls.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#070b18",

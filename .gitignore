@@ -3,3 +3,11 @@ node_modules/
 public/games/
 test-results/
 .vercel/
+
+/public/play/
+/public/ar/
+/public/category/
+/public/about/
+/public/sitemap.xml
+/public/robots.txt
+/public/page-build.json

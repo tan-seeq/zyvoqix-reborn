@@ -1,0 +1,11 @@
+from pathlib import Path
+import json,hashlib
+R=Path(__file__).resolve().parents[1];out=R.parent/'expansion-v13-output';items=json.loads((R/'vendor/expansion-v13.json').read_text());catalog=json.loads((R/'public/library-catalog.json').read_text());lock=json.loads((R/'library.lock.json').read_text())
+for g in items:
+ d=json.loads((out/(g['id']+'.json')).read_text());id=g['id'];cat=g['categories'][0];author=g.get('author',g['repo'].split('/')[0])
+ c=dict(id=id,name=g['name'],author=author,license='MIT',categories=g['categories'],description=g.get('descriptionAr',g['nameAr']+' — لعبة ثلاثية الأبعاد مستقلة. راجع تعليمات اللعبة قبل البدء.'),controls=g.get('controlsAr','استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.'),genre=g['nameAr'],tag='3D',kind=g.get('kindAr','لعبة مستقلة'),search=g['name']+' '+g['nameAr']+' '+cat,desktop=g['desktop'],webgl2=True,device=g.get('deviceAr','كمبيوتر · لوحة مفاتيح وماوس' if g['desktop'] else 'كمبيوتر · تحكم لمس'),source='https://github.com/'+g['repo']+'/tree/'+g['commit'],entry='/games/'+id+'/index.html',cover=d.get('cover'),runtimeMB=d['runtimeMB'],notice='المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.',i18n={'en':dict(description=g.get('description',g['name']+' — an independent 3D game. Read the in-game instructions before starting.'),controls=g.get('controls','Use the in-game control instructions. Some games require keyboard and mouse.'),genre=cat.upper(),tag='3D',kind=g.get('kind','Independent game'),device=g.get('device','Keyboard & mouse' if g['desktop'] else 'Computer · touch controls'),notice=g.get('changes','Original source and asset credits retained. In-game menus use the developer’s language.'))})
+ catalog=[x for x in catalog if x['id']!=id]+[c]
+ a=R/'vendor'/(id+'.tar.gz');lock['games']=[x for x in lock['games'] if x['id']!=id]+[dict(id=id,archive='vendor/'+a.name,sha256=hashlib.sha256(a.read_bytes()).hexdigest(),bytes=a.stat().st_size,upstreamCommit=g['commit'],required=['index.html','LICENSE.txt'])]
+lock['version']=13
+for p,d in [(R/'library.lock.json',lock),(R/'public/library-catalog.json',catalog)]:p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+print('Library',len(catalog),'distinct source games',len({x['source'] for x in catalog}))

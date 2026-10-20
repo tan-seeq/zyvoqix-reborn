@@ -1,8 +1,5 @@
 name: Build fifty locally hosted games
 on:
-  push:
-    branches: [library/self-hosted-v8]
-    paths: [scripts/package-bulk-games.py, scripts/localize-runtime.mjs, scripts/decompress-runtime.mjs, scripts/finalize-bulk-games.py, vendor/bulk-games.json, .github/workflows/expand-fifty-games.yml]
   workflow_dispatch:
 permissions:
   contents: write

@@ -1,0 +1,71 @@
+name: Build expanded international game library
+on:
+  push:
+    branches: [library/self-hosted-v8]
+    paths: [scripts/package-expansion-v13.py, scripts/build-cra-game.mjs, vendor/expansion-v13.json, vendor/crossroad-local-scores.js, .github/workflows/expand-v13.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: self-hosted-library
+  cancel-in-progress: false
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: library/self-hosted-v8
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+      - run: python3 -m pip install Pillow==11.3.0
+      - run: npm install --prefix /tmp/zyvoqix-build-tools esbuild@0.28.2 @gltf-transform/core@4.2.1 @gltf-transform/extensions@4.2.1 draco3dgltf@1.5.7 --ignore-scripts --no-audit --no-fund
+      - name: Restore exact dependency locks
+        run: |
+          python3 - <<'PY'
+          import base64,gzip,json
+          from pathlib import Path
+          root=Path('vendor');encoded=''.join(p.read_text() for p in sorted(root.glob('expansion-v13-locks-*.b64')))
+          out=root/'expansion-v13-locks';out.mkdir(exist_ok=True)
+          for name,content in json.loads(gzip.decompress(base64.b64decode(encoded))).items():(out/name).write_text(content)
+          PY
+      - name: Package independent licensed additions
+        run: |
+          python3 scripts/package-expansion-v13.py
+          python3 scripts/finalize-expansion-v13.py
+      - name: Verify runtimes, bilingual routes and preserved site
+        run: |
+          npm run build
+          python3 scripts/verify-library.py
+          python3 scripts/verify-pages.py
+          node --check public/library.js
+          node --check public/play-page.js
+          node --check public/game-bridge.js
+          node --check vendor/crossroad-local-scores.js
+      - name: Save immutable game archives and pin release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "ZYVOQIX Library Build"
+          git config user.email "zyvoqix-library@users.noreply.github.com"
+          git add vendor/*.tar.gz public/licenses/ public/covers/ public/library-catalog.json public/library-build.json
+          git diff --cached --quiet || git commit -m "Vendor twenty-one independent projects for the expanded library"
+          python3 - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          p=Path('library.lock.json');x=json.loads(p.read_text());x['archiveCommit']=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip();p.write_text(json.dumps(x,indent=2)+'\n')
+          PY
+          git add library.lock.json
+          git diff --cached --quiet || git commit -m "Pin expanded seventy-one-project library"
+          cat > "$RUNNER_TEMP/zyvoqix-git-askpass" <<'SH'
+          #!/bin/sh
+          case "$1" in
+            *Username*) printf '%s\n' 'x-access-token' ;;
+            *Password*) printf '%s\n' "$GH_TOKEN" ;;
+          esac
+          SH
+          chmod 700 "$RUNNER_TEMP/zyvoqix-git-askpass"
+          GIT_ASKPASS="$RUNNER_TEMP/zyvoqix-git-askpass" GIT_TERMINAL_PROMPT=0 git push origin HEAD:library/self-hosted-v8

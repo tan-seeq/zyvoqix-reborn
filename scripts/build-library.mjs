@@ -29,11 +29,12 @@ for (const game of config.games) {
   execFileSync('tar', ['-xzf', archive, '--no-same-owner', '-C', temp]);
   const dest = path.join(root, 'public', 'games', game.id);
   await rm(dest, {recursive:true, force:true, maxRetries:8, retryDelay:200});
-  await cp(path.join(temp,'runtime'), dest, {recursive:true});
+  await mkdir(dest,{recursive:true});
+  execFileSync('cp',['-a',path.join(temp,'runtime')+'/.',dest]);
   // Install the error bridge before any game script can throw.
   const index = path.join(dest,'index.html');
   let html = await readFile(index,'utf8');
-  if (!html.includes('/game-bridge.js')) html=html.replace(/<head[^>]*>/i,'$&<script src="/game-bridge.js?v=12"></script>');
+  if (!html.includes('/game-bridge.js')) html=html.replace(/<head[^>]*>/i,'$&<script src="/game-bridge.js?v=13"></script>');
   await writeFile(index,html);
   if(game.sourceArchive){await mkdir(path.join(root,'public','sources'),{recursive:true});await cp(archive,path.join(root,'public','sources',game.id+'.tar.gz'));}
   for (const f of game.required) {
@@ -43,3 +44,5 @@ for (const game of config.games) {
 }
 await writeFile(path.join(root,'public','library-build.json'), JSON.stringify({version:config.version,games:config.games.map(g=>({id:g.id,upstreamCommit:g.upstreamCommit,sha256:g.sha256})),runtime:'same-origin static files'},null,2));
 await rm(path.join(root,'.library-build'), {recursive:true,force:true,maxRetries:8,retryDelay:200});
+
+await import('./generate-game-pages.mjs');
