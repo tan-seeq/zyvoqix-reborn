@@ -31,8 +31,8 @@ function normalizeBoard(value){
  for(const z of zones)board[z]=value[z].filter(x=>x&&typeof x.name==='string'&&x.name.length<=120&&!seen.has(x.name)&&seen.add(x.name)).map(x=>({name:x.name,icon:typeof x.icon==='string'?x.icon.slice(0,20):'🎮'}));
  return board;
 }
-function initialBoard(){
- const board=normalizeBoard(read('gz2_tierBoard',null))||{S:[{name:'Minecraft',icon:'⛏️'},{name:'Roblox',icon:'🧩'}],A:[{name:'Fortnite',icon:'🌌'},{name:'Valorant',icon:'🎯'},{name:'Crystal PvP',icon:'💎'}],B:[{name:'Axe PvP',icon:'🪓'},{name:'Rocket League',icon:'🚀'},{name:'Obby games',icon:'🏃'}],C:[{name:'Terraria',icon:'🌳'},{name:'Roleplay',icon:'🎭'}],D:[{name:'Among Us',icon:'👽'},{name:'Stumble Guys',icon:'🏁'}],pool:[]};
+function initialBoard(value=read('gz2_tierBoard',null)){
+ const board=normalizeBoard(value)||{S:[{name:'Minecraft',icon:'⛏️'},{name:'Roblox',icon:'🧩'}],A:[{name:'Fortnite',icon:'🌌'},{name:'Valorant',icon:'🎯'},{name:'Crystal PvP',icon:'💎'}],B:[{name:'Axe PvP',icon:'🪓'},{name:'Rocket League',icon:'🚀'},{name:'Obby games',icon:'🏃'}],C:[{name:'Terraria',icon:'🌳'},{name:'Roleplay',icon:'🎭'}],D:[{name:'Among Us',icon:'👽'},{name:'Stumble Guys',icon:'🏁'}],pool:[]};
  const names=new Set(zones.flatMap(z=>board[z].map(x=>x.name)));
  for(const g of catalog)if(!names.has(g.name))board.pool.push({name:g.name,icon:'🎮'});
  return board;
@@ -68,7 +68,7 @@ function missions(){const xp=number(read('gz2_xp',0)),done=array('gz2_done');ret
 function render(){applyLanguage();$('#hub').innerHTML=({rankings,tiers:tierPage,community,missions})[page]()+`<div class="hub-note">${t('backupNote')} <button class="secondary" data-backup>${t('download')}</button></div>`;}
 function summary(){return tiers.map(z=>z+': '+(board[z].map(x=>x.name).join(', ')||'—')).join('\n');}
 function move(to){if(!selection||!zones.includes(to)||!zones.includes(selection.from))return;const from=board[selection.from],index=from.findIndex(x=>x.name===selection.name);if(index<0)return;const before=structuredClone(board);board[to].push(from.splice(index,1)[0]);selection=null;if(!persist({tierBoard:board}))board=before;capture();render();}
-function openList(index){const l=array('gz2_lists')[index];if(!l)return;capture();draftTitle=String(l.title||'').slice(0,70);draftCategory=l.category||'All games';let parsed=normalizeBoard(l.board);if(!parsed){parsed={S:[],A:[],B:[],C:[],D:[],pool:[]};const icons=new Map(zones.flatMap(z=>(board?.[z]||[]).map(x=>[x.name,x.icon])));for(const line of String(l.summary||'').split('\n')){const m=line.match(/^([SABCD]):\s*(.*)$/);if(!m)continue;parsed[m[1]]=m[2].split(',').map(x=>x.trim()).filter(x=>x&&x!=='—').map(name=>({name,icon:icons.get(name)||'🎮'}));}parsed=normalizeBoard(parsed)||initialBoard();}board=parsed;selection=null;render();$('#tierTitle').focus();}
+function openList(index){const l=array('gz2_lists')[index];if(!l)return;capture();draftTitle=String(l.title||'').slice(0,70);draftCategory=l.category||'All games';let parsed=normalizeBoard(l.board);if(!parsed){parsed={S:[],A:[],B:[],C:[],D:[],pool:[]};const icons=new Map(zones.flatMap(z=>(board?.[z]||[]).map(x=>[x.name,x.icon])));for(const line of String(l.summary||'').split('\n')){const m=line.match(/^([SABCD]):\s*(.*)$/);if(!m)continue;parsed[m[1]]=m[2].split(',').map(x=>x.trim()).filter(x=>x&&x!=='—').map(name=>({name,icon:icons.get(name)||'🎮'}));}parsed=normalizeBoard(parsed)||initialBoard();}board=initialBoard(parsed);selection=null;render();$('#tierTitle').focus();}
 function download(){const values=Object.fromEntries(['tierBoard','lists','posts','xp','done','profile'].map(k=>[k,read('gz2_'+k,null)]));const blob=new Blob([JSON.stringify({format:'ZYVOQIX_HUB_BACKUP',version:1,createdAt:new Date().toISOString(),values},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='zyvoqix-hub-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 document.addEventListener('click',async e=>{
  const b=e.target.closest('button');if(!b)return;
@@ -91,6 +91,6 @@ document.addEventListener('drop',e=>{const row=e.target.closest('[data-drop]');i
 window.addEventListener('storage',()=>{capture();if(page==='tiers')board=initialBoard();render();});
 async function loadShared(){try{const res=await fetch('/api/gamezone?action=community');if(!res.ok)return;const x=await res.json();shared={enabled:x.enabled===true,players:Array.isArray(x.players)?x.players:[]};}catch{}}
 try{const res=await fetch('/library-catalog.json');if(res.ok)catalog=await res.json();}catch{}
-if(!board)board=initialBoard();
+board=initialBoard();
 render();if(page==='rankings'){await loadShared();render();}
 if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});
