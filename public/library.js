@@ -30,5 +30,9 @@ window.addEventListener('storage',e=>{if(e.key==='zyvoqix_language')applyLanguag
 $('search').addEventListener('input',render);$('close').addEventListener('click',close);$('restart').addEventListener('click',launch);$('fullscreen').addEventListener('click',()=>{$('player').requestFullscreen?.().catch(()=>{});});
 $('player').addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.fullscreenElement){e.preventDefault();close();}if(e.key==='Tab'){const items=[...$('player').querySelectorAll('button:not([hidden]),iframe')],first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
 applyLanguage(lang);
+try{localStorage.setItem('zyvoqix_hub_visited','true');}catch{}
+const oldHubRoutes={rankings:'/rankings.html',tiers:'/tiers.html',comments:'/community.html',community:'/community.html',missions:'/missions.html'};
+const restoreRoute=()=>{const to=oldHubRoutes[location.hash.slice(1)];if(to)location.replace(to);};
+window.addEventListener('hashchange',restoreRoute);restoreRoute();
 try{const r=await fetch('/library-catalog.json');if(!r.ok)throw Error(r.status);games=await r.json();applyLanguage(lang);const id=location.hash.startsWith('#play-')&&location.hash.slice(6);if(id)open(id);}catch{$('count').textContent=t('catalogError');$('gameGrid').innerHTML=`<p class="empty">${t('catalogError')} <button class="play" id="retryCatalog">${t('reload')}</button></p>`;$('retryCatalog').onclick=()=>location.reload();}
 if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});
