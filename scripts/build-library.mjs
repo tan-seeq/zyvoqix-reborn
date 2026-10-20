@@ -35,5 +35,5 @@ for (const game of config.games) {
   }
   console.log(`Prepared ${game.id} from verified local archive`);
 }
-await writeFile(path.join(root,'public','library-build.json'), JSON.stringify({version:8,games:config.games.map(g=>({id:g.id,upstreamCommit:g.upstreamCommit,sha256:g.sha256})),runtime:'same-origin static files'},null,2));
+await writeFile(path.join(root,'public','library-build.json'), JSON.stringify({version:config.version,games:config.games.map(g=>({id:g.id,upstreamCommit:g.upstreamCommit,sha256:g.sha256})),runtime:'same-origin static files'},null,2));
 await rm(path.join(root,'.library-build'), {recursive:true,force:true});

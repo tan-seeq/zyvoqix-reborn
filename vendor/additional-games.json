@@ -1,0 +1,101 @@
+[
+  {
+    "id": "parapet",
+    "name": "Parapet",
+    "repo": "StarKnightt/parapet",
+    "commit": "a45e4a651600d4d35f0738829470c356191d0694",
+    "author": "Prasenjit Nayak / StarKnightt",
+    "categories": [
+      "adventure",
+      "action"
+    ],
+    "coverSource": "media/01-gap.webp",
+    "genre": "باركور الأسطح",
+    "tag": "جري حر",
+    "kind": "مسار باركور",
+    "description": "اقفز بين أسطح المدينة، اجرِ على الحوائط وانزلق تحت العوائق في مسار من ستة أسطح.",
+    "controls": "WASD حركة · Space قفز · Ctrl أو C انزلاق · R إعادة · M كتم الصوت · الماوس للكاميرا.",
+    "search": "باركور جري اسطح قفز parkour rooftop running",
+    "en": {
+      "genre": "ROOFTOP PARKOUR",
+      "tag": "FREE RUNNING",
+      "kind": "Parkour course",
+      "description": "Leap across city rooftops, wall-run and slide under obstacles on a course spanning six roofs.",
+      "controls": "WASD move · Space jump/wall kick · Ctrl or C slide · R reset · M mute · mouse camera."
+    }
+  },
+  {
+    "id": "blockverse",
+    "name": "BlockVerse",
+    "repo": "appleweiping/blockverse",
+    "commit": "05089a00606fd9def7e7f1578841596ca6a55377",
+    "author": "BlockVerse contributors",
+    "categories": [
+      "sandbox",
+      "adventure"
+    ],
+    "coverSource": "docs/screenshots/plains.jpg",
+    "genre": "بناء واستكشاف",
+    "tag": "عالم مكعبات",
+    "kind": "بناء وبقاء",
+    "description": "استكشف تضاريس مولدة، اجمع الموارد واصنع أدوات وابنِ عالمك. أو اختَر الوضع الإبداعي للبناء بحرية.",
+    "controls": "WASD حركة · Space قفز · Ctrl جري · Shift تسلل · كليك أيسر حفر · أيمن بناء · E حقيبة · 1–9 أدوات.",
+    "search": "مكعبات بناء بقاء عالم حفر crafting blocks building voxel survival",
+    "en": {
+      "genre": "BUILD & EXPLORE",
+      "tag": "VOXEL WORLD",
+      "kind": "Building & survival",
+      "description": "Explore generated terrain, gather resources, craft tools and build your world. Choose creative mode for free building.",
+      "controls": "WASD move · Space jump · Ctrl sprint · Shift sneak · left click mine · right click build · E inventory · 1–9 tools."
+    }
+  },
+  {
+    "id": "island-survival",
+    "name": "Island Survival",
+    "repo": "alexandrosang21/island-survival",
+    "commit": "9140b5b94f60b5f67da58cf546850b24e65bff69",
+    "author": "Alexander Angelov",
+    "categories": [
+      "adventure",
+      "sandbox"
+    ],
+    "coverSource": null,
+    "genre": "بقاء ومغامرة",
+    "tag": "جزيرة برية",
+    "kind": "بقاء وصناعة",
+    "description": "اجمع الخشب والحجر، اصنع الأدوات وابنِ مأوى على جزيرة برية. احذر الذئاب وهجمات الليل واحفظ تقدمك محليًا.",
+    "controls": "WASD حركة · الماوس كاميرا · Shift جري · Space قفز · E تفاعل · Tab حقيبة · B بناء · R تدوير.",
+    "search": "بقاء جزيرة بناء صناعة ذئاب survival island crafting shelter",
+    "en": {
+      "genre": "SURVIVAL ADVENTURE",
+      "tag": "WILD ISLAND",
+      "kind": "Survival & crafting",
+      "description": "Gather wood and stone, craft tools and build shelter on a wild island. Watch for wolves and night raids; save progress locally.",
+      "controls": "WASD move · mouse camera · Shift sprint · Space jump · E interact · Tab backpack · B building · R rotate."
+    }
+  },
+  {
+    "id": "flight-sim",
+    "name": "Flight Sim",
+    "repo": "Sanjays2402/flight-sim",
+    "commit": "11d94d03a5b4b4947f6b6859c999bf0bb62451c0",
+    "author": "Sanjay Santhanam",
+    "categories": [
+      "flying"
+    ],
+    "coverSource": null,
+    "genre": "محاكاة طيران",
+    "tag": "إقلاع وهبوط",
+    "kind": "محاكي طيران",
+    "description": "حلّق فوق الجبال والبحر، جرّب الإقلاع والهبوط في ثلاثة مطارات وغيّر الكاميرا والطقس.",
+    "controls": "W/S قوة المحرك · I/K ميل الطائرة · A/D دوران · Q/E دفة · G عجلات · F رفارف · B فرامل · C كاميرا. يتوفر تحكم لمس.",
+    "search": "طيران طائرة محاكاة مطار flight simulator aircraft",
+    "en": {
+      "genre": "FLIGHT SIMULATION",
+      "tag": "TAKE OFF & LAND",
+      "kind": "Flight simulator",
+      "description": "Fly above mountains and ocean, practise takeoffs and landings at three airfields, and adjust the camera and weather.",
+      "controls": "W/S throttle · I/K pitch · A/D roll · Q/E yaw · G gear · F flaps · B brakes · C camera. Touch controls available."
+    }
+  }
+]

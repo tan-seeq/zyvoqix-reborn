@@ -1,1 +1,19 @@
-{"name":"ZYVOQIX - Gaming Universe","short_name":"ZYVOQIX","description":"26 playable browser games including WebGL 3D experiences with Canvas 2D fallback, plus official PC download listings.","start_url":"/","display":"standalone","background_color":"#070b18","theme_color":"#080e21","lang":"ar","dir":"rtl","icons":[{"src":"/assets/icon.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
+{
+  "name": "ZYVOQIX - Gaming Universe",
+  "short_name": "ZYVOQIX",
+  "description": "Eight self-hosted 3D games and experiences, with English and Arabic site controls.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b18",
+  "theme_color": "#080e21",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
