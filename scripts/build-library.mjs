@@ -26,7 +26,7 @@ for (const game of config.games) {
   await mkdir(temp, {recursive:true});
   const names = execFileSync('tar', ['-tzf',archive], {encoding:'utf8'}).trim().split('\n');
   if (names.some(n => n.startsWith('/') || n.split('/').includes('..'))) throw new Error('Unsafe archive path');
-  execFileSync('tar', ['-xzf', archive, '-C', temp]);
+  execFileSync('tar', ['-xzf', archive, '--no-same-owner', '-C', temp]);
   const dest = path.join(root, 'public', 'games', game.id);
   await rm(dest, {recursive:true, force:true});
   await cp(path.join(temp,'runtime'), dest, {recursive:true});
