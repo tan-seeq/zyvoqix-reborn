@@ -1,0 +1,23 @@
+name: Verify ZYVOQIX game library
+on:
+  push:
+    branches: [main, feature/**]
+  pull_request:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          node --check public/portal.js
+          node --check public/telemetry.js
+          node --check scripts/import-playgama.mjs
+          node --check scripts/validate-library.mjs
+      - name: Validate catalog
+        run: node scripts/validate-library.mjs
+      - name: Test partner import (no repo changes)
+        run: node scripts/import-playgama.mjs scripts/fixtures/sample-playgama.json --clid=DEMO321

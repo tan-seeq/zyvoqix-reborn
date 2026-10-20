@@ -1,0 +1,15 @@
+{
+  "games": [
+    {
+      "title": "Test Racer",
+      "genre": "Car Racing",
+      "gameURL": "https://playgama.com/export/game/test-racer",
+      "thumbnail": "https://playgama.com/images/test.jpg"
+    },
+    {
+      "name": "Test Shooter",
+      "category": "Shooter",
+      "gameURL": "https://playgama.com/export/game/test-shooter?clid=DEMO321"
+    }
+  ]
+}

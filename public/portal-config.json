@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "ga4MeasurementId": "",
+  "note": "GA4 optional; leave blank until you own a property. Analytics loads ONLY after visitor opts in. Partner CLID goes in approved game URLs, not here."
+}
