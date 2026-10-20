@@ -1,19 +1,19 @@
 {
-  "version": 9,
-  "archiveCommit": "913cfcb84a703e77be777b8a8cecc3060a1b40f4",
+  "version": 11,
+  "archiveCommit": "6bdac170aecdabc303d7ef7272be4661971f0382",
   "games": [
     {
       "id": "space-pirates",
       "archive": "vendor/space-pirates.tar.gz",
-      "sha256": "5e6e9cc5dbed08072bf1faca6a60bca027912c96dcb13e75a611da25d1808981",
+      "sha256": "201714eab38bcafb84da61d9025c95d779ea80b96c782c826b63471439a2e0e5",
       "upstreamCommit": "8abceefbda9176be192e74ceb7030f5bd31d7ea5",
       "required": [
         "index.html",
-        "bundle.js",
+        "bundle-v11.js",
         "assets/missions.json",
         "assets/gltf/valkyrie_mesh.glb"
       ],
-      "bytes": 31243434
+      "bytes": 32299731
     },
     {
       "id": "kart-royale",
@@ -93,6 +93,54 @@
         "LICENSE.txt"
       ],
       "bytes": 1515872
+    },
+    {
+      "id": "circuit-sprint",
+      "archive": "vendor/circuit-sprint.tar.gz",
+      "sha256": "dc833276de0bab07840192648482ffae7ddeb1d6c24bcb883075ac58310d330e",
+      "upstreamCommit": "b896a92de290ecfbe4419d23c582bddaf9b64c8e",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ],
+      "bytes": 338462,
+      "sourceArchive": true
+    },
+    {
+      "id": "bowling",
+      "archive": "vendor/bowling.tar.gz",
+      "sha256": "54146765477d3b280fb116c2899edfb65583a9e096bd1198d5a31fdf0da0f4ab",
+      "upstreamCommit": "60fa6fe5283869c45515f614f6a99b181c63d499",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ],
+      "bytes": 1544252,
+      "sourceArchive": true
+    },
+    {
+      "id": "contra-run",
+      "archive": "vendor/contra-run.tar.gz",
+      "sha256": "9196cc24505435846e403419b383a49fa27b17e9635e419dc37206d9972d9c92",
+      "upstreamCommit": "5f75e3986017b33d9f6975f03ca8d1519a9ebce9",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ],
+      "bytes": 2556837,
+      "sourceArchive": true
+    },
+    {
+      "id": "beachy-ball",
+      "archive": "vendor/beachy-ball.tar.gz",
+      "sha256": "4ba8f38504d19c56d2829185dd12a67b4ed0ab974181ce057519221cb75e8e00",
+      "upstreamCommit": "1deb797f478794d6e9c336a4cad741b4afd8b160",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ],
+      "bytes": 15843405,
+      "sourceArchive": true
     }
   ]
 }
