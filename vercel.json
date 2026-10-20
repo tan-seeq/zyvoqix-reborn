@@ -76,6 +76,36 @@
   },
   "redirects": [
     {
+      "source": "/data",
+      "destination": "/super-admin/backup/",
+      "permanent": false
+    },
+    {
+      "source": "/data/",
+      "destination": "/super-admin/backup/",
+      "permanent": false
+    },
+    {
+      "source": "/data/index.html",
+      "destination": "/super-admin/backup/",
+      "permanent": false
+    },
+    {
+      "source": "/ar/data",
+      "destination": "/ar/super-admin/backup/",
+      "permanent": false
+    },
+    {
+      "source": "/ar/data/",
+      "destination": "/ar/super-admin/backup/",
+      "permanent": false
+    },
+    {
+      "source": "/ar/data/index.html",
+      "destination": "/ar/super-admin/backup/",
+      "permanent": false
+    },
+    {
       "source": "/data/:path*",
       "destination": "/super-admin/backup/",
       "permanent": false
