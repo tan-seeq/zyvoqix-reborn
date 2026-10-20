@@ -50,12 +50,12 @@ function showGameStatus(status,detail=''){
  const h=document.createElement('h2');h.textContent=t(status==='error'?'gameFailed':'loadingGame');box.append(h);
  const p=document.createElement('p');p.textContent=t(status==='error'?'failureHelp':status==='slow'?'slowGame':'download',{n:activeGame.runtimeMB});box.append(p);
  if(status==='error'&&detail){const technical=document.createElement('details');const label=document.createElement('summary');label.textContent=lang==='ar'?'تفاصيل الخطأ':'Error details';const code=document.createElement('p');code.textContent=detail;technical.append(label,code);box.append(technical);clearTimeout(loadTimer);}
- if(status==='error'||status==='slow'){const retry=document.createElement('button');retry.type='button';retry.className='play';retry.textContent=t('retryGame');retry.onclick=launch;box.append(retry);const a=document.createElement('a');a.href=activeGame.entry;a.target='_blank';a.rel='noopener';a.textContent=t('directGame');box.append(a);}
+ if(status==='error'||status==='slow'){const retry=document.createElement('button');retry.type='button';retry.className='play';retry.textContent=t('retryGame');retry.onclick=launch;box.append(retry);const a=document.createElement('a');a.href=activeGame.entry+'?zyvoqixRelease=15';a.target='_blank';a.rel='noopener';a.textContent=t('directGame');box.append(a);}
  $('playerArea').append(box);
 }
 function launch(){
  if(!activeGame)return;clearTimeout(loadTimer);lastGameStatus=null;recent=[activeGame.id,...recent.filter(id=>id!==activeGame.id)].slice(0,12);try{localStorage.setItem('zyvoqix_v13_recent',JSON.stringify(recent));}catch{}
- const f=document.createElement('iframe');f.title=activeGame.name;const url=new URL(activeGame.entry,location.origin);url.searchParams.set('zyvoqixRelease','14');f.src=url.pathname+url.search;f.allow='fullscreen; gamepad; autoplay';f.allowFullscreen=true;
+ const f=document.createElement('iframe');f.title=activeGame.name;const url=new URL(activeGame.entry,location.origin);url.searchParams.set('zyvoqixRelease','15');f.src=url.pathname+url.search;f.allow='fullscreen; gamepad; autoplay';f.allowFullscreen=true;
  $('playerArea').replaceChildren(f);$('restart').hidden=false;$('fullscreen').hidden=false;$('directGameLink').hidden=false;$('directGameLink').href=f.src;showGameStatus('loading');
  loadTimer=setTimeout(()=>showGameStatus('slow'),60000);
  f.addEventListener('load',()=>{f.focus();});

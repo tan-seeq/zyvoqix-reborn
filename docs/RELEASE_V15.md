@@ -22,3 +22,5 @@ The patched runtime, dependencies and original MIT license are available at `/so
 
 ## Validation
 25 Node tests cover server authorization, invalid/tampered sessions, cookie attributes, CSRF/origin failures, backup preservation/rollback, board filters and touch state/Pointer Lock regression. Build verification checks all 71 pinned runtimes and 142 localized game pages. A cloud browser without a GPU cannot certify FPS or real iPhone gameplay; actual device play remains a separate check.
+
+Game launch and direct links use `zyvoqixRelease=15`; entry HTML revalidates instead of remaining fresh in the browser for an hour. Heavy runtime assets keep their existing cache policy. This avoids serving the pre-fix Ironhold entry from an iPhone cache.
