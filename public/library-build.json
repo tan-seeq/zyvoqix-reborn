@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "games": [
     {
       "id": "space-pirates",
@@ -20,6 +20,26 @@
       "id": "sketchbook",
       "upstreamCommit": "62f4b7986fd1ce1e4f91daba89ef032c20a6ce55",
       "sha256": "676a10b3f8499d7bfdc45e7ed49d84635364e3ebabafd9851a5da5a72ddde682"
+    },
+    {
+      "id": "parapet",
+      "upstreamCommit": "a45e4a651600d4d35f0738829470c356191d0694",
+      "sha256": "c4095b2ac4cc60ce8b48d39afeff9fabd8ddbcf60c80a84c56cf79cfe46370f4"
+    },
+    {
+      "id": "blockverse",
+      "upstreamCommit": "05089a00606fd9def7e7f1578841596ca6a55377",
+      "sha256": "67f28682323fe6dbd463140296b7a47d6b39dcfd5557e9deb3e2b932495e2503"
+    },
+    {
+      "id": "island-survival",
+      "upstreamCommit": "9140b5b94f60b5f67da58cf546850b24e65bff69",
+      "sha256": "fd50ea6753448d4c9ad0d1a54e9568ed6fcef99b79f901808df2ae0fd0c54015"
+    },
+    {
+      "id": "flight-sim",
+      "upstreamCommit": "11d94d03a5b4b4947f6b6859c999bf0bb62451c0",
+      "sha256": "ab6fb1646384430b2d0d43239bf94e9d3abda7f6b8f4a194ea07e36182526d9f"
     }
   ],
   "runtime": "same-origin static files"

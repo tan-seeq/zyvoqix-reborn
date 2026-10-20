@@ -153,5 +153,144 @@
         "tag": "عالم حر"
       }
     }
+  },
+  {
+    "id": "parapet",
+    "name": "Parapet",
+    "categories": [
+      "adventure",
+      "action"
+    ],
+    "genre": "باركور الأسطح",
+    "tag": "جري حر",
+    "kind": "مسار باركور",
+    "description": "اقفز بين أسطح المدينة، اجرِ على الحوائط وانزلق تحت العوائق في مسار من ستة أسطح.",
+    "controls": "WASD حركة · Space قفز · Ctrl أو C انزلاق · R إعادة · M كتم الصوت · الماوس للكاميرا.",
+    "search": "باركور جري اسطح قفز parkour rooftop running",
+    "author": "Prasenjit Nayak / StarKnightt",
+    "license": "MIT",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كيبورد وماوس",
+    "source": "https://github.com/StarKnightt/parapet",
+    "entry": "/games/parapet/index.html",
+    "cover": "/covers/parapet.webp",
+    "notice": "ملفات التشغيل والمصدر محفوظة محليًا مع ترخيص المشروع. القوائم الداخلية بلغة المطور الأصلية.",
+    "runtimeMB": 1.1,
+    "i18n": {
+      "en": {
+        "genre": "ROOFTOP PARKOUR",
+        "tag": "FREE RUNNING",
+        "kind": "Parkour course",
+        "description": "Leap across city rooftops, wall-run and slide under obstacles on a course spanning six roofs.",
+        "controls": "WASD move · Space jump/wall kick · Ctrl or C slide · R reset · M mute · mouse camera.",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime and source bundled locally with the original license. Internal menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "blockverse",
+    "name": "BlockVerse",
+    "categories": [
+      "sandbox",
+      "adventure"
+    ],
+    "genre": "بناء واستكشاف",
+    "tag": "عالم مكعبات",
+    "kind": "بناء وبقاء",
+    "description": "استكشف تضاريس مولدة، اجمع الموارد واصنع أدوات وابنِ عالمك. أو اختَر الوضع الإبداعي للبناء بحرية.",
+    "controls": "WASD حركة · Space قفز · Ctrl جري · Shift تسلل · كليك أيسر حفر · أيمن بناء · E حقيبة · 1–9 أدوات.",
+    "search": "مكعبات بناء بقاء عالم حفر crafting blocks building voxel survival",
+    "author": "BlockVerse contributors",
+    "license": "MIT",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كيبورد وماوس",
+    "source": "https://github.com/appleweiping/blockverse",
+    "entry": "/games/blockverse/index.html",
+    "cover": "/covers/blockverse.jpg",
+    "notice": "ملفات التشغيل والمصدر محفوظة محليًا مع ترخيص المشروع. القوائم الداخلية بلغة المطور الأصلية.",
+    "runtimeMB": 0.8,
+    "i18n": {
+      "en": {
+        "genre": "BUILD & EXPLORE",
+        "tag": "VOXEL WORLD",
+        "kind": "Building & survival",
+        "description": "Explore generated terrain, gather resources, craft tools and build your world. Choose creative mode for free building.",
+        "controls": "WASD move · Space jump · Ctrl sprint · Shift sneak · left click mine · right click build · E inventory · 1–9 tools.",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime and source bundled locally with the original license. Internal menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "island-survival",
+    "name": "Island Survival",
+    "categories": [
+      "adventure",
+      "sandbox"
+    ],
+    "genre": "بقاء ومغامرة",
+    "tag": "جزيرة برية",
+    "kind": "بقاء وصناعة",
+    "description": "اجمع الخشب والحجر، اصنع الأدوات وابنِ مأوى على جزيرة برية. احذر الذئاب وهجمات الليل واحفظ تقدمك محليًا.",
+    "controls": "WASD حركة · الماوس كاميرا · Shift جري · Space قفز · E تفاعل · Tab حقيبة · B بناء · R تدوير.",
+    "search": "بقاء جزيرة بناء صناعة ذئاب survival island crafting shelter",
+    "author": "Alexander Angelov",
+    "license": "MIT",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كيبورد وماوس",
+    "source": "https://github.com/alexandrosang21/island-survival",
+    "entry": "/games/island-survival/index.html",
+    "cover": null,
+    "notice": "ملفات التشغيل والمصدر محفوظة محليًا مع ترخيص المشروع. القوائم الداخلية بلغة المطور الأصلية.",
+    "runtimeMB": 3.1,
+    "i18n": {
+      "en": {
+        "genre": "SURVIVAL ADVENTURE",
+        "tag": "WILD ISLAND",
+        "kind": "Survival & crafting",
+        "description": "Gather wood and stone, craft tools and build shelter on a wild island. Watch for wolves and night raids; save progress locally.",
+        "controls": "WASD move · mouse camera · Shift sprint · Space jump · E interact · Tab backpack · B building · R rotate.",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime and source bundled locally with the original license. Internal menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "flight-sim",
+    "name": "Flight Sim",
+    "categories": [
+      "flying"
+    ],
+    "genre": "محاكاة طيران",
+    "tag": "إقلاع وهبوط",
+    "kind": "محاكي طيران",
+    "description": "حلّق فوق الجبال والبحر، جرّب الإقلاع والهبوط في ثلاثة مطارات وغيّر الكاميرا والطقس.",
+    "controls": "W/S قوة المحرك · I/K ميل الطائرة · A/D دوران · Q/E دفة · G عجلات · F رفارف · B فرامل · C كاميرا. يتوفر تحكم لمس.",
+    "search": "طيران طائرة محاكاة مطار flight simulator aircraft",
+    "author": "Sanjay Santhanam",
+    "license": "MIT",
+    "desktop": false,
+    "webgl2": false,
+    "device": "كمبيوتر · لمس",
+    "source": "https://github.com/Sanjays2402/flight-sim",
+    "entry": "/games/flight-sim/index.html",
+    "cover": null,
+    "notice": "ملفات التشغيل والمصدر محفوظة محليًا مع ترخيص المشروع. القوائم الداخلية بلغة المطور الأصلية.",
+    "runtimeMB": 3.1,
+    "i18n": {
+      "en": {
+        "genre": "FLIGHT SIMULATION",
+        "tag": "TAKE OFF & LAND",
+        "kind": "Flight simulator",
+        "description": "Fly above mountains and ocean, practise takeoffs and landings at three airfields, and adjust the camera and weather.",
+        "controls": "W/S throttle · I/K pitch · A/D roll · Q/E yaw · G gear · F flaps · B brakes · C camera. Touch controls available.",
+        "device": "Computer · touch",
+        "notice": "Runtime and source bundled locally with the original license. Internal menus use the developer’s language."
+      }
+    }
   }
 ]
