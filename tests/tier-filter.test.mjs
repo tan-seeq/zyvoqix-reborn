@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {filterBoard} from '../public/tier-filter.js';
+const board={S:[{name:'Orbit Golf'}],A:[{name:'Old custom game'}],B:[],C:[],D:[],pool:[{name:'Misty Bunny'},{name:'لُعبة القمر'}]},catalog=[{name:'Orbit Golf'},{name:'Misty Bunny'}];
+test('hosted filter shows the catalog and preserves every original row',()=>{const before=JSON.stringify(board),r=filterBoard(board,catalog,{group:'hosted'});assert.equal(r.S.length,1);assert.equal(r.A.length,0);assert.equal(r.pool.length,1);assert.equal(JSON.stringify(board),before);});
+test('legacy custom games stay accessible in their own view',()=>{const r=filterBoard(board,catalog,{group:'other'});assert.equal(r.A[0].name,'Old custom game');assert.equal(r.pool[0].name,'لُعبة القمر');});
+test('search ignores case and Arabic diacritics',()=>{assert.equal(filterBoard(board,catalog,{query:'MISTY'}).pool[0].name,'Misty Bunny');assert.equal(filterBoard(board,catalog,{query:'لعبة القمر'}).pool[0].name,'لُعبة القمر');});

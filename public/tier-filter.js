@@ -1,0 +1,2 @@
+const normalize=value=>String(value||'').normalize('NFKD').replace(/[\u0300-\u036f\u064b-\u065f\u0670\u0640]/g,'').toLocaleLowerCase();
+export function filterBoard(board,catalog,{group='all',query=''}={}){const hosted=new Set(catalog.map(g=>g.name)),q=normalize(query).trim(),out={};for(const [zone,items]of Object.entries(board))out[zone]=items.filter(item=>(group==='all'||group==='hosted'&&hosted.has(item.name)||group==='other'&&!hosted.has(item.name))&&normalize(item.name).includes(q));return out;}

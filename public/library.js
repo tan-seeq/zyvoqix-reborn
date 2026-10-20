@@ -1,3 +1,5 @@
+import {screenMode} from './screen-mode.js';
+import './navigation.js';
 import {getLanguage,setLanguage,copy} from './language.js';
 const $=id=>document.getElementById(id);
 let lang=setLanguage(document.documentElement.dataset.locale||getLanguage()),games=JSON.parse(document.getElementById('initialCatalog')?.textContent||'[]'),category='all',previousFocus,activeGame,loadTimer,lastGameStatus;
@@ -28,10 +30,12 @@ function applyLanguage(value){
   document.documentElement.dataset.locale=lang;
   const canonical=document.querySelector('link[rel=canonical]');if(canonical){const publicOrigin=new URL(canonical.href).origin;canonical.href=publicOrigin+localePath;document.querySelector('meta[property="og:url"]')?.setAttribute('content',publicOrigin+localePath);}
  }
+ document.querySelectorAll('[data-data-link]').forEach(a=>a.href=(lang==='ar'?'/ar':'')+'/data/');
  document.title=t('title');document.querySelector('meta[name="description"]').content=t('description');
  document.querySelectorAll('[data-t]').forEach(el=>el.textContent=t(el.dataset.t));
  document.querySelectorAll('[data-t-label]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.tLabel)));
  $('search').placeholder=t('search');render();credits();
+ playerScreen?.refresh();
  if(activeGame){$('help').textContent=local(activeGame).controls;if(!$('playerArea').querySelector('iframe'))launchPanel();else if(lastGameStatus)showGameStatus(lastGameStatus.status,lastGameStatus.detail);}
 }
 function supports(g){const c=document.createElement('canvas');try{const gl=c.getContext('webgl2')||(!g.webgl2&&c.getContext('webgl'));if(!gl)return false;gl.getExtension('WEBGL_lose_context')?.loseContext();return true;}catch{return false;}}
@@ -39,6 +43,7 @@ function launchPanel(){const g=local(activeGame),ok=supports(g);$('playerArea').
 function open(id){const game=games.find(g=>g.id===id);if(!game)return;previousFocus=document.activeElement;activeGame=game;$('player').hidden=false;document.body.style.overflow='hidden';$('playerTitle').textContent=game.name;$('restart').hidden=true;$('fullscreen').hidden=true;$('directGameLink').hidden=true;$('help').textContent=local(game).controls;launchPanel();$('close').focus();history.replaceState(null,'',`#play-${game.id}`);}
 function showGameStatus(status,detail=''){
  if(!activeGame)return;lastGameStatus={status,detail};$('gameStatus')?.remove();
+ if(status==='error')clearTimeout(loadTimer);
  if(status==='ready'||status==='loaded'&&activeGame.id!=='space-pirates'){clearTimeout(loadTimer);return;}
  if(!['boot','loading','slow','error'].includes(status))return;
  const box=document.createElement('div');box.id='gameStatus';box.className='game-status'+(status==='error'?' is-error':'');box.setAttribute('role',status==='error'?'alert':'status');
@@ -50,17 +55,17 @@ function showGameStatus(status,detail=''){
 }
 function launch(){
  if(!activeGame)return;clearTimeout(loadTimer);lastGameStatus=null;recent=[activeGame.id,...recent.filter(id=>id!==activeGame.id)].slice(0,12);try{localStorage.setItem('zyvoqix_v13_recent',JSON.stringify(recent));}catch{}
- const f=document.createElement('iframe');f.title=activeGame.name;const url=new URL(activeGame.entry,location.origin);url.searchParams.set('zyvoqixRelease','13');f.src=url.pathname+url.search;f.allow='fullscreen; gamepad; autoplay';f.allowFullscreen=true;
- $('playerArea').replaceChildren(f);$('restart').hidden=false;$('fullscreen').hidden=!$('player').requestFullscreen;$('directGameLink').hidden=false;$('directGameLink').href=f.src;showGameStatus('loading');
+ const f=document.createElement('iframe');f.title=activeGame.name;const url=new URL(activeGame.entry,location.origin);url.searchParams.set('zyvoqixRelease','14');f.src=url.pathname+url.search;f.allow='fullscreen; gamepad; autoplay';f.allowFullscreen=true;
+ $('playerArea').replaceChildren(f);$('restart').hidden=false;$('fullscreen').hidden=false;$('directGameLink').hidden=false;$('directGameLink').href=f.src;showGameStatus('loading');
  loadTimer=setTimeout(()=>showGameStatus('slow'),60000);
  f.addEventListener('load',()=>{f.focus();});
 }
 window.addEventListener('message',e=>{const f=$('playerArea').querySelector('iframe');if(!f||e.origin!==location.origin||e.source!==f.contentWindow||e.data?.type!=='zyvoqix-game-status')return;const {status,detail}=e.data;if(['boot','ready','loaded','slow','error'].includes(status))showGameStatus(status,typeof detail==='string'?detail.slice(0,600):'');});
-function close(){clearTimeout(loadTimer);lastGameStatus=null;$('directGameLink').hidden=true;if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});$('playerArea').replaceChildren();$('player').hidden=true;document.body.style.overflow='';activeGame=null;history.replaceState(null,'','#library');(previousFocus?.isConnected?previousFocus:document.querySelector(`[data-play="${previousFocus?.dataset?.play||''}"]`))?.focus();}
+function close(){playerScreen.exit();clearTimeout(loadTimer);lastGameStatus=null;$('directGameLink').hidden=true;if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});$('playerArea').replaceChildren();$('player').hidden=true;document.body.style.overflow='';activeGame=null;history.replaceState(null,'','#library');(previousFocus?.isConnected?previousFocus:document.querySelector(`[data-play="${previousFocus?.dataset?.play||''}"]`))?.focus();}
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.language)applyLanguage(b.dataset.language);if(b.dataset.play)open(b.dataset.play);if(b.dataset.fav){favorites=favorites.includes(b.dataset.fav)?favorites.filter(x=>x!==b.dataset.fav):[...favorites,b.dataset.fav];try{localStorage.setItem('zyvoqix_v8_favorites',JSON.stringify(favorites));}catch{}render();}if(b.dataset.filter){category=b.dataset.filter;render();}});
 window.addEventListener('storage',e=>{if(e.key==='zyvoqix_language')applyLanguage(getLanguage());if(['zyvoqix_v8_favorites','zyvoqix_v13_recent'].includes(e.key))syncSavedState();});
 window.addEventListener('pageshow',syncSavedState);
-$('search').addEventListener('input',render);$('sort')?.addEventListener('change',render);$('close').addEventListener('click',close);$('restart').addEventListener('click',launch);$('fullscreen').addEventListener('click',()=>{$('player').requestFullscreen?.().catch(()=>{});});
+$('search').addEventListener('input',render);$('sort')?.addEventListener('change',render);$('close').addEventListener('click',close);$('restart').addEventListener('click',launch);const playerScreen=screenMode($('player'),$('fullscreen'));
 $('player').addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.fullscreenElement){e.preventDefault();close();}if(e.key==='Tab'){const items=[...$('player').querySelectorAll('button:not([hidden]),iframe')],first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
 const query=new URLSearchParams(location.search).get('q');if(query)$('search').value=query.slice(0,200);
 applyLanguage(lang);
@@ -68,5 +73,7 @@ try{localStorage.setItem('zyvoqix_hub_visited','true');}catch{}
 const oldHubRoutes={rankings:'/rankings.html',tiers:'/tiers.html',comments:'/community.html',community:'/community.html',missions:'/missions.html'};
 const restoreRoute=()=>{const to=oldHubRoutes[location.hash.slice(1)];if(to)location.replace(to);};
 window.addEventListener('hashchange',restoreRoute);restoreRoute();
-try{const r=await fetch('/library-catalog.json');if(!r.ok)throw Error(r.status);games=await r.json();applyLanguage(lang);const id=location.hash.startsWith('#play-')&&location.hash.slice(6);if(id)open(id);}catch{$('count').textContent=t('catalogError');$('gameGrid').innerHTML=`<p class="empty">${t('catalogError')} <button class="play" id="retryCatalog">${t('reload')}</button></p>`;$('retryCatalog').onclick=()=>location.reload();}
+// The generated catalog is authoritative. Avoid replacing cards while a first click is in progress.
+if(!games.length){try{const r=await fetch('/library-catalog.json');if(!r.ok)throw Error(r.status);const data=await r.json();if(!Array.isArray(data)||!data.every(g=>g&&typeof g.id==='string'))throw Error('catalog');games=data;applyLanguage(lang);}catch{$('count').textContent=t('catalogError');}}
+const launchId=location.hash.startsWith('#play-')&&location.hash.slice(6);if(launchId)open(launchId);
 if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});

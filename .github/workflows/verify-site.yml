@@ -1,0 +1,27 @@
+name: Verify bilingual player experience
+on:
+  push:
+    branches: [library/self-hosted-v8]
+    paths: [public/**, scripts/generate-game-pages.mjs, scripts/data-page-content.mjs, scripts/templates/**, tests/**, library.lock.json, .github/workflows/verify-site.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+      - name: Test backup integrity and tier filters
+        run: node --test tests/*.test.mjs
+      - name: Build the complete pinned library
+        run: npm run build
+      - name: Verify runtimes and bilingual pages
+        run: |
+          python3 scripts/verify-library.py
+          python3 scripts/verify-pages.py
