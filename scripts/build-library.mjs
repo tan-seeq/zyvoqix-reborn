@@ -30,6 +30,12 @@ for (const game of config.games) {
   const dest = path.join(root, 'public', 'games', game.id);
   await rm(dest, {recursive:true, force:true});
   await cp(path.join(temp,'runtime'), dest, {recursive:true});
+  // Install the error bridge before any game script can throw.
+  const index = path.join(dest,'index.html');
+  let html = await readFile(index,'utf8');
+  if (!html.includes('/game-bridge.js')) html=html.replace(/<head[^>]*>/i,'$&<script src="/game-bridge.js?v=11"></script>');
+  await writeFile(index,html);
+  if(game.sourceArchive){await mkdir(path.join(root,'public','sources'),{recursive:true});await cp(archive,path.join(root,'public','sources',game.id+'.tar.gz'));}
   for (const f of game.required) {
     if (!(await stat(path.join(dest,f))).isFile()) throw new Error(`${game.id}: missing ${f}`);
   }

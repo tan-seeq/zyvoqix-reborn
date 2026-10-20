@@ -14,7 +14,8 @@ class Assets(HTMLParser):
         url=d.get('src') or (d.get('href') if tag=='link' else None)
         if not url or url.startswith(('data:','#')):return
         assert not url.startswith(('http:','https:','//')),f'External runtime asset: {url}'
-        f=(root/url.lstrip('/')) if url.startswith('/') else self.folder/url.split('?')[0]
+        url=url.split('?')[0]
+        f=(root/url.lstrip('/')) if url.startswith('/') else self.folder/url
         assert f.is_file(),f'Missing HTML dependency: {f}'
 for game in games:
     folder=root/'games'/game['id']
