@@ -5,8 +5,10 @@ const t=(key,values={})=>Object.entries(values).reduce((s,[k,v])=>s.replaceAll(`
 const local=g=>({...g,...g.i18n?.[lang]});
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const featured=['voxel-musou','misty-bunny','regolith','kart-royale','space-pirates','tiny-town','vibe-basketball','orbit-golf','san-juan-kart','operation-ironhold','sketchbook'];
-let recent=[];try{const r=JSON.parse(localStorage.getItem('zyvoqix_v13_recent')||'[]');if(Array.isArray(r))recent=r.filter(x=>typeof x==='string').slice(0,12);}catch{}
-let favorites=[];try{const x=JSON.parse(localStorage.getItem('zyvoqix_v8_favorites')||'[]');if(Array.isArray(x))favorites=x.filter(v=>typeof v==='string');}catch{}
+function readStoredIds(key,max=Infinity){try{const value=JSON.parse(localStorage.getItem(key)||'[]');return Array.isArray(value)?value.filter(x=>typeof x==='string').slice(0,max):[];}catch{return[];}}
+let recent=readStoredIds('zyvoqix_v13_recent',12),favorites=readStoredIds('zyvoqix_v8_favorites');
+function syncSavedState(){recent=readStoredIds('zyvoqix_v13_recent',12);favorites=readStoredIds('zyvoqix_v8_favorites');render();}
+
 function render(){
  const q=$('search').value.trim().toLocaleLowerCase();
  const list=games.filter(g=>(category==='all'||category==='favorites'&&favorites.includes(g.id)||category==='recent'&&recent.includes(g.id)||category==='mobile'&&!g.desktop||g.categories.includes(category))&&`${g.name} ${g.description} ${g.search} ${g.i18n?.en?.description||''}`.toLocaleLowerCase().includes(q));
@@ -19,7 +21,14 @@ function render(){
 }
 function credits(){$('creditsGrid').innerHTML=games.map(base=>{const g=local(base);return `<article class="credit" id="credit-${g.id}"><strong>${escape(g.name)}</strong><p>${escape(g.author)} · ${escape(g.license)}</p><p>${escape(g.notice)}</p><a href="${g.source}" target="_blank" rel="noopener noreferrer">${t('originalSource')}</a> · <a href="/licenses/${g.id}.txt">${t('license')}</a>${g.sourceArchive?` · <a href="${g.sourceArchive}">${t('modifiedSource')}</a>`:''}</article>`;}).join('');}
 function applyLanguage(value){
- lang=setLanguage(value);document.title=t('title');document.querySelector('meta[name="description"]').content=t('description');
+ lang=setLanguage(value);
+ const localePath=lang==='ar'?'/ar/':'/';
+ if(['/', '/ar/', '/index.html'].includes(location.pathname)){
+  if(location.pathname!==localePath)history.replaceState(null,'',localePath+location.search+location.hash);
+  document.documentElement.dataset.locale=lang;
+  const canonical=document.querySelector('link[rel=canonical]');if(canonical){const publicOrigin=new URL(canonical.href).origin;canonical.href=publicOrigin+localePath;document.querySelector('meta[property="og:url"]')?.setAttribute('content',publicOrigin+localePath);}
+ }
+ document.title=t('title');document.querySelector('meta[name="description"]').content=t('description');
  document.querySelectorAll('[data-t]').forEach(el=>el.textContent=t(el.dataset.t));
  document.querySelectorAll('[data-t-label]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.tLabel)));
  $('search').placeholder=t('search');render();credits();
@@ -49,7 +58,8 @@ function launch(){
 window.addEventListener('message',e=>{const f=$('playerArea').querySelector('iframe');if(!f||e.origin!==location.origin||e.source!==f.contentWindow||e.data?.type!=='zyvoqix-game-status')return;const {status,detail}=e.data;if(['boot','ready','loaded','slow','error'].includes(status))showGameStatus(status,typeof detail==='string'?detail.slice(0,600):'');});
 function close(){clearTimeout(loadTimer);lastGameStatus=null;$('directGameLink').hidden=true;if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});$('playerArea').replaceChildren();$('player').hidden=true;document.body.style.overflow='';activeGame=null;history.replaceState(null,'','#library');(previousFocus?.isConnected?previousFocus:document.querySelector(`[data-play="${previousFocus?.dataset?.play||''}"]`))?.focus();}
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.language)applyLanguage(b.dataset.language);if(b.dataset.play)open(b.dataset.play);if(b.dataset.fav){favorites=favorites.includes(b.dataset.fav)?favorites.filter(x=>x!==b.dataset.fav):[...favorites,b.dataset.fav];try{localStorage.setItem('zyvoqix_v8_favorites',JSON.stringify(favorites));}catch{}render();}if(b.dataset.filter){category=b.dataset.filter;render();}});
-window.addEventListener('storage',e=>{if(e.key==='zyvoqix_language')applyLanguage(getLanguage());});
+window.addEventListener('storage',e=>{if(e.key==='zyvoqix_language')applyLanguage(getLanguage());if(['zyvoqix_v8_favorites','zyvoqix_v13_recent'].includes(e.key))syncSavedState();});
+window.addEventListener('pageshow',syncSavedState);
 $('search').addEventListener('input',render);$('sort')?.addEventListener('change',render);$('close').addEventListener('click',close);$('restart').addEventListener('click',launch);$('fullscreen').addEventListener('click',()=>{$('player').requestFullscreen?.().catch(()=>{});});
 $('player').addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.fullscreenElement){e.preventDefault();close();}if(e.key==='Tab'){const items=[...$('player').querySelectorAll('button:not([hidden]),iframe')],first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
 const query=new URLSearchParams(location.search).get('q');if(query)$('search').value=query.slice(0,200);
