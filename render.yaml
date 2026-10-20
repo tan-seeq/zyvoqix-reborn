@@ -2,7 +2,7 @@ services:
   - type: web
     name: zyvoqix-reborn
     runtime: static
-    buildCommand: 'test -f public/index.html'
+    buildCommand: 'npm install --ignore-scripts --no-audit --no-fund && npm run build'
     staticPublishPath: ./public
     headers:
       - path: /*

@@ -1,0 +1,37 @@
+/* Zyvoqix 4.2 — centered hero / first-screen brand identity. */
+:root{--green:#22e2f8;--blue:#367fff;--purple:#ad6bff;--gold:#ffc94f;--muted:#abbad1}
+body{background:radial-gradient(ellipse at 10% 0%,#152456,transparent 39%),radial-gradient(ellipse at 96% 1%,#261147,transparent 32%),#070d20}
+.top{background:#070e22ed;border-bottom-color:#2a3a62;box-shadow:0 4px 30px #0005}
+.links button.active,.links button:hover{background:#237cff1f;color:#79d6ff}
+.btn.primary{background:linear-gradient(120deg,#188dff,#654eff);border-color:#68aaff;color:#fff;box-shadow:0 7px 25px #235ffb3d}
+.btn.primary:hover{border-color:#a0d5ff;box-shadow:0 12px 31px #3f87ff4c}
+#page-home{padding-top:16px}
+#page-home .zy-hero{position:relative;isolation:isolate;display:flex!important;grid-template-columns:none!important;align-items:center;justify-content:center;text-align:center;overflow:hidden;min-height:min(780px,calc(100svh - 106px));padding:clamp(24px,4vw,44px) clamp(13px,3vw,42px) 36px;margin:0 0 24px;background:radial-gradient(ellipse at 48% 46%,#204a9a55,transparent 50%),radial-gradient(ellipse at 69% 50%,#702db945,transparent 52%),linear-gradient(150deg,#09172e 4%,#0d1230 49%,#090f24 92%);border:1px solid #395c914a;border-radius:28px;box-shadow:0 24px 64px #0004, inset 0 1px #a9e8ff1c}
+#page-home .zy-hero:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 8% 15%,#38ddff78 0 1px,transparent 2px),radial-gradient(circle at 83% 17%,#bbb6ff9c 0 1.5px,transparent 2.5px),radial-gradient(circle at 15% 86%,#35adff85 0 1.5px,transparent 2px),radial-gradient(circle at 91% 73%,#ff6bf780 0 2px,transparent 3px),linear-gradient(180deg,transparent 73%,#060d1d55);background-size:100% 100%;opacity:.9}
+#page-home .zy-hero:after{content:'';position:absolute;inset:auto 12% 0;height:1px;background:linear-gradient(90deg,transparent,#1dcbff70,#b847f280,transparent);pointer-events:none}
+.zy-hero-content{width:100%;min-width:0;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.zy-hero-kicker{display:inline-flex;gap:11px;align-items:center;justify-content:center;flex-wrap:wrap;padding:7px 14px;border:1px solid #4c8ed66b;border-radius:60px;background:#0b1834bd;color:#bcdfff;letter-spacing:2.2px;font-size:11px;font-weight:850;box-shadow:0 4px 15px #0003}
+.zy-status-dot{width:7px;height:7px;border-radius:50%;background:#56edff;box-shadow:0 0 14px #42e9ff}
+.zy-hero-sep{width:1px;height:14px;background:#7187b7}
+.zy-logo-stage{position:relative;display:flex;align-items:center;justify-content:center;width:100%;margin:4px auto 0;isolation:isolate}
+.zy-logo-stage:before{content:'';pointer-events:none;position:absolute;inset:24% 13% 15%;border-radius:50%;background:radial-gradient(ellipse,#1665dd43,#a73be118 52%,transparent 75%);filter:blur(20px);z-index:-1}
+#page-home .zy-hero-emblem{position:relative;display:block;width:min(1100px,100%);max-width:100%;height:auto;max-height:min(53vh,440px);object-fit:contain;filter:drop-shadow(0 17px 32px #0008) drop-shadow(0 0 16px #357cff3d);animation:zyArrive .8s cubic-bezier(.18,.85,.23,1) both}
+#page-home .zy-hero h1{font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.3;font-size:clamp(20px,2.7vw,34px);letter-spacing:0;margin:3px auto 6px;color:#f5fbff;text-shadow:0 2px 14px #060d1bad;font-weight:900}
+#page-home .zy-hero h1 span{color:#9bdcff}
+#page-home .zy-hero p.zy-hero-subtitle{max-width:780px;margin:2px auto 0;color:#c1d2e8;font-size:clamp(12px,1.6vw,16px);line-height:1.75}
+#page-home .zy-hero-actions{display:flex;align-items:center;justify-content:center;gap:12px;margin:21px 0 16px;width:100%}
+#page-home .zy-hero-actions .btn{border-radius:13px;padding:13px 24px;font-size:14px;min-height:47px}
+#page-home .zy-hero-actions .zy-alt-button{color:#e9f6ff;border:1px solid #5870a6;background:#17264a}
+#page-home .zy-hero-actions .zy-alt-button:hover{border-color:#75ddff;background:#1d345a}
+#page-home .zy-hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:0;margin:4px 0 0;padding:12px 0 0;border-top:1px solid #5175a644;width:min(630px,100%)}
+#page-home .zy-hero-stats>div{padding:0 21px;min-width:125px;border-inline-end:1px solid #38547d61}
+#page-home .zy-hero-stats>div:last-child{border:0}
+#page-home .zy-hero-stats strong{font-size:clamp(19px,2.3vw,25px);line-height:1.3;color:#f3faff}
+#page-home .zy-hero-stats span{display:block;margin-top:2px;font-size:9px;color:#97b6d3;letter-spacing:.7px}
+#page-home .zy-hero .hero-trustbar{display:flex;justify-content:center;margin-top:12px;gap:7px}
+#page-home .zy-hero .hero-trustbar span{border-color:#3c699b;color:#cbdef3;background:#142b4e;font-size:10px}
+@keyframes zyArrive{from{opacity:0;transform:translateY(15px) scale(.985)}to{opacity:1;transform:none}}
+@media(max-width:760px){#page-home{padding-top:9px}#page-home .zy-hero{min-height:0;padding:19px 10px 25px;border-radius:19px;margin-bottom:20px}.zy-hero-kicker{font-size:9px;letter-spacing:1.35px;padding:6px 9px;gap:7px}#page-home .zy-hero-emblem{width:100%;max-height:none}#page-home .zy-hero h1{font-size:clamp(18px,4.75vw,27px);margin-top:5px}#page-home .zy-hero p.zy-hero-subtitle{padding-inline:8px;font-size:12px}#page-home .zy-hero-actions{margin:15px 0 11px;gap:8px}#page-home .zy-hero-actions .btn{padding:11px 13px;min-height:44px;font-size:12px}#page-home .zy-hero-stats>div{padding:0 11px;min-width:0;flex:1}#page-home .zy-hero-stats span{font-size:8px;letter-spacing:0}#page-home .zy-hero .hero-trustbar{margin-top:8px}}
+@media(max-width:360px){#page-home .zy-hero-actions{flex-direction:column}#page-home .zy-hero-actions .btn{width:100%}#page-home .zy-hero-stats>div{padding:0 5px}#page-home .zy-hero-stats span{font-size:7px}}
+@media(prefers-reduced-motion:reduce){#page-home .zy-hero-emblem{animation:none}}
+@media print{#page-home .zy-hero{box-shadow:none;border:1px solid #aaa;min-height:unset}#page-home .zy-hero-emblem{filter:none}}

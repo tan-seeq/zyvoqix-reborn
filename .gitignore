@@ -1,0 +1,5 @@
+node_modules/
+.library-build/
+public/games/
+test-results/
+.vercel/

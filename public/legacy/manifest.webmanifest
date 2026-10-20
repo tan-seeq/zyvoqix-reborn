@@ -1,0 +1,25 @@
+{
+  "name": "Zyvoqix - Play. Learn. Level Up.",
+  "short_name": "Zyvoqix",
+  "description": "16 original browser games, learning challenges and saved scores.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#080b12",
+  "theme_color": "#a3ff12",
+  "lang": "en",
+  "orientation": "any",
+  "categories": [
+    "games",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "/icons/zyvoqix-icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

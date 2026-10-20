@@ -1,0 +1,59 @@
+name: Build self-hosted game library
+on:
+  push:
+    branches: [library/self-hosted-v8]
+    paths: [scripts/bootstrap-library.py, .github/workflows/build-game-library.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: self-hosted-library
+  cancel-in-progress: false
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: library/self-hosted-v8
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: python3 -m pip install Pillow==11.3.0
+      - name: Fetch exact upstream revisions
+        run: |
+          python3 scripts/fetch-site-assets.py
+          python3 scripts/fetch-upstreams.py
+      - name: Compile modified Space Pirates and local games
+        run: |
+          python3 scripts/patch-space-pirates.py
+          npm --prefix ../game-sources/space-pirates/app_package ci --ignore-scripts --no-audit --no-fund
+          npm --prefix ../game-sources/space-pirates/app_package run build
+          npm --prefix ../game-sources/space-pirates/test_package ci --ignore-scripts --no-audit --no-fund
+          npm --prefix ../game-sources/space-pirates/test_package run build
+          npm --prefix ../game-sources/tactical-fps ci --ignore-scripts --no-audit --no-fund
+          npm --prefix ../game-sources/tactical-fps run build -- --base=./
+          npm --prefix ../game-sources/kart-royale ci --ignore-scripts --no-audit --no-fund
+          npm --prefix ../game-sources/kart-royale run build -- --base=./
+      - name: Package complete runtime assets and preferred source
+        run: |
+          python3 scripts/bootstrap-library.py
+          npm run build
+          node --check public/library.js
+          python3 scripts/verify-library.py
+      - name: Save archives and catalog on the library branch
+        run: |
+          git config user.name "ZYVOQIX Library Build"
+          git config user.email "zyvoqix-library@users.noreply.github.com"
+          git add vendor/ licenses/ public/assets/ public/legacy/ public/licenses/ public/covers/ public/library-catalog.json public/library-build.json package.json public/library.css public/sw.js
+          git diff --cached --quiet || git commit -m "Vendor four complete self-hosted game packages with licenses"
+          python3 - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          p=Path('library.lock.json'); x=json.loads(p.read_text()); x['archiveCommit']=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip();p.write_text(json.dumps(x,indent=2)+'\n')
+          PY
+          git add library.lock.json
+          git diff --cached --quiet || git commit -m "Pin verified game archives for reproducible deployment"
+          git push origin HEAD:library/self-hosted-v8

@@ -1,0 +1,52 @@
+[
+  {
+    "path": "public/assets/icon.png",
+    "sha256": "6d1a75219f30cf7dc540138f3752f8fd419af169f40026859f7f549d8335cd2f",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/assets/icon.png"
+  },
+  {
+    "path": "public/assets/world.webp",
+    "sha256": "99d73a7178876fab28236a0a77cc2b87ae65ce8664f3580b8163221c3f15f301",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/assets/world.webp"
+  },
+  {
+    "path": "public/assets/zyvoqix-logo.webp",
+    "sha256": "ef1bc5b65258a17531a3bcce5f47d396181db3af3abd171d288289f165f4afa6",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/assets/zyvoqix-logo.webp"
+  },
+  {
+    "path": "public/legacy/brand/zyvoqix-hero-social.jpg",
+    "sha256": "6693d233e3a66d1b1e8a064e634afa20540355b33ea332c41485497e7609689e",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/legacy/brand/zyvoqix-hero-social.jpg"
+  },
+  {
+    "path": "public/legacy/brand/zyvoqix-hero.webp",
+    "sha256": "d5a16f6c8b064d0b8c5b0204f5034e5ea60347da339b166ee5fee6723cf8268a",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/legacy/brand/zyvoqix-hero.webp"
+  },
+  {
+    "path": "public/legacy/brand/zyvoqix-logo.webp",
+    "sha256": "b114e6c7454feaa17acce1d0ef63ac126f0d2be47dc6043e835e3b28d6e2e921",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/legacy/brand/zyvoqix-logo.webp"
+  },
+  {
+    "path": "public/legacy/brand/zyvoqix-social.jpg",
+    "sha256": "29a4e3e2dc5c75877e2e62ed5f3a66c2c56c10720f13cb1631292b89a9c2ecae",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/legacy/brand/zyvoqix-social.jpg"
+  },
+  {
+    "path": "public/legacy/icons/zyvoqix-icon-180.png",
+    "sha256": "81a14c44dd4dc8d254c620506bfdf0c923ca196bc652c3786eb9910dfd18acc0",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/legacy/icons/zyvoqix-icon-180.png"
+  },
+  {
+    "path": "public/legacy/icons/zyvoqix-icon-192.png",
+    "sha256": "9c36ebddaf523f15337bb6e8a0264c7f1dc0d0e9f8c9593dc6ad9f677ed61382",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/legacy/icons/zyvoqix-icon-192.png"
+  },
+  {
+    "path": "public/legacy/icons/zyvoqix-icon-64.png",
+    "sha256": "140bc30423d94781f2394c20abcadf44961e964ac7d50a4b49bda3d52905e0ac",
+    "url": "https://gamezone-play-rank-rise-ph4kss522-hatems-projects-79e96ce6.vercel.app/legacy/icons/zyvoqix-icon-64.png"
+  }
+]

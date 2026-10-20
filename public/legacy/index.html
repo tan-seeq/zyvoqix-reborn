@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Legacy Arcade • Zyvoqix | Play. Learn. Level Up.</title>
+<style>
+:root{--bg:#080b12;--panel:#111927;--panel2:#172235;--line:#29374b;--text:#f2f6ff;--muted:#96a5bc;--green:#a3ff12;--purple:#b16cff;--blue:#43c4ff;--gold:#ffd166}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#1a2540,transparent 35%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}.top{position:sticky;top:0;z-index:30;background:#080b12ed;backdrop-filter:blur(16px);border-bottom:1px solid #202b3b}.nav{height:72px;display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:9px;color:white;text-decoration:none;font-weight:1000;font-size:21px;white-space:nowrap}.logo{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--green),var(--blue));color:#07100a;font-weight:1000;box-shadow:0 0 22px #a3ff1233}.links{display:flex;gap:8px;flex:1}.links button{border:0;background:transparent;color:var(--muted);padding:10px 12px;border-radius:9px;font-weight:800;font-size:13px}.links button.active,.links button:hover{background:#a3ff1217;color:var(--green)}.navright{display:flex;gap:9px;align-items:center}.xp-mini{border:1px solid #334154;background:#121b29;border-radius:10px;padding:7px 10px;font-size:12px;font-weight:900;color:var(--green);white-space:nowrap}.btn{border:1px solid var(--line);border-radius:11px;padding:10px 14px;color:white;background:#172131;font-weight:850;transition:.2s}.btn:hover{transform:translateY(-2px);border-color:#72849d}.primary{background:var(--green);border-color:var(--green);color:#0b1207}.purple{background:#8b4be8;border-color:#8b4be8}.small{padding:7px 10px;font-size:12px}.page{display:none;min-height:70vh;padding:30px 0 48px}.page.active{display:block;animation:appear .25s ease}@keyframes appear{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:none}}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:25px;align-items:center;padding:28px 0 32px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:99px;color:var(--green);border:1px solid #a3ff1240;background:#a3ff1210;font-size:10px;letter-spacing:1.5px;font-weight:1000;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}h1{font-size:clamp(43px,6vw,73px);line-height:.98;letter-spacing:-3px;margin:19px 0}.grad{background:linear-gradient(90deg,var(--green),var(--blue),var(--purple));color:transparent;background-clip:text}.hero p,.muted{color:var(--muted)}.hero p{font-size:16px;max-width:530px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.stats{display:flex;gap:25px;margin-top:25px}.stats strong{font-size:23px;display:block}.stats span{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}.art{position:relative;min-height:330px;border:1px solid #34445c;border-radius:23px;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 70% 30%,#8b4be855,transparent 30%),radial-gradient(circle at 20% 75%,#a3ff1233,transparent 30%),linear-gradient(140deg,#172b3c,#19152c,#101922)}.orb{position:absolute;width:230px;height:230px;border:1px solid #a3ff1260;border-radius:50%;animation:spin 25s linear infinite}.orb:before,.orb:after{content:"";position:absolute;width:15px;height:15px;border-radius:50%;background:var(--green);box-shadow:0 0 20px var(--green);top:15px;left:30px}.orb:after{background:var(--purple);box-shadow:0 0 20px var(--purple);top:auto;left:auto;bottom:12px;right:20px}.gamepad{font-size:100px;filter:drop-shadow(0 12px 30px #0009);animation:float 4s ease-in-out infinite;z-index:1}.art-label{position:absolute;bottom:15px;left:15px;right:15px;padding:12px;background:#080b12c9;border:1px solid #ffffff1c;border-radius:12px;display:flex;justify-content:space-between;font-size:12px;font-weight:850}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:15px 0 18px}.kicker{font-size:10px;color:var(--green);letter-spacing:1.7px;font-weight:1000;text-transform:uppercase}.section-head h2,.page-title{margin:4px 0 0;font-size:29px;letter-spacing:-.8px}.page-intro{color:var(--muted);margin:6px 0 20px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card,.panel{background:linear-gradient(145deg,#131d2c,#0e1520);border:1px solid var(--line);border-radius:17px;overflow:hidden}.card{transition:.22s}.card:hover{transform:translateY(-4px);border-color:#596b83}.cover{height:132px;display:grid;place-items:center;font-size:57px;position:relative;overflow:hidden}.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#111927,transparent 80%)}.cover span{z-index:1;filter:drop-shadow(0 8px 18px #0009)}.c1{background:linear-gradient(135deg,#245a40,#709c48,#1a2e43)}.c2{background:linear-gradient(135deg,#6e348e,#293e82,#151a2c)}.c3{background:linear-gradient(135deg,#276bb5,#7042a8,#17152a)}.c4{background:linear-gradient(135deg,#912b3b,#3a2337,#171927)}.c5{background:linear-gradient(135deg,#176b91,#29326d,#101624)}.c6{background:linear-gradient(135deg,#397e50,#276e79,#101624)}.c7{background:linear-gradient(135deg,#8b7137,#5a3e72,#121a29)}.c8{background:linear-gradient(135deg,#27756f,#293b77,#111927)}.c9{background:linear-gradient(135deg,#7c3d53,#4a3c8a,#111927)}.cardbody{padding:13px}.cardtop{display:flex;justify-content:space-between;gap:8px;align-items:start}.card h3{margin:0;font-size:16px}.rating{color:var(--gold);font-size:12px;white-space:nowrap}.card p{font-size:12px;color:var(--muted);min-height:37px;margin:7px 0 12px}.cardfoot{border-top:1px solid #253044;padding-top:10px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--muted);font-size:11px}.chip{border:1px solid var(--line);background:#0e1520;color:var(--muted);border-radius:99px;padding:8px 12px;font-size:12px;font-weight:800}.chip.active,.chip:hover{border-color:#a3ff1266;color:var(--green);background:#a3ff1215}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.search{width:min(310px,100%);padding:11px 13px;border:1px solid var(--line);background:#0c131e;border-radius:11px;color:white;outline:none}.search:focus,input:focus,textarea:focus,select:focus{border-color:var(--green);outline:none;box-shadow:0 0 0 3px #a3ff1215}.panel{padding:20px}.panel h3{margin:0 0 5px}.panel>p{color:var(--muted);font-size:13px;margin:0 0 15px}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.row{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #253044}.row:last-child{border-bottom:0}.ico{width:42px;height:42px;flex-shrink:0;border-radius:11px;display:grid;place-items:center;background:#1c2a3d;font-size:21px}.grow{flex:1;min-width:0}.row strong{display:block;font-size:13px}.row small{color:var(--muted);font-size:11px}.score{font-size:12px;font-weight:950;color:var(--green)}.task{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #263348}.task:last-child{border:0}.task-icon{width:43px;height:43px;border-radius:12px;background:#1c2a3d;display:grid;place-items:center;font-size:22px}.task button{flex-shrink:0}.task.done{opacity:.65}.task.done .task-icon{background:#23391e}.progress{height:8px;background:#283448;border-radius:99px;overflow:hidden;margin:9px 0}.progress span{height:100%;display:block;background:linear-gradient(90deg,var(--green),var(--blue));border-radius:99px;transition:width .3s}.tierboard{display:grid;gap:7px;margin:14px 0}.tierrow{display:grid;grid-template-columns:60px 1fr;min-height:73px;border:1px solid #354156;border-radius:10px;overflow:hidden;background:#0b111a}.tierlabel{display:grid;place-items:center;color:#10131a;font-size:22px;font-weight:1000}.S{background:#ff7185}.A{background:#ffbd59}.B{background:#f6e56b}.C{background:#6cdd9c}.D{background:#76baff}.drop{padding:8px;display:flex;align-items:center;flex-wrap:wrap;gap:7px}.item{border:1px solid #36465d;background:#182437;color:white;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:800}.item.selected{outline:2px solid var(--green)}.pool{border:1px dashed #42516a;border-radius:12px;padding:12px;display:flex;gap:8px;flex-wrap:wrap;min-height:54px}.field{width:100%;padding:11px 12px;border-radius:10px;background:#0b121c;border:1px solid #304056;color:white}.formrow{display:flex;gap:10px;margin:12px 0}.formrow>*{flex:1;min-width:0}.rankline{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #253044}.ranknum{font-weight:1000;color:var(--green);font-size:16px}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),var(--blue));color:#0b1207;font-weight:1000}.notice{font-size:11px;color:var(--muted);margin-top:10px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:90;background:#eaffd3;color:#10170b;padding:12px 18px;border-radius:12px;font-weight:950;transition:.2s;box-shadow:0 10px 40px #0009}.toast.show{opacity:1;transform:translate(-50%,0)}.empty{padding:20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}.foot{border-top:1px solid #202b3b;padding:24px 0 35px;color:var(--muted);font-size:11px}.footin{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.hide{display:none!important}@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-13px) rotate(5deg)}}@media(max-width:850px){.nav{gap:10px}.links{gap:0}.links button{padding:9px 7px;font-size:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr .85fr}}@media(max-width:650px){.wrap{width:calc(100% - 24px)}.nav{height:auto;min-height:66px;flex-wrap:wrap;padding:10px 0;gap:8px}.brand{font-size:18px}.links{order:3;flex-basis:100%;overflow:auto}.links button{white-space:nowrap}.navright{margin-left:auto}.xp-mini{font-size:10px;padding:6px 8px}.hero{grid-template-columns:1fr;padding-top:20px}.art{min-height:240px}.orb{width:185px;height:185px}.gamepad{font-size:78px}h1{font-size:48px;letter-spacing:-2px}.stats{gap:18px}.stats strong{font-size:20px}.section-head{align-items:start}.section-head h2,.page-title{font-size:25px}.grid{gap:9px}.cover{height:100px;font-size:45px}.cardbody{padding:10px}.card h3{font-size:14px}.rating{display:block;font-size:11px;margin-top:3px}.card p{font-size:11px;min-height:58px}.cardfoot{font-size:10px}.two{grid-template-columns:1fr}.formrow{flex-direction:column}.tierrow{grid-template-columns:45px 1fr}.tierlabel{font-size:18px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style><style>
+/* Zyvoqix arcade + transparent community ratings */
+.cloud-pill{font-size:12px;border:1px solid #41536a;border-radius:99px;padding:7px 12px;background:#192338;color:#c9d9eb;display:inline-flex;gap:8px;align-items:center}
+.cloud-pill.ready{color:#a3ff12;border-color:#a3ff1255;background:#a3ff1210}
+.cloud-pill.warn{color:#ffd166;border-color:#ffd16666}
+.play-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.play-card{padding:21px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#192941,#121827);display:flex;flex-direction:column;gap:10px}
+.play-card h3{margin:0;font-size:21px}.play-card .emo{font-size:48px}.play-card p{margin:0;color:var(--muted);font-size:13px}.play-card .btn{margin-top:auto}
+.arcade-area{border:1px solid #4b5b73;border-radius:20px;padding:22px;background:#101b2b;margin:20px 0;min-height:180px}
+.game-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:470px;gap:10px;margin:18px auto}
+.memory-tile{min-height:74px;font-size:32px;font-weight:bold;border:1px solid #405370;border-radius:14px;color:white;background:#1e3150}
+.memory-tile.open,.memory-tile.solved{background:#334769;border-color:var(--green)}.memory-tile.solved{opacity:.68}
+.tap-target{width:100%;min-height:190px;border:1px solid var(--green);color:#07160c;background:linear-gradient(135deg,#a3ff12,#4aca9a);border-radius:24px;font-size:36px;font-weight:950;touch-action:manipulation}
+.math-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px;margin:18px auto}.math-options button{min-height:75px;font-size:23px}
+.reflex-target{width:100%;min-height:200px;border-radius:18px;border:1px solid #536079;background:#303848;color:white;font-size:23px;font-weight:bold}.reflex-target.wait{background:#b54152}.reflex-target.ready{background:#68d88a;color:#05180c}
+.arcade-center{text-align:center}.arcade-center strong{font-size:26px}.arcade-meta{display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;margin:14px}
+.stars{display:flex;gap:2px;align-items:center;flex-wrap:wrap;margin:8px 0}.star-btn{border:0;background:transparent;color:#7f8799;padding:4px 5px;font-size:21px;line-height:1}.star-btn.voted{color:var(--gold)}.star-btn:hover,.star-btn:focus{color:#ffdf8c;transform:scale(1.1)}
+.rating-note{font-size:11px;color:var(--muted);margin:4px 0 0}.game-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:12px}.game-actions .btn{font-size:12px}
+.auth-panel{border-color:#537047}.auth-panel h3{margin-top:0}.auth-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.auth-actions button{flex:1;min-width:140px}.auth-hint{font-size:12px;color:var(--muted);line-height:1.7;margin-top:9px}
+.score-label{font-size:12px;color:#a3ff12}.mini-scores{display:flex;flex-wrap:wrap;gap:9px}.mini-score{border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:#172133;font-size:12px}
+.filter-rating-note{font-size:12px;color:var(--muted);margin:10px 0}.active-account{border:1px solid #a3ff1255;padding:10px;border-radius:12px;background:#a3ff120b}
+.nav .links{overflow:auto;scrollbar-width:none}.nav .links::-webkit-scrollbar{display:none}
+@media(max-width:680px){.play-grid{grid-template-columns:1fr}.game-board{gap:7px}.memory-tile{min-height:60px;font-size:26px}.arcade-area{padding:12px}.math-options button{min-height:65px}.nav{height:auto!important;min-height:70px;flex-wrap:wrap;padding:8px 0}.nav .links{order:3;width:100%;flex-basis:100%}.navright{margin-left:auto}.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+
+.backup-panel{margin:18px 0 20px;border-color:#405870}.backup-panel p{max-width:900px}.auth-panel input:disabled,.auth-panel button:disabled{opacity:.48;cursor:not-allowed;filter:grayscale(.3)}.game-actions .btn{display:inline-flex;align-items:center;text-decoration:none;justify-content:center}.game-actions a:focus-visible,.star-btn:focus-visible{outline:2px solid var(--green)}.backup-panel .notice{max-width:900px}
+
+.local-name-area{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}.local-name-area h4{font-size:13px;margin:0 0 9px}.local-names{display:flex;gap:7px;flex-wrap:wrap}.local-names .btn{white-space:nowrap}
+
+</style><link rel="icon" type="image/svg+xml" href="/legacy/icons/zyvoqix-icon.svg"><link rel="apple-touch-icon" href="/legacy/icons/zyvoqix-icon.svg"><meta name="theme-color" content="#080b12"><style>/* Zyvoqix v3 design upgrades: additive styles that preserve existing pages. */
+:root{--brand-shine:linear-gradient(105deg,#c9ff32,#70fba8 36%,#4bc8ff 67%,#a26cff)}
+.top{box-shadow:0 7px 27px #0004}
+.nav{gap:12px}
+.brand{flex:0 0 auto;max-width:205px;display:inline-flex;align-items:center;text-decoration:none;transition:filter .2s}
+.brand:hover{filter:drop-shadow(0 0 8px #92ff5166)}
+.brand-image{display:block;width:196px;height:auto;max-height:54px;object-fit:contain}
+.links{gap:1px;min-width:0}
+.links button{padding:9px 9px;font-size:12px;white-space:nowrap}
+.navright{gap:6px}.navright .cloud-pill{padding:6px 9px;white-space:nowrap;font-size:11px}
+.hero{isolation:isolate;position:relative}.hero:before{content:'';position:absolute;z-index:-1;inset:2% -1% auto;height:75%;pointer-events:none;background:radial-gradient(circle at 35% 15%,#adff1211,transparent 38%),radial-gradient(circle at 70% 55%,#5c89ff17,transparent 39%)}
+#page-home .hero h1{font-weight:1000;text-shadow:0 3px 22px #06101880}
+#page-home .art{border-color:#416283;box-shadow:0 14px 44px #0005,0 0 34px #2654ce19;background:radial-gradient(circle at 62% 36%,#8848ff54,transparent 35%),radial-gradient(circle at 26% 68%,#8eff1f35,transparent 30%),linear-gradient(130deg,#10243d,#1c163b,#07131e)}
+.hero-brand-stamp{position:absolute;left:15px;top:13px;right:15px;display:flex;justify-content:flex-end;z-index:2;pointer-events:none}
+.hero-brand-stamp img{width:min(178px,40%);height:auto;filter:drop-shadow(0 0 12px #a4ff2163)}
+.hero-trustbar{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px;font-size:11px;font-weight:800;color:#b9d1e6}
+.hero-trustbar span{display:inline-flex;align-items:center;gap:6px;border:1px solid #3a4b62;background:#142136b0;padding:6px 9px;border-radius:99px}
+.brand-stats{color:#9fe925!important}
+.premium-section-intro{color:var(--muted);font-size:13px;max-width:840px;margin:0 0 19px}
+.new-game-tag{font-size:10px;letter-spacing:1.2px;color:#bcf89b;background:#7bff1a14;padding:5px 9px;border:1px solid #9fff1847;border-radius:90px;display:inline-flex;align-items:center;gap:6px;font-weight:900}
+.newgames-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}
+.ng-card{--accent:#abff16;position:relative;isolation:isolate;border:1px solid #34435e;background:linear-gradient(145deg,#172640,#101927);border-radius:18px;padding:17px;display:flex;flex-direction:column;gap:10px;min-height:214px;overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.ng-card:before{content:'';position:absolute;z-index:-1;inset:-80px -50px auto auto;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.12;pointer-events:none}
+.ng-card:hover,.ng-card:focus-within{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 22px #0006}
+.ng-card:nth-child(4n+1){--accent:#c379ff}.ng-card:nth-child(4n+2){--accent:#56bbff}.ng-card:nth-child(4n+3){--accent:#a3ff12}.ng-card:nth-child(4n+4){--accent:#ffcc63}
+.ng-icon{width:51px;height:51px;border-radius:13px;display:grid;place-items:center;background:#101829b0;border:1px solid #52617a;font-size:29px}
+.ng-card h3{font-size:17px;margin:0;letter-spacing:-.2px}.ng-card p{flex:1;color:var(--muted);font-size:12px;margin:0;line-height:1.55}
+.ng-record{font-size:11px;color:#b4f77e;min-height:18px;font-weight:800}
+.ng-card .btn{width:100%;font-size:12px;border-radius:10px;padding:9px;min-height:38px}
+#premiumGameSection{margin:10px 0 29px}
+#premiumGameSection .section-head{margin-bottom:9px}
+#extraArcadeSection{margin-top:27px}
+#extraArcadeSection .newgames-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+#arcadeStage .premium-arcade-game{max-width:780px;margin:auto}
+.premium-arcade-game .ag-title{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap}
+.premium-arcade-game h2{font-size:clamp(22px,4vw,30px);letter-spacing:-.5px;margin:0}
+.ag-description{color:var(--muted);font-size:13px;margin:7px 0 15px}
+.ag-status{border:1px solid #324763;background:#0b1728;border-radius:13px;padding:10px 14px;margin:11px 0 15px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:13px}
+.ag-status strong{color:var(--green)}
+.ag-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:16px 0 4px}
+.ag-buttons .btn{min-width:92px}
+.ag-message{min-height:32px;padding:9px 13px;color:#bceaff;font-size:14px;text-align:center}
+.game-tile-grid{display:grid;grid-template-columns:repeat(4,minmax(54px,86px));gap:9px;justify-content:center;margin:18px auto}
+.ttt-tile{aspect-ratio:1/1;background:#142540;color:#bafc89;border:1px solid #476386;border-radius:15px;font-size:clamp(32px,5vw,48px);font-weight:1000;transition:.15s}
+.ttt-tile[data-value="O"]{color:#ab82ff}.ttt-tile:not([disabled]):hover{border-color:#a3ff12;box-shadow:0 0 16px #a3ff1222}
+.ag-snake-board{display:grid;grid-template-columns:repeat(15,minmax(0,1fr));gap:2px;padding:8px;border:1px solid #435672;background:#0b1424;border-radius:15px;max-width:450px;margin:15px auto;aspect-ratio:1/1;touch-action:none}
+.ag-snake-cell{border-radius:3px;background:#1a2c42;aspect-ratio:1}.ag-snake-cell.head{background:#ddff50;box-shadow:0 0 8px #91ff30}.ag-snake-cell.body{background:#42cb9e}.ag-snake-cell.food{background:#ff5f8d;border-radius:50%;box-shadow:0 0 8px #ff5f8d}
+.ag-dpad{display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(2,52px);gap:5px;justify-content:center;margin:13px 0 3px}
+.ag-dpad .btn{padding:8px;min-width:0}.ag-dpad [data-dir="up"]{grid-column:2}.ag-dpad [data-dir="left"]{grid-column:1;grid-row:2}.ag-dpad [data-dir="down"]{grid-column:2;grid-row:2}.ag-dpad [data-dir="right"]{grid-column:3;grid-row:2}
+.ag-2048{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:10px;max-width:376px;margin:20px auto;background:#233047;border-radius:14px}
+.ag-2048 .v2048{aspect-ratio:1;border-radius:9px;display:grid;place-items:center;font-size:clamp(19px,3vw,30px);font-weight:900;color:#ecf2ff;background:#172133}
+.ag-2048 .v2048[data-v="2"]{background:#3d4f58}.ag-2048 .v2048[data-v="4"]{background:#396e66}.ag-2048 .v2048[data-v="8"]{background:#468a64}.ag-2048 .v2048[data-v="16"]{background:#7cac45;color:#061708}.ag-2048 .v2048[data-v="32"]{background:#b9d04b;color:#061708}.ag-2048 .v2048[data-v="64"]{background:#ffd664;color:#25190b}.ag-2048 .v2048[data-v="128"]{background:#ffad63;color:#2c160a}.ag-2048 .v2048[data-v="256"],.ag-2048 .v2048[data-v="512"]{background:#d46ab0}.ag-2048 .v2048[data-v="1024"],.ag-2048 .v2048[data-v="2048"]{background:#8b66e3}
+.ag-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:18px 0}
+.ag-choice-grid .btn{padding:17px 8px;font-size:17px;font-weight:900;min-height:65px}
+.ag-moles{display:grid;grid-template-columns:repeat(3,minmax(0,95px));gap:11px;justify-content:center;margin:21px auto}
+.ag-hole{aspect-ratio:1;border:1px solid #384d66;background:radial-gradient(circle at center,#090c19,#172435);border-radius:50%;font-size:39px;transition:.1s}
+.ag-hole.target{background:radial-gradient(circle at 48% 43%,#a1ff4260,#1e442f);border-color:#9dff48;box-shadow:0 0 20px #a3ff1244}
+.ag-letters{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:18px 0 10px}
+.ag-letter{background:linear-gradient(130deg,#1b3457,#17243e);border:1px solid #425a7b;border-radius:10px;width:47px;height:52px;display:grid;place-items:center;font-size:26px;font-weight:950;color:#eafff2}
+.ag-field{width:min(320px,100%);background:#0f1c2c;border:1px solid #426083;border-radius:10px;padding:12px;color:#fff;font-size:18px;outline:none}
+.ag-field:focus{border-color:#b7ff5c;box-shadow:0 0 0 3px #a3ff1220}
+.ag-prompt{font-weight:1000;font-size:22px;letter-spacing:.3px;text-align:center;margin:14px auto;color:#d5e5ff}
+.ag-color-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:455px;margin:18px auto}
+.ag-color{border:2px solid #c4d3e944;border-radius:13px;padding:15px 8px;background:#10223b;font-size:19px;font-weight:950;min-height:70px}
+.ag-color:hover{border-color:#ffffffaf;transform:translateY(-1px)}
+.ag-guess{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px auto}
+.ag-guess input{max-width:170px}.ag-guess button{min-width:100px}
+.ag-history{font-size:12px;color:var(--muted);word-break:break-word;max-width:500px;margin:auto;text-align:center}
+#extraSavedRecords{margin-top:12px;display:flex;flex-wrap:wrap;gap:7px}
+.game-note{color:#8ba2c0;font-size:11px;padding-top:12px;border-top:1px solid #344052;margin:12px 0 0}
+@media(max-width:1150px){.brand{max-width:164px}.brand-image{width:158px}.links button{font-size:11px;padding:8px 6px}.newgames-grid,#extraArcadeSection .newgames-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.top .nav{gap:7px}.brand{max-width:156px}.brand-image{width:148px}.navright{gap:5px}.navright .cloud-pill{font-size:10px;padding:5px 7px}.hero-brand-stamp img{width:120px}.newgames-grid,#extraArcadeSection .newgames-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ng-card{padding:13px;min-height:199px}.ng-card h3{font-size:15px}.ng-card p{font-size:11px}.ng-icon{width:44px;height:44px;font-size:25px}}
+@media(max-width:420px){.brand-image{width:131px}.brand{max-width:133px}.top .navright .btn{padding:5px 7px;font-size:10px}.newgames-grid,#extraArcadeSection .newgames-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ng-card{min-height:214px}.ag-status{gap:9px;font-size:12px}.ag-choice-grid .btn{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.ng-card{transition:none}.hero:before{animation:none}}
+</style><meta name="description" content="Zyvoqix is an original educational gaming hub featuring 16 playable browser games, ICT challenges, scores, achievements and game discovery.">
+<meta name="theme-color" content="#a3ff12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zyvoqix | Play. Learn. Level Up.">
+<meta property="og:description" content="16 playable browser games, skill challenges, saved scores and a professional ICT project showcase.">
+<meta property="og:url" content="https://gamezone-play-rank-rise.vercel.app/"><meta property="og:image" content="https://gamezone-play-rank-rise.vercel.app/legacy/brand/zyvoqix-hero-social.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://gamezone-play-rank-rise.vercel.app/legacy/brand/zyvoqix-hero-social.jpg">
+<link rel="canonical" href="https://gamezone-play-rank-rise.vercel.app/">
+<link rel="manifest" href="/legacy/manifest.webmanifest">
+<link rel="stylesheet" href="/legacy/v4.css">
+<link rel="stylesheet" href="/legacy/zy-home.css">
+<link rel="preload" as="image" href="/legacy/brand/zyvoqix-hero.webp" type="image/webp" fetchpriority="high">
+</head><body>
+<header class="top"><div class="wrap nav"><a class="brand" href="#" data-page="home"><img class="brand-image" src="/legacy/brand/zyvoqix-logo.svg" alt="Zyvoqix original gaming brand logo" width="196" height="65"></a>
+<nav class="links" id="nav"><button class="active" data-page="home">Home</button><button data-page="games">Games</button><button data-page="rankings">Rankings</button><button data-page="missions">Missions + XP</button><button data-page="tiers">Tier Lists</button><button data-page="community">Community</button></nav>
+<div class="navright"><span class="xp-mini" id="xpMini">⚡ 0 XP</span><button class="btn small" id="profileOpen">Profile</button></div></div></header>
+<main class="wrap">
+<section class="page active" id="page-home"><div class="hero zy-hero" aria-labelledby="zyHeroTitle">
+ <div class="zy-hero-content">
+  <div class="zy-hero-kicker" aria-label="Zyvoqix gaming and learning"><span class="zy-status-dot" aria-hidden="true"></span> ZYVOQIX ARCADE <span class="zy-hero-sep" aria-hidden="true"></span> PLAY · LEARN · LEVEL UP</div>
+  <div class="zy-logo-stage"><img class="zy-hero-emblem" src="/legacy/brand/zyvoqix-hero.webp" width="1700" height="680" alt="Zyvoqix: عالم الألعاب السريعة والمغامرات المستقبلية، شعار الألعاب والشخصية المستقبلية" fetchpriority="high" decoding="async" /></div>
+  <h1 id="zyHeroTitle" lang="ar" dir="rtl">عالم الألعاب السريعة <span>والمغامرات المستقبلية</span></h1>
+  <p class="zy-hero-subtitle" lang="ar" dir="rtl">مغامرتك تبدأ هنا! العب مباشرة، اختبر مهاراتك، اجمع النقاط واحفظ تقدمك.</p>
+  <div class="actions zy-hero-actions"><button class="btn primary" type="button" data-page="arcade">🎮 ابدأ اللعب الآن</button><button class="btn zy-alt-button" type="button" data-page="games">استكشف عالم الألعاب ↗</button></div>
+  <div class="stats zy-hero-stats" aria-label="Gaming hub features"><div><strong id="statGames">28</strong><span>16 Playable + 12 to explore</span></div><div><strong id="statXP">0</strong><span>Your XP</span></div><div><strong id="statLists">0</strong><span>Tier lists</span></div></div>
+ </div>
+</div>
+<div class="section-head"><div><div class="kicker">Picked for you</div><h2>Featured games</h2></div><button class="btn small" data-page="games">All games →</button></div><div class="grid" id="featured"></div>
+<div class="section-head"><div><div class="kicker">Your next challenge</div><h2>Daily missions</h2></div><button class="btn small" data-page="missions">View missions →</button></div><div class="two"><div class="panel" id="homeMission"></div><div class="panel"><h3>🏆 The leaderboard</h3><p>Only real Zyvoqix members appear on the leaderboard once cloud storage is connected.</p><div id="homeLeaders"></div><button class="btn small" data-page="rankings" style="margin-top:12px">Full rankings →</button></div></div>
+</section>
+<section class="page" id="page-games"><div class="kicker">Explore your next obsession</div><h1 class="page-title">Game library<span style="color:var(--green)">.</span></h1><p class="page-intro">Browse 12 published games across sandbox, adventure, sports, and competitive play. Search by title or genre.</p><div class="formrow"><input id="search" class="search" placeholder="⌕ Search games, genres..." aria-label="Search games"><select id="sort" class="field" style="max-width:190px"><option value="popular">Featured picks</option><option value="rating">Highest rated</option><option value="az">A to Z</option></select></div><div class="filters" id="filters"><button class="chip active" data-cat="All">All games</button><button class="chip" data-cat="Sandbox">Sandbox</button><button class="chip" data-cat="Adventure">Adventure</button><button class="chip" data-cat="Competitive">Competitive</button><button class="chip" data-cat="Sports">Sports</button><button class="chip" data-cat="Roblox">Roblox picks</button></div><div class="grid" id="gameGrid"></div><div id="gameEmpty" class="empty hide">No games match. Try another search.</div></section>
+<section class="page" id="page-rankings"><div class="kicker">Every point counts</div><h1 class="page-title">Rankings & leaderboards<span style="color:var(--green)">.</span></h1><p class="page-intro">Check player XP, browse starter PvP rankings, and see community tier lists. Player points marked as sample are illustrative, not live global stats.</p><div class="two"><div class="panel"><h3>🌍 Player leaderboard</h3><p>Your locally earned XP appears here beside sample community players.</p><div id="leaderboard"></div></div><div class="panel"><h3>⚔️ Minecraft PvP starter rankings</h3><p>Informational starter guide; matchups depend on version and ruleset.</p><div class="row"><div class="ico">💎</div><div class="grow"><strong>Crystal PvP</strong><small>High burst damage, timing and mechanics</small></div><span class="score">S TIER</span></div><div class="row"><div class="ico">🪓</div><div class="grow"><strong>Axe + Shield</strong><small>Strong timing and shield pressure</small></div><span class="score">A TIER</span></div><div class="row"><div class="ico">🧪</div><div class="grow"><strong>Potions</strong><small>Preparation and utility</small></div><span class="score">A TIER</span></div><div class="row"><div class="ico">🏹</div><div class="grow"><strong>Bow PvP</strong><small>Range and precision</small></div><span class="score">B TIER</span></div></div></div>
+<div class="section-head"><div><div class="kicker">Your creative rankings</div><h2>Community tier lists</h2></div><button class="btn small" data-page="tiers">Create yours →</button></div><div class="grid" id="communityLists"></div></section>
+<section class="page" id="page-missions"><div class="kicker">Play. Complete. Get rewarded.</div><h1 class="page-title">Missions & XP<span style="color:var(--green)">.</span></h1><p class="page-intro">Complete activities on Zyvoqix to earn experience points and level up. Rewards are saved in this browser.</p><div class="two"><div class="panel"><h3>⚡ Your player progress</h3><p id="levelLabel">Level 1 · Rookie Gamer</p><div style="display:flex;align-items:end;justify-content:space-between"><strong style="font-size:32px" id="bigXP">0 XP</strong><span class="muted" id="nextXP">100 XP to next level</span></div><div class="progress"><span id="xpBar" style="width:0%"></span></div><div class="notice">Every 100 XP advances one level. XP is a site demo reward, not an in-game currency.</div><div class="row"><div class="ico">🎯</div><div class="grow"><strong id="doneCount">0 missions completed</strong><small>Keep going — new goals are waiting.</small></div></div></div><div class="panel"><h3>📅 Mission board</h3><p>Finish tasks to collect their XP once per browser profile.</p><div id="missions"></div></div></div>
+<div class="section-head"><div><div class="kicker">Your activity</div><h2>Achievement badges</h2></div></div><div class="grid" id="badges"></div></section>
+<section class="page" id="page-tiers"><div class="kicker">Build your own meta</div><h1 class="page-title">Tier list studio<span style="color:var(--green)">.</span></h1><p class="page-intro">Start with a filled-in example ranking for popular games and modes. Move items between tiers by tapping an item, then tapping the tier you want.</p><div class="panel"><div class="formrow"><input id="tierTitle" class="field" maxlength="70" value="My Ultimate Gaming Tier List" aria-label="Tier list name"><select id="tierCategory" class="field"><option>All games</option><option>Minecraft PvP</option><option>Roblox experiences</option><option>Weapons & items</option></select></div><div class="tierboard" id="tierBoard"></div><h3 style="font-size:13px;margin:17px 0 8px">UNRANKED ITEMS</h3><div class="pool" id="pool"></div><div class="actions"><button class="btn primary" id="saveTier">Save list (+25 XP once per list)</button><button class="btn" id="shareTier">Copy / share</button><button class="btn" id="resetTier">Reset board</button></div><div class="notice">Lists save in this browser. Sharing copies a text version; online public publishing needs a backend.</div></div><div class="section-head"><div><div class="kicker">Saved tier lists</div><h2>My tier lists</h2></div></div><div id="savedLists" class="grid"></div></section>
+<section class="page" id="page-community"><div class="kicker">Made by gamers, for gamers</div><h1 class="page-title">Community lounge<span style="color:var(--green)">.</span></h1><p class="page-intro">Set up your local gamer profile and share a thought. This demo stores posts on this device only.</p><div class="two"><div class="panel"><h3>🧑‍🚀 Your gamer profile</h3><p>Choose your display name and favorite game.</p><label class="muted" for="gamerName">Gamer tag</label><input class="field" id="gamerName" maxlength="24" placeholder="e.g. PixelPilot"><label class="muted" for="favGame" style="display:block;margin:12px 0 5px">Favorite game</label><select class="field" id="favGame"><option>Minecraft</option><option>Roblox</option><option>Fortnite</option><option>Valorant</option><option>Rocket League</option><option>Terraria</option><option>Other</option></select><button class="btn primary" id="saveProfile" style="margin-top:13px">Save profile</button><div class="notice">No password or sensitive information is requested. This is not an online account.</div></div><div class="panel"><h3>💬 Community posts</h3><p>What are you playing or building this week?</p><textarea class="field" id="postText" maxlength="240" rows="3" placeholder="Share a tip, question, or gaming win..."></textarea><button class="btn primary" id="publish" style="margin-top:10px">Publish post (+5 XP)</button><div id="posts" style="margin-top:13px"></div></div></div><div class="section-head"><div><div class="kicker">Useful gaming links</div><h2>Official & trusted resources</h2></div></div><div class="grid"><div class="card"><div class="cardbody"><h3>⛏️ Minecraft</h3><p>Official game information and updates.</p><a class="btn small" href="https://www.minecraft.net/" target="_blank" rel="noopener">Visit website ↗</a></div></div><div class="card"><div class="cardbody"><h3>🧱 Roblox</h3><p>Explore experiences and official community resources.</p><a class="btn small" href="https://www.roblox.com/discover" target="_blank" rel="noopener">Discover ↗</a></div></div><div class="card"><div class="cardbody"><h3>📦 Mods & packs</h3><p>Find projects and check compatibility before downloading.</p><a class="btn small" href="https://modrinth.com/" target="_blank" rel="noopener">Modrinth ↗</a></div></div></div></section>
+</main><footer class="foot"><div class="wrap footin"><strong style="color:white">◈ Zyvoqix</strong><span>Independent educational gaming hub. All third-party game names belong to their owners. Not affiliated with their publishers.</span><span>Play fair. Be kind. © <span id="year"></span></span></div></footer><div class="toast" id="toast" role="status"></div>
+<script>
+const GAMES=[
+{id:'minecraft',name:'Minecraft',cat:'Sandbox',desc:'Build worlds, explore caves, and master survival or PvP.',icon:'⛏️',cover:'c1'},
+{id:'roblox',name:'Roblox',cat:'Roblox',desc:'Explore a universe of player-created games and experiences.',icon:'🧩',cover:'c2'},
+{id:'fortnite',name:'Fortnite',cat:'Competitive',desc:'Squad up, outplay rivals, and try evolving game modes.',icon:'🌌',cover:'c3'},
+{id:'valorant',name:'Valorant',cat:'Competitive',desc:'Tactical 5v5 action built around precision and teamwork.',icon:'🎯',cover:'c4'},
+{id:'rocket',name:'Rocket League',cat:'Sports',desc:'Football meets rocket-powered cars in fast matches.',icon:'🚗',cover:'c5'},
+{id:'terraria',name:'Terraria',cat:'Adventure',desc:'Dig, fight, explore, and build in a huge pixel world.',icon:'🌳',cover:'c6'},
+{id:'among',name:'Among Us',cat:'Adventure',desc:'Work together, uncover impostors, and trust carefully.',icon:'🚀',cover:'c7'},
+{id:'stumble',name:'Stumble Guys',cat:'Sports',desc:'Race through chaotic obstacle courses with friends.',icon:'🏃',cover:'c8'},
+{id:'brawl',name:'Brawl Stars',cat:'Competitive',desc:'Fast multiplayer battles, heroes, and team strategies.',icon:'⭐',cover:'c9'},
+{id:'fallguys',name:'Fall Guys',cat:'Sports',desc:'Compete in colorful rounds of silly knockout challenges.',icon:'👑',cover:'c3'},
+{id:'genshin',name:'Genshin Impact',cat:'Adventure',desc:'Explore a fantasy world, solve puzzles, and build a team.',icon:'✨',cover:'c2'},
+{id:'subnautica',name:'Subnautica',cat:'Adventure',desc:'Dive into an alien ocean, craft gear, and survive.',icon:'🌊',cover:'c5'}
+];
+const MISSIONS=[
+{id:'visit',icon:'🧭',title:'Explore the game library',desc:'Open the Games page and discover what is available.',xp:10,check:()=>true},
+{id:'favorite',icon:'❤️',title:'Save a favorite game',desc:'Like any game card in the library.',xp:15,check:()=>Object.values(state.likes).some(Boolean)},
+{id:'tier',icon:'🏆',title:'Create your first tier list',desc:'Save a custom ranking in Tier Lists.',xp:25,check:()=>state.lists.length>0},
+{id:'post',icon:'💬',title:'Join the conversation',desc:'Publish a post in the community lounge.',xp:10,check:()=>state.posts.length>0},
+{id:'profile',icon:'🧑‍🚀',title:'Set your gamer tag',desc:'Save a local profile on the Community page.',xp:10,check:()=>!!state.profile},
+{id:'three',icon:'🎮',title:'Build a bigger library',desc:'Like three different games.',xp:20,check:()=>Object.values(state.likes).filter(Boolean).length>=3}
+];
+const load=(k,d)=>{try{return JSON.parse(localStorage.getItem('gz2_'+k))??d}catch{return d}};
+let state={xp:load('xp',0),done:load('done',[]),likes:load('likes',{}),lists:load('lists',[]),posts:load('posts',[]),profile:load('profile',null),missionBonus:load('missionBonus',{}),arcade:load('arcade',null),ratings:load('ratings',{}),tierBoard:load('tierBoard',null)};
+let category='All',searchText='',selectedItem=null;
+function persist(){for(const k of Object.keys(state))localStorage.setItem('gz2_'+k,JSON.stringify(state[k]));updateHeader()}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(s){let el=document.getElementById('toast');el.textContent=s;el.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>el.classList.remove('show'),2300)}
+function addXP(n,reason){state.xp+=n;persist();renderProgress();renderLeaders();renderMissions();toast('+'+n+' XP · '+reason)}
+function updateHeader(){document.getElementById('xpMini').textContent='⚡ '+state.xp+' XP';document.getElementById('statXP').textContent=state.xp;document.getElementById('statLists').textContent=state.lists.length}
+function go(page){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));if(page==='games'&&state.done.indexOf('visit')<0){state.done.push('visit');persist()}window.scrollTo({top:0,behavior:'smooth'});if(page==='games')renderGames();if(page==='tiers')renderTier();if(page==='rankings')renderCommunityLists()}
+document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b){e.preventDefault();go(b.dataset.page)}});
+function card(g){return `<article class="card"><div class="cover ${g.cover}"><span>${g.icon}</span></div><div class="cardbody"><div class="cardtop"><h3>${esc(g.name)}</h3><span class="rating">☆ Not rated yet</span></div><p>${esc(g.desc)}</p><div class="cardfoot"><span>${esc(g.cat)}</span><button class="btn small ${state.likes[g.id]?'primary':''}" data-like="${g.id}">${state.likes[g.id]?'♥ Liked':'♡ Like'}</button></div></div></article>`}
+function renderFeatured(){document.getElementById('featured').innerHTML=GAMES.slice(0,3).map(card).join('')}
+function renderGames(){let arr=GAMES.filter(g=>(category==='All'||g.cat===category)&&(g.name+' '+g.cat+' '+g.desc).toLowerCase().includes(searchText.toLowerCase()));let sort=document.getElementById('sort')?.value||'popular';arr.sort((a,b)=>a.name.localeCompare(b.name));document.getElementById('gameGrid').innerHTML=arr.map(card).join('');document.getElementById('gameEmpty').classList.toggle('hide',arr.length>0)}
+document.getElementById('filters').addEventListener('click',e=>{let b=e.target.closest('[data-cat]');if(!b)return;category=b.dataset.cat;document.querySelectorAll('[data-cat]').forEach(x=>x.classList.toggle('active',x===b));renderGames()});
+document.getElementById('search').addEventListener('input',e=>{searchText=e.target.value;renderGames()});document.getElementById('sort').addEventListener('change',renderGames);
+document.addEventListener('click',e=>{let b=e.target.closest('[data-like]');if(!b)return;let id=b.dataset.like;state.likes[id]=!state.likes[id];persist();renderFeatured();renderGames();renderMissions();renderLeaders();if(state.likes[id]&&!state.missionBonus.favorite){state.missionBonus.favorite=true;state.done.push('favorite');addXP(15,'Favorite game');}else if(Object.values(state.likes).filter(Boolean).length>=3&&!state.missionBonus.three){state.missionBonus.three=true;state.done.push('three');addXP(20,'Three games liked')}});
+function level(){return Math.floor(state.xp/100)+1}
+function renderProgress(){let inLevel=state.xp%100;document.getElementById('bigXP').textContent=state.xp+' XP';document.getElementById('levelLabel').textContent='Level '+level()+' · '+(level()<3?'Rookie Gamer':level()<6?'Rising Player':level()<10?'Pro Challenger':'Legend');document.getElementById('nextXP') .textContent=(100-inLevel)+' XP to next level';document.getElementById('xpBar').style.width=inLevel+'%';document.getElementById('doneCount').textContent=state.done.length+' missions completed';document.getElementById('statXP').textContent=state.xp}
+function renderMissions(){document.getElementById('missions').innerHTML=MISSIONS.map(m=>{let done=state.done.includes(m.id)||m.check();return `<div class="task ${done?'done':''}"><div class="task-icon">${done?'✅':m.icon}</div><div class="grow"><strong>${esc(m.title)}</strong><small>${esc(m.desc)}</small><div class="score">+${m.xp} XP</div></div><button class="btn small ${done?'':'primary'}" data-claim="${m.id}" ${done?'disabled':''}>${done?'Completed':'Claim XP'}</button></div>`}).join('');document.getElementById('homeMission').innerHTML='<h3>🎯 Daily mission</h3><p>Finish small activities to level up your profile.</p>'+MISSIONS.filter(m=>!state.done.includes(m.id)).slice(0,2).map(m=>`<div class="row"><div class="ico">${m.icon}</div><div class="grow"><strong>${esc(m.title)}</strong><small>Reward: ${m.xp} XP</small></div></div>`).join('')}
+document.getElementById('missions').addEventListener('click',e=>{let b=e.target.closest('[data-claim]');if(!b)return;let m=MISSIONS.find(x=>x.id===b.dataset.claim);if(!m||state.done.includes(m.id))return;if(!m.check()){toast('Complete the task first to claim XP');return}state.done.push(m.id);addXP(m.xp,m.title)});
+function renderLeaders(){let arr=[{name:state.profile?.name||'You (guest)',game:state.profile?.game||'Local player',xp:state.xp,me:true},{name:'PixelPilot',game:'Minecraft builder · sample',xp:420},{name:'NovaByte',game:'Roblox explorer · sample',xp:365},{name:'ShadowStriker',game:'PvP competitor · sample',xp:290}].sort((a,b)=>b.xp-a.xp);let html=arr.map((p,i)=>`<div class="rankline"><div class="ranknum">#${i+1}</div><div style="display:flex;gap:10px;align-items:center"><div class="avatar">${p.me?'👤':p.name[0]}</div><div class="grow"><strong>${esc(p.name)}</strong><small class="muted">${esc(p.game)}</small></div></div><span class="score">${p.xp} XP</span></div>`).join('');document.getElementById('leaderboard').innerHTML=html;document.getElementById('homeLeaders').innerHTML=arr.slice(0,3).map((p,i)=>`<div class="row"><div class="ico">${['🥇','🥈','🥉'][i]}</div><div class="grow"><strong>${esc(p.name)}</strong><small>${esc(p.game)}</small></div><span class="score">${p.xp} XP</span></div>`).join('')}
+function renderBadges(){let b=[['🎮','First steps','Visit the games library',state.done.includes('visit')],['❤️','Game fan','Like a game',Object.values(state.likes).some(Boolean)],['🏆','Tier maker','Save a tier list',state.lists.length>0],['💬','Community voice','Publish a post',state.posts.length>0],['⚡','Level 2','Reach 100 XP',state.xp>=100],['👑','Level 5','Reach 400 XP',state.xp>=400]];document.getElementById('badges').innerHTML=b.map(x=>`<div class="panel" style="opacity:${x[3]?1:.55}"><div style="font-size:28px">${x[0]}</div><h3>${x[1]} ${x[3]?'✓':''}</h3><p>${x[2]}</p><span class="score">${x[3]?'UNLOCKED':'LOCKED'}</span></div>`).join('')}
+let items=[['Minecraft','⛏️'],['Roblox','🧩'],['Fortnite','🌌'],['Valorant','🎯'],['Crystal PvP','💎'],['Axe PvP','🪓'],['Obby games','🏃'],['Roleplay','🏡'],['Rocket League','🚗'],['Terraria','🌳'],['Among Us','🚀'],['Stumble Guys','🏃‍♂️']];
+function defaultBoard(){
+  const make = names => names.map(name=>{const x=items.find(i=>i[0]===name);return {name:x[0],icon:x[1]}});
+  return {
+    S:make(['Minecraft','Roblox']),
+    A:make(['Fortnite','Valorant','Crystal PvP']),
+    B:make(['Axe PvP','Rocket League','Obby games']),
+    C:make(['Terraria','Roleplay']),
+    D:make(['Among Us','Stumble Guys']),
+    pool:[]
+  };
+}
+let board=defaultBoard();
+function itemButton(it,zone){return `<button draggable="true" class="item ${selectedItem?.name===it.name?'selected':''}" data-item="${esc(it.name)}" data-zone="${zone}">${it.icon} ${esc(it.name)}</button>`}
+function renderTier(){document.getElementById('tierBoard').innerHTML=['S','A','B','C','D'].map(t=>`<div class="tierrow"><div class="tierlabel ${t}">${t}</div><div class="drop" data-drop="${t}">${board[t].map(i=>itemButton(i,t)).join('')}</div></div>`).join('');document.getElementById('pool').innerHTML=board.pool.map(i=>itemButton(i,'pool')).join('')}
+function move(name,from,to){let src=from==='pool'?board.pool:board[from],i=src.findIndex(x=>x.name===name);if(i<0)return;let it=src.splice(i,1)[0];(to==='pool'?board.pool:board[to]).push(it)}
+document.getElementById('tierBoard').addEventListener('click',e=>{let it=e.target.closest('[data-item]');if(it){selectedItem={name:it.dataset.item,from:it.dataset.zone};renderTier();return}let d=e.target.closest('[data-drop]');if(d&&selectedItem){move(selectedItem.name,selectedItem.from,d.dataset.drop);selectedItem=null;renderTier()}});
+document.getElementById('pool').addEventListener('click',e=>{let it=e.target.closest('[data-item]');if(!it)return;selectedItem={name:it.dataset.item,from:it.dataset.zone};renderTier();toast('Item selected — tap a tier')});
+document.addEventListener('dragstart',e=>{let it=e.target.closest('[data-item]');if(it)e.dataTransfer.setData('text/plain',JSON.stringify({name:it.dataset.item,from:it.dataset.zone}))});document.addEventListener('dragover',e=>{if(e.target.closest('[data-drop]')||e.target.closest('#pool'))e.preventDefault()});document.addEventListener('drop',e=>{let d=e.target.closest('[data-drop]')||e.target.closest('#pool');if(!d)return;e.preventDefault();try{let v=JSON.parse(e.dataTransfer.getData('text/plain'));move(v.name,v.from,d.dataset.drop||'pool');renderTier()}catch{}});
+function summary(){return ['S','A','B','C','D'].map(t=>t+': '+(board[t].map(x=>x.name).join(', ')||'—')).join('\n')}
+document.getElementById('saveTier').addEventListener('click',()=>{let title=document.getElementById('tierTitle').value.trim()||'Untitled tier list';state.lists.unshift({id:Date.now(),title,category:document.getElementById('tierCategory').value,summary:summary(),date:new Date().toLocaleDateString()});state.lists=state.lists.slice(0,20);if(!state.done.includes('tier')){state.done.push('tier');state.xp+=25}persist();renderSavedLists();renderMissions();renderProgress();renderLeaders();renderBadges();renderCommunityLists();toast('Tier list saved!')});
+document.getElementById('resetTier').addEventListener('click',()=>{board=defaultBoard();selectedItem=null;renderTier();toast('Example tier list restored')});
+document.getElementById('shareTier').addEventListener('click',async()=>{let text=document.getElementById('tierTitle').value+'\n'+document.getElementById('tierCategory').value+'\n'+summary()+'\nCreated with Zyvoqix';try{await navigator.clipboard.writeText(text);toast('Tier list copied to share')}catch{let t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();toast('Tier list copied')}});
+function renderSavedLists(){document.getElementById('savedLists').innerHTML=state.lists.length?state.lists.map(l=>`<div class="panel"><div class="kicker">${esc(l.category||'Gaming')}</div><h3>${esc(l.title)}</h3><p>${esc(l.date)}</p><pre style="white-space:pre-wrap;color:var(--muted);font:12px/1.6 system-ui">${esc(l.summary)}</pre><button class="btn small" data-delete-list="${l.id}">Delete list</button></div>`).join(''):'<div class="empty">Your saved tier lists will appear here.</div>'}
+document.getElementById('savedLists').addEventListener('click',e=>{let b=e.target.closest('[data-delete-list]');if(!b)return;state.lists=state.lists.filter(l=>l.id!==Number(b.dataset.deleteList));persist();renderSavedLists();renderLeaders();renderBadges();renderCommunityLists();toast('Tier list deleted')});
+function renderCommunityLists(){let list=[{title:'Minecraft PvP starter meta',desc:'Crystal PvP · Axe PvP · Bow PvP',tag:'STARTER GUIDE'},{title:'Roblox experience genres',desc:'Obby · Roleplay · Horror · Tycoon',tag:'COMMUNITY IDEA'},...state.lists.slice(0,4).map(l=>({title:l.title,desc:l.category+' · '+l.summary.replace(/\n/g,' · '),tag:'LOCAL LIST'}))];document.getElementById('communityLists').innerHTML=list.map(l=>`<div class="card"><div class="cardbody"><div class="kicker">${esc(l.tag)}</div><h3 style="margin:8px 0">${esc(l.title)}</h3><p>${esc(l.desc)}</p><button class="btn small" data-page="tiers">Make a list like this →</button></div></div>`).join('')}
+document.getElementById('saveProfile').addEventListener('click',()=>{let name=document.getElementById('gamerName').value.trim();if(!name){toast('Enter a gamer tag first');return}state.profile={name,game:document.getElementById('favGame').value};persist();renderLeaders();renderMissions();toast('Profile saved on this device')});
+document.getElementById('profileOpen').addEventListener('click',()=>go('community'));
+document.getElementById('publish').addEventListener('click',()=>{let text=document.getElementById('postText').value.trim();if(!text){toast('Write a post first');return}state.posts.push({text,name:state.profile?.name||'Guest Gamer',date:new Date().toLocaleString()});state.posts=state.posts.slice(-30);document.getElementById('postText').value='';if(!state.done.includes('post')){state.done.push('post');state.xp+=5}persist();renderPosts();renderMissions();renderLeaders();renderBadges();toast('Post published locally')});
+function renderPosts(){document.getElementById('posts').innerHTML=state.posts.length?state.posts.slice().reverse().map(p=>`<div class="row"><div class="ico">💬</div><div class="grow"><strong>${esc(p.name)}</strong><small>${esc(p.date)}</small><div style="font-size:13px;margin-top:5px">${esc(p.text)}</div></div></div>`).join(''):'<div class="empty">No posts yet — start the conversation.</div>'}
+document.getElementById('year').textContent=new Date().getFullYear();
+function init(){document.getElementById('gamerName').value=state.profile?.name||'';document.getElementById('favGame').value=state.profile?.game||'Minecraft';renderFeatured();renderGames();renderTier();renderSavedLists();renderCommunityLists();renderPosts();updateHeader();renderProgress();renderMissions();renderLeaders();renderBadges();if(!state.done.includes('visit')){state.done.push('visit');persist()} }
+init();
+</script><script>
+/* Zyvoqix v2 enhancement: real playable browser games, real member ratings,
+   persistent local progress and optional private Vercel Blob cloud accounts. */
+(function () {
+  'use strict';
+  const OFFICIAL = {
+    minecraft:'https://www.minecraft.net/en-us',
+    roblox:'https://www.roblox.com/discover',
+    fortnite:'https://www.fortnite.com/',
+    valorant:'https://playvalorant.com/en-us/',
+    rocket:'https://www.rocketleague.com/play',
+    terraria:'https://terraria.org/',
+    among:'https://www.innersloth.com/games/among-us/',
+    stumble:'https://www.stumbleguys.com/',
+    brawl:'https://supercell.com/en/games/brawlstars/',
+    fallguys:'https://www.fallguys.com/download',
+    genshin:'https://genshin.hoyoverse.com/en/',
+    subnautica:'https://www.subnautica.com/en/'
+  };
+  const ARCADE = [
+    {id:'memory',icon:'🧠',title:'Memory Match',desc:'Find the emoji pairs. Unlock new levels and continue later.'},
+    {id:'math',icon:'🔢',title:'Math Quest',desc:'Beat ten quick puzzles; your best result stays saved.'},
+    {id:'tap',icon:'⚡',title:'Tap Rush',desc:'How many taps can you score in twelve seconds?'},
+    {id:'reflex',icon:'🎯',title:'Reflex Test',desc:'Wait for green, then tap as fast as you can.'}
+  ];
+  const API='/api/gamezone';
+  let publicData={enabled:false,players:[],ratings:{},count:0};
+  let token=localStorage.getItem('gz_cloud_session')||'';
+  let activeAccount=localStorage.getItem('gz_cloud_name')||'';
+  let connected=false, syncTimer=null, syncBusy=false, needsSync=false, activeGame=null, lastCommunityRefresh=0;
+  let tapDeadline=0,tapCount=0,tapTimer=null,reflexTimer=null,reflexStart=0,reflexPhase='idle';
+  let memoryLock=false;
+  const emptyArcade=()=>({memory:{level:1,moves:0,board:[],matched:[],opened:[],cleared:[]},math:{round:0,right:0,best:0,question:null},tap:{best:0,plays:0},reflex:{best:0,plays:0}});
+  function ensureState(){
+    if(!state.arcade || typeof state.arcade!=='object')state.arcade=emptyArcade();
+    const fresh=emptyArcade();
+    for(const key of Object.keys(fresh))state.arcade[key]={...fresh[key],...(state.arcade[key]||{})};
+    if(!state.ratings || typeof state.ratings!=='object')state.ratings={};
+    if(!state.tierBoard || typeof state.tierBoard!=='object')state.tierBoard=null;
+  }
+  ensureState();
+  function text(id,value){const el=document.getElementById(id);if(el)el.textContent=value}
+  function html(id,value){const el=document.getElementById(id);if(el)el.innerHTML=value}
+  const starsHtml=(id,voted)=>[1,2,3,4,5].map(n=>`<button class="star-btn ${n<=voted?'voted':''}" data-rate="${esc(id)}" data-stars="${n}" title="Rate ${n} stars" aria-label="Rate ${n} of 5 stars">${n<=voted?'★':'☆'}</button>`).join('');
+  function ratingLabel(g){
+    const r=publicData.ratings[g.id];
+    if(r?.votes)return `★ ${Number(r.average).toFixed(1)} <span class="muted">(${r.votes} ${r.votes===1?'vote':'votes'})</span>`;
+    const mine=Number(state.ratings[g.id])||0;
+    return mine?`★ ${mine}/5 <span class="muted">(your rating only)</span>`:'☆ Not rated yet';
+  }
+  function ratingSort(g){const r=publicData.ratings[g.id];return r?.votes ? ((r.average*r.votes)+(3.5*5))/(r.votes+5) : (!connected ? (Number(state.ratings[g.id])||0)/10 : 0)}
+  function newCard(g){
+    const local=state.ratings[g.id]||0;
+    return `<article class="card"><div class="cover ${g.cover}"><span>${g.icon}</span></div><div class="cardbody"><div class="cardtop"><h3>${esc(g.name)}</h3><span class="rating">${ratingLabel(g)}</span></div><p>${esc(g.desc)}</p><div class="stars" role="group" aria-label="Rate ${esc(g.name)}">${starsHtml(g.id,local)}</div><div class="rating-note">${publicData.enabled?'Zyvoqix account votes':'Your rating is saved locally until cloud sign-in'} · not an official game review</div><div class="game-actions"><a class="btn small primary" href="${OFFICIAL[g.id]}" target="_blank" rel="noopener noreferrer" title="Opens the official game website outside Zyvoqix">Official site ↗</a>${g.id==='stumble'?'<a class="btn small" href="https://live.web.stumbleguys.com/" target="_blank" rel="noopener noreferrer" title="Play the official browser version of Stumble Guys">Play online ↗</a>':''}<button class="btn small ${state.likes[g.id]?'primary':''}" data-like="${g.id}">${state.likes[g.id]?'♥ Liked':'♡ Favorite'}</button></div><div class="rating-note">Opens the official game website; gameplay may need its app, purchase or own account.</div></div></article>`;
+  }
+  // Replace invented star scores with real member votes. All original game entries remain.
+  card=newCard;
+  renderFeatured=function(){html('featured',GAMES.slice(0,3).map(newCard).join(''))};
+  renderGames=function(){
+    const val=document.getElementById('sort')?.value||'popular';
+    const arr=GAMES.filter(g=>(category==='All'||g.cat===category)&&(g.name+' '+g.cat+' '+g.desc).toLowerCase().includes(searchText.toLowerCase()));
+    arr.sort((a,b)=>val==='rating'?(ratingSort(b)-ratingSort(a)||a.name.localeCompare(b.name)):val==='az'?a.name.localeCompare(b.name):GAMES.indexOf(a)-GAMES.indexOf(b));
+    html('gameGrid',arr.map(newCard).join(''));
+    document.getElementById('gameEmpty').classList.toggle('hide',arr.length>0);
+  };
+  renderLeaders=function(){
+    const people=publicData.players||[];
+    const localName=state.profile?.name||'';
+    const localOnly=!people.length&&localName?`<div class="rankline"><div class="ranknum">•</div><div class="grow"><strong>${esc(localName)}</strong><small>Saved on this device — not a global rank</small></div><span class="score">${Number(state.xp)||0} XP</span></div>`:'';
+    const rows=people.length?people.map((p,i)=>`<div class="rankline"><div class="ranknum">#${i+1}</div><div style="display:flex;gap:10px;align-items:center"><div class="avatar">${esc(p.name[0]?.toUpperCase()||'🎮')}</div><div class="grow"><strong>${esc(p.name)} ${p.name.toLowerCase()===activeAccount.toLowerCase()?'(you)':''}</strong><small class="muted">${esc(p.game)}</small></div></div><span class="score">${p.xp} XP</span></div>`).join(''):localOnly||'<div class="empty">No shared leaderboard yet. Pick a gamer tag to track your own score while the cloud is offline.</div>';
+    html('leaderboard',rows);
+    html('homeLeaders',people.length?people.slice(0,3).map((p,i)=>`<div class="row"><div class="ico">${['🥇','🥈','🥉'][i]}</div><div class="grow"><strong>${esc(p.name)}</strong><small>${esc(p.game)}</small></div><span class="score">${p.xp} XP</span></div>`).join(''):'<div class="empty">Real player rankings will appear here.</div>');
+    const arcadeRows=people.length?people.slice().sort((a,b)=>b.math-a.math||b.tap-a.tap).slice(0,5).map((p,i)=>`<div class="row"><div class="ico">${['🥇','🥈','🥉','🎮','🎮'][i]}</div><div class="grow"><strong>${esc(p.name)}</strong><small>Math ${p.math}/10 · Tap ${p.tap} · Memory level ${p.memory}</small></div></div>`).join(''):'<div class="empty">Play and sign in to appear on the shared scores.</div>';
+    html('arcadeLeaders',arcadeRows);html('rankingArcade',arcadeRows);
+  };
+  // Reuse existing persistence: never delete or reset legacy saves.
+  const basePersist=persist;
+  const localKey=name=>'gz_local_gamer_'+name.toLowerCase();
+  const validTag=name=>/^[a-zA-Z][a-zA-Z0-9_]{2,19}$/.test(name);
+  function emptyPlayer(name=''){
+    return {xp:0,done:[],likes:{},lists:[],posts:[],profile:name?{name,game:'Minecraft'}:null,missionBonus:{},arcade:emptyArcade(),ratings:{},tierBoard:null};
+  }
+  function savedLocalNames(){
+    try{const n=JSON.parse(localStorage.getItem('gz_local_players')||'[]');return Array.isArray(n)?n.filter(x=>typeof x==='string'&&validTag(x)).slice(0,15):[]}catch{return []}
+  }
+  function renderLocalNames(){
+    const el=document.getElementById('localSavedNames');if(!el)return;
+    const names=savedLocalNames();
+    el.innerHTML=names.length?names.map(name=>`<button class="btn small ${name.toLowerCase()===state.profile?.name?.toLowerCase()?'primary':''}" data-switch-name="${esc(name)}">${esc(name)}</button>`).join(''):'<span class="notice">No local nickname saved yet — choose one in Your gamer profile below.</span>';
+  }
+  function localProfileBackup(){
+    if(token)return;
+    const name=state.profile?.name;
+    if(name&&validTag(name))try{
+      localStorage.setItem(localKey(name),JSON.stringify(state));
+      const names=savedLocalNames().filter(x=>x.toLowerCase()!==name.toLowerCase());
+      names.push(name);localStorage.setItem('gz_local_players',JSON.stringify(names.slice(-15)));
+    }catch{}
+    renderLocalNames();
+  }
+  persist=function(){basePersist();localProfileBackup();updateScores();requestSync()};
+  function switchLocalPlayer(newName){
+    if(token){toast('Sign out of your cloud account first.');return false}
+    if(!validTag(newName)){toast('Use 3–20 letters, numbers or underscore; start with a letter.');return false}
+    const current=state.profile?.name||'';
+    if(current.toLowerCase()===newName.toLowerCase())return true;
+    localProfileBackup();
+    let saved=null;
+    try{saved=JSON.parse(localStorage.getItem(localKey(newName))||'null')}catch{}
+    if(saved&&typeof saved==='object'){
+      state={...emptyPlayer(newName),...saved,profile:{name:newName,game:saved.profile?.game||'Minecraft'}};
+    }else if(!current){state.profile={name:newName,game:state.profile?.game||'Minecraft'}}
+    else{state=emptyPlayer(newName)}
+    stopArcadeTimers();activeGame=null;memoryLock=false;ensureState();board=defaultBoard();basePersist();localProfileBackup();renderAll();
+    toast('Playing as '+newName+' — this device has a separate save.');
+    return true;
+  }
+  const baseMove=move;
+  move=function(name,from,to){baseMove(name,from,to);state.tierBoard=JSON.parse(JSON.stringify(board));persist()};
+  if(state.tierBoard){
+    const needed=['S','A','B','C','D','pool'];
+    if(needed.every(k=>Array.isArray(state.tierBoard[k]))){board=JSON.parse(JSON.stringify(state.tierBoard));renderTier()}
+  }
+  // Preserve current DOM, inject the new playable games and account controls.
+  const arcadePage=document.createElement('section');
+  arcadePage.className='page';arcadePage.id='page-arcade';
+  arcadePage.innerHTML=`<div class="kicker">Made to play in your browser</div><h1 class="page-title">Zyvoqix Arcade<span style="color:var(--green)">.</span></h1><p class="page-intro">Four original mini games run right here on Zyvoqix, on mobile and desktop. Their scores and progress save to your browser, and to your Zyvoqix account when cloud sync is enabled.</p><div class="play-grid" id="playGrid"></div><div class="arcade-area" id="arcadeStage"><div class="empty">Choose a game above to start playing.</div></div><div class="two"><div class="panel"><h3>💾 My saved arcade records</h3><p>Your current best scores on this account or browser.</p><div class="mini-scores" id="myScores"></div></div><div class="panel"><h3>🏆 Shared Arcade scores</h3><p>Only Zyvoqix player scores — not scores from Roblox, Minecraft, or other external games.</p><div id="arcadeLeaders"></div></div></div>`;
+  document.getElementById('page-games').before(arcadePage);
+  const arcadeNav=document.createElement('button');arcadeNav.setAttribute('data-page','arcade');arcadeNav.textContent='🎮 Play Now';
+  document.getElementById('nav').querySelector('[data-page="rankings"]').before(arcadeNav);
+  const heroActions=document.querySelector('#page-home .hero .actions');
+  if(heroActions && !heroActions.querySelector('[data-page="arcade"]'))heroActions.insertAdjacentHTML('afterbegin','<button class="btn purple" data-page="arcade">Play free games ▶</button>');
+  const oldPvp=document.querySelector('#page-rankings .two .panel:nth-child(2)');
+  if(oldPvp)oldPvp.innerHTML='<h3>🎮 Real Arcade Records</h3><p>Scores from Zyvoqix members — not guessed PvP tier ratings.</p><div id="rankingArcade"></div>';
+  const accountPanel=document.createElement('div');accountPanel.className='panel auth-panel';
+  accountPanel.innerHTML=`<h3>☁️ Zyvoqix Cloud Account</h3><p>Use a gamer tag and password to keep your score, level, favorites and tier lists across devices. No email needed.</p><div id="cloudAccountStatus" class="cloud-pill warn">Checking cloud save...</div><div id="cloudSignedIn" class="active-account hide" style="margin-top:12px"><strong id="cloudName"></strong><p class="auth-hint">This device syncs automatically when online.</p><button class="btn small" id="cloudLogout">Sign out</button></div><div id="cloudSignIn"><div class="formrow"><input id="cloudUser" class="field" autocomplete="username" maxlength="20" placeholder="Gamer tag (letters, numbers, _)" aria-label="Gamer tag"><input id="cloudPass" class="field" autocomplete="current-password" type="password" maxlength="128" placeholder="Password (8+ characters)" aria-label="Password"></div><div class="auth-actions"><button class="btn primary" id="cloudRegister">Create free account</button><button class="btn" id="cloudLogin">Sign in</button></div><div class="auth-hint">Cloud sign-in works after database activation. Then use the same gamer tag and password on any device. Save your password; there is no email recovery. Use a nickname, not a real name. Public leaderboards show gamer tags and scores only.</div></div><div class="auth-hint" id="cloudLastSave"></div>`;
+  const communityTwo=document.querySelector('#page-community .two');
+  communityTwo.before(accountPanel);
+  const backupPanel=document.createElement('div');
+  backupPanel.className='panel backup-panel';
+  backupPanel.innerHTML=`<h3>💾 Save a backup of your progress</h3><p>Your games, XP, level, favorites and ratings are saved on this device. Export a backup file to keep them safe or move them manually to another device until cloud sync becomes available.</p><div class="auth-actions"><button class="btn primary" id="exportProgress">Download my progress</button><button class="btn" id="chooseProgress">Restore a backup</button></div><input type="file" accept=".json,application/json" id="importProgress" class="hide" aria-label="Choose Zyvoqix progress backup"><p class="notice">Keep backup files private. Restoring replaces the active local player's progress; existing data is backed up first. Cloud users must sign out to import.</p><div class="local-name-area"><h4>Saved nicknames on this device</h4><div id="localSavedNames" class="local-names"></div></div>`;
+  accountPanel.after(backupPanel);
+  document.getElementById('localSavedNames').addEventListener('click',event=>{const b=event.target.closest('[data-switch-name]');if(b)switchLocalPlayer(b.dataset.switchName);});
+  document.getElementById('exportProgress').addEventListener('click',()=>{
+    const data={format:'GAMEZONE_PLAYER_BACKUP',version:2,createdAt:new Date().toISOString(),player:state.profile?.name||'guest',state:JSON.parse(JSON.stringify(state))};
+    const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
+    const a=document.createElement('a');a.href=url;a.download='Zyvoqix_'+(state.profile?.name||'guest').replace(/[^a-z0-9_]/gi,'_')+'_progress.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);toast('Backup downloaded.');
+  });
+  document.getElementById('chooseProgress').addEventListener('click',()=>document.getElementById('importProgress').click());
+  document.getElementById('importProgress').addEventListener('change',async e=>{
+    const file=e.target.files[0];e.target.value='';if(!file)return;
+    if(token){toast('Please sign out before importing a backup.');return}
+    if(file.size>150000){toast('Backup is too large.');return}
+    try{
+      const doc=JSON.parse(await file.text());
+      if(doc?.format!=='GAMEZONE_PLAYER_BACKUP'||doc.version!==2||!doc.state||typeof doc.state!=='object'||Array.isArray(doc.state))throw Error('Invalid Zyvoqix backup file');
+      if(!window.confirm('Restore this Zyvoqix backup? A safety copy of your current local progress will be kept.'))return;
+      const oldName=state.profile?.name||'guest';
+      try{localStorage.setItem('gz_before_restore_'+Date.now(),JSON.stringify(state))}catch{}
+      localProfileBackup();
+      const saved=doc.state;
+      const keys=['xp','done','likes','lists','posts','profile','missionBonus','arcade','ratings','tierBoard'];
+      const clean=emptyPlayer();
+      for(const k of keys)if(Object.hasOwn(saved,k))clean[k]=saved[k];
+      state=clean;stopArcadeTimers();activeGame=null;memoryLock=false;ensureState();board=defaultBoard();basePersist();localProfileBackup();renderAll();toast('Zyvoqix progress restored for '+(state.profile?.name||oldName));
+    }catch(err){toast('Could not restore: '+(err.message||'invalid file'))}
+  });
+  const statusNav=document.createElement('span');statusNav.id='cloudNav';statusNav.className='cloud-pill';statusNav.textContent='💾 Local saves';
+  document.querySelector('.navright').prepend(statusNav);
+  const setText=(query,str)=>{const el=document.querySelector(query);if(el)el.textContent=str};
+  setText('#page-games .page-intro','Browse 12 popular titles with links to their official websites. These full games normally run in their own apps or services; the Arcade games play directly here. Ratings are from Zyvoqix members, not fabricated review scores.');
+  setText('#page-rankings .page-intro','Only real Zyvoqix account holders appear on the shared leaderboard. No example players and no invented XP scores.');
+  setText('#page-rankings .two .panel:first-child > p','Community rankings sync when cloud storage is connected.');
+  setText('#page-missions .page-intro','Level up from Zyvoqix activities and the Arcade. Progress always saves locally; cloud accounts can sync between devices.');
+  setText('#page-missions .two .panel:nth-child(1) .notice','Every 100 XP advances one level. Zyvoqix XP is separate from official games.');
+  setText('#page-missions .two .panel:nth-child(2) > p','Complete tasks once per player account.');
+  setText('#page-tiers .page-intro','Make your own subjective tier list. The starter arrangement is an editable example, not a verified global ranking.');
+  setText('#page-tiers .panel .notice','Tier lists and your current board save locally and sync to your Zyvoqix account when cloud storage is active.');
+  setText('#page-community .page-intro','Private progress, ratings and optional local posts. Community posts are NOT published publicly; only gamer tags and scores can appear in the leaderboard.');
+  setText('#page-community .two .panel:first-child > p','Choose a gamer tag. Switching to another saved nickname on this device loads that player’s separate progress. Cloud sign-in (when available) adds cross-device sync.');
+  setText('#page-community .two .panel:first-child .notice','This device keeps separate progress for each saved nickname. Use a nickname, not personal information. Cloud accounts require a password when activated.');
+  setText('#page-community .two .panel:nth-child(2) > p','Write a private note about your games. Posts are saved to your own profile, not exposed to strangers.');
+  setText('#page-community .two .panel:nth-child(2) #publish','Save private note');
+  const sort=document.getElementById('sort');
+  if(sort){sort.querySelector('[value="popular"]').textContent='Featured picks';sort.querySelector('[value="rating"]').textContent='Top Zyvoqix ratings'}
+  const info=document.createElement('p');info.className='filter-rating-note';info.textContent='Zyvoqix ratings begin with zero votes; no invented scores. Your own stars save locally. Shared average ratings appear after cloud accounts are enabled.';
+  document.getElementById('filters').before(info);
+  text('statGames','12 official');
+  // Capture profile saving: changing an offline nickname switches saved profiles, not renames/overwrites them.
+  document.getElementById('saveProfile').addEventListener('click',e=>{
+    e.preventDefault();e.stopImmediatePropagation();
+    const wanted=document.getElementById('gamerName').value.trim();
+    if(token){
+      if(wanted.toLowerCase()!==activeAccount.toLowerCase()){toast('Gamer tag cannot change while signed in. Your favorite game can change.');document.getElementById('gamerName').value=activeAccount;return}
+      state.profile={name:activeAccount,game:document.getElementById('favGame').value};persist();toast('Cloud profile updated (sync pending)');return;
+    }
+    if(!switchLocalPlayer(wanted))return;
+    state.profile={name:state.profile?.name||wanted,game:document.getElementById('favGame').value};
+    persist();renderAll();toast('Saved locally for '+state.profile.name);
+  },true);
+  // Rating is linked to each Zyvoqix account, not a fabricated editorial number.
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('[data-rate]');if(!b)return;
+    state.ratings[b.dataset.rate]=Number(b.dataset.stars);
+    persist();renderFeatured();renderGames();
+    toast(token&&connected?'Your vote is queued for cloud sync':'Your rating is saved on this device');
+  });
+  function updateScores(){
+    if(!state.arcade)return;
+    const a=state.arcade;
+    html('myScores',`<div class="mini-score">🧠 Memory: <strong>Level ${Math.max(0,...(a.memory?.cleared||[]))}</strong></div><div class="mini-score">🔢 Math: <strong>${a.math?.best||0}/10</strong></div><div class="mini-score">⚡ Tap: <strong>${a.tap?.best||0}</strong></div><div class="mini-score">🎯 Reflex: <strong>${a.reflex?.best?`${a.reflex.best} ms`:'—'}</strong></div>`);
+  }
+  function drawPlayCards(){html('playGrid',ARCADE.map(a=>`<div class="play-card"><div class="emo">${a.icon}</div><h3>${a.title}</h3><p>${a.desc}</p><button class="btn primary" data-play="${a.id}">${activeGame===a.id?'Continue playing':'Play / Resume'} ▶</button></div>`).join(''))}
+  function newBadge(marker,amount,reason){if(state.done.includes(marker))return;state.done.push(marker);addXP(amount,reason)}
+  function stopArcadeTimers(){if(tapTimer){clearInterval(tapTimer);tapTimer=null}if(reflexTimer){clearTimeout(reflexTimer);reflexTimer=null}reflexPhase='idle'}
+  function play(id){stopArcadeTimers();activeGame=id;drawPlayCards();renderArcade();go('arcade')}
+  document.getElementById('playGrid').addEventListener('click',e=>{const b=e.target.closest('[data-play]');if(b)play(b.dataset.play)});
+  function renderArcade(){
+    if(activeGame==='memory')renderMemory();
+    if(activeGame==='math')renderMath();
+    if(activeGame==='tap')renderTap();
+    if(activeGame==='reflex')renderReflex();
+    updateScores();
+  }
+  // MEMORY MATCH: save the deck, flipped cards, completed pairs, and level.
+  const emojis=['🦊','🦄','🐼','🐙','🚀','🍕','🎮','⚽'];
+  const shuffle=arr=>{for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr};
+  function newMemoryBoard(){const m=state.arcade.memory;const pairs=Math.min(4+((m.level-1)*2),8);m.board=shuffle([...emojis.slice(0,pairs),...emojis.slice(0,pairs)]);m.moves=0;m.matched=[];m.opened=[];persist()}
+  function renderMemory(){const m=state.arcade.memory;if(!m.board.length)newMemoryBoard();
+    html('arcadeStage',`<div class="arcade-center"><h2>🧠 Memory Match</h2><div class="arcade-meta"><span>Level <strong>${m.level}</strong></span><span>Moves <strong>${m.moves}</strong></span><span>Pairs <strong>${m.matched.length/2}/${m.board.length/2}</strong></span></div><p class="muted">Find matching emoji cards. Every move and unlocked level is saved.</p></div><div class="game-board">${m.board.map((emo,i)=>{const open=m.opened.includes(i),solved=m.matched.includes(i);return `<button class="memory-tile ${solved?'solved':open?'open':''}" data-flip="${i}" aria-label="Memory card ${i+1}" ${solved?'disabled':''}>${open||solved?esc(emo):'❔'}</button>`}).join('')}</div><div class="arcade-center"><button class="btn small" id="memoryRestart">Restart current level</button></div>`);
+  }
+  function finishMemory(){const m=state.arcade.memory;const level=m.level;m.cleared=[...new Set([...m.cleared,level])];m.level=Math.min(6,level+1);m.board=[];m.matched=[];m.opened=[];m.moves=0;persist();newBadge('arcade-memory-L'+level,20,'Memory Match Level '+level);toast('Level '+level+' complete! Your next level is ready.');renderMemory()}
+  document.getElementById('arcadeStage').addEventListener('click',e=>{
+    const flip=e.target.closest('[data-flip]');
+    if(flip && activeGame==='memory'){
+      const m=state.arcade.memory,i=Number(flip.dataset.flip);
+      if(memoryLock||m.matched.includes(i)||m.opened.includes(i)||m.opened.length>=2)return;
+      m.opened.push(i);if(m.opened.length===2)m.moves++;
+      persist();renderMemory();
+      if(m.opened.length===2){memoryLock=true;
+        const match=m.board[m.opened[0]]===m.board[m.opened[1]];
+        setTimeout(()=>{if(match)m.matched.push(...m.opened);m.opened=[];memoryLock=false;persist();if(m.matched.length===m.board.length){finishMemory()}else if(activeGame==='memory')renderMemory()},match?400:750);
+      }
+      return;
+    }
+    if(e.target.id==='memoryRestart'){state.arcade.memory.board=[];newMemoryBoard();renderMemory()}
+  });
+  // MATH QUEST: resume at the saved question and record the best score.
+  function mathQuestion(round){const a=3+Math.floor(Math.random()*(10+round*2));const b=2+Math.floor(Math.random()*(9+round));const subtract=Math.random()<.3;const answer=subtract?a-b:a+b;const opts=new Set([answer]);while(opts.size<4){let v=answer+Math.floor(Math.random()*18)-9;if(v!==answer)opts.add(v)}return{text:`${a} ${subtract?'−':'+'} ${b} = ?`,answer,options:shuffle([...opts])}}
+  function resetMath(){state.arcade.math={round:0,right:0,best:state.arcade.math.best||0,question:mathQuestion(0)};persist()}
+  function renderMath(){const q=state.arcade.math;if(!q.question&&q.round<10){q.question=mathQuestion(q.round);persist()}
+    if(q.round>=10){html('arcadeStage',`<div class="arcade-center"><h2>🔢 Math Quest — Finished!</h2><p>Correct answers: <strong>${q.right}/10</strong></p><p class="muted">Best score: ${q.best}/10</p><button class="btn primary" id="mathRestart">Play again ↻</button></div>`);return}
+    html('arcadeStage',`<div class="arcade-center"><h2>🔢 Math Quest</h2><p class="muted">Question ${q.round+1} of 10 · Correct: ${q.right}</p><div style="font-size:37px;font-weight:900;padding:12px">${esc(q.question.text)}</div></div><div class="math-options">${q.question.options.map(n=>`<button class="btn" data-answer="${n}">${n}</button>`).join('')}</div>`);
+  }
+  document.getElementById('arcadeStage').addEventListener('click',e=>{
+    if(e.target.id==='mathRestart'){resetMath();renderMath();return}
+    const b=e.target.closest('[data-answer]');if(!b||activeGame!=='math')return;
+    const q=state.arcade.math,correct=Number(b.dataset.answer)===q.question.answer;
+    if(correct)q.right++;
+    q.round++;q.question=q.round<10?mathQuestion(q.round):null;
+    if(q.round===10){q.best=Math.max(q.best,q.right);newBadge('arcade-math',15,'Math Quest completed')}
+    persist();toast(correct?'Correct! ✅':'Next question — keep going!');renderMath();
+  });
+  // TAP RUSH: scores are awarded only at the end of a 12-second round.
+  function renderTap(){const t=state.arcade.tap;html('arcadeStage',`<div class="arcade-center"><h2>⚡ Tap Rush</h2><p class="muted">Tap as many times as possible in 12 seconds.</p><div class="arcade-meta"><span>Record <strong>${t.best}</strong></span><span>Score <strong id="tapCounter">${tapCount}</strong></span><span>Time <strong id="tapClock">${tapTimer?'Playing':'12.0s'}</strong></span></div><button class="tap-target" id="tapHit">${tapTimer?'TAP! TAP! TAP!':'START GAME ▶'}</button></div>`)}
+  function finishTap(){if(tapTimer){clearInterval(tapTimer);tapTimer=null}const t=state.arcade.tap;t.plays++;const best=t.best;if(tapCount>best)t.best=tapCount;persist();if(tapCount>=20)newBadge('arcade-tap',15,'Tap Rush milestone');renderTap();toast('You scored '+tapCount+' taps! '+(tapCount>best?'New personal record!':'Try again!'))}
+  document.getElementById('arcadeStage').addEventListener('click',e=>{
+    if(e.target.id!=='tapHit'||activeGame!=='tap')return;
+    if(!tapTimer){tapCount=0;tapDeadline=Date.now()+12000;tapTimer=setInterval(()=>{if(Date.now()>=tapDeadline){finishTap();return}text('tapClock',((tapDeadline-Date.now())/1000).toFixed(1)+'s')},100);renderTap();return}
+    if(Date.now()>=tapDeadline){finishTap();return}
+    tapCount++;text('tapCounter',tapCount);
+  });
+  // REFLEX TEST: score in milliseconds, lower is better.
+  function renderReflex(){const best=state.arcade.reflex.best||0;html('arcadeStage',`<div class="arcade-center"><h2>🎯 Reflex Test</h2><p class="muted">Tap START. Wait for green, then click as quickly as you can.</p><p>Fastest time: <strong>${best?best+' ms':'Not played'}</strong></p><button class="reflex-target ${reflexPhase==='waiting'?'wait':reflexPhase==='go'?'ready':''}" id="reflexHit">${reflexPhase==='waiting'?'WAIT FOR GREEN…':reflexPhase==='go'?'TAP NOW!':'START TEST ▶'}</button></div>`)}
+  document.getElementById('arcadeStage').addEventListener('click',e=>{
+    if(e.target.id!=='reflexHit'||activeGame!=='reflex')return;
+    if(reflexPhase==='waiting'){clearTimeout(reflexTimer);reflexTimer=null;reflexPhase='idle';renderReflex();toast('Too soon! Wait for the green signal.');return}
+    if(reflexPhase==='go'){
+      const ms=Math.round(performance.now()-reflexStart);reflexPhase='idle';
+      if(ms>=80&&ms<=10000){const g=state.arcade.reflex;g.plays++;if(!g.best||ms<g.best)g.best=ms;persist();newBadge('arcade-reflex',10,'Reflex Test finished');toast(ms+' ms · '+(ms<250?'Lightning fast!':'Try again!'))}
+      renderReflex();return;
+    }
+    reflexPhase='waiting';renderReflex();reflexTimer=setTimeout(()=>{reflexPhase='go';reflexStart=performance.now();renderReflex()},1200+Math.random()*2400);
+  });
+  function renderAll(){ensureState();document.getElementById('gamerName').value=state.profile?.name||'';document.getElementById('favGame').value=state.profile?.game||'Minecraft';renderFeatured();renderGames();renderSavedLists();renderCommunityLists();renderPosts();updateHeader();renderProgress();renderMissions();renderLeaders();renderBadges();if(state.tierBoard&&['S','A','B','C','D','pool'].every(k=>Array.isArray(state.tierBoard[k])))board=JSON.parse(JSON.stringify(state.tierBoard));renderTier();updateScores();renderArcade();}
+  async function jsonCall(action,data={},auth=''){
+    const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json',...(auth?{'authorization':'Bearer '+auth}:{})},body:JSON.stringify({action,...data}),cache:'no-store'});
+    const j=await r.json().catch(()=>({error:'Server returned an invalid response'}));
+    if(!r.ok)throw new Error(j.error||'Could not reach cloud storage');
+    return j;
+  }
+  function setStatus(message,mode='warn'){
+    const node=document.getElementById('cloudAccountStatus');node.className='cloud-pill '+mode;node.textContent=message;
+    text('cloudNav',connected?(token?'☁️ '+activeAccount:'☁️ Cloud ready'):'💾 Local saves');
+  }
+  function accountUI(){
+    document.getElementById('cloudSignedIn').classList.toggle('hide',!token);
+    document.getElementById('cloudSignIn').classList.toggle('hide',!!token||!connected);
+    text('cloudName','🎮 '+activeAccount);
+    setStatus(!connected?'Cloud save needs database setup — local games still work':token?'Cloud account connected':'Cloud available — create an account',connected?'ready':'warn');
+    for(const id of ['cloudUser','cloudPass','cloudRegister','cloudLogin'])document.getElementById(id).disabled=!connected;
+  }
+  function requestSync(){if(!token||!connected)return;needsSync=true;if(syncTimer)clearTimeout(syncTimer);syncTimer=setTimeout(flushSync,4500)}
+  async function flushSync(){
+    if(syncBusy||!needsSync||!connected||!token)return;
+    syncBusy=true;needsSync=false;
+    const currentToken=token;
+    const snapshot=JSON.parse(JSON.stringify(state));
+    try{
+      const result=await jsonCall('save',{state:snapshot},currentToken);
+      if(token===currentToken){text('cloudLastSave','☁️ Cloud saved at '+new Date().toLocaleTimeString());
+        // Avoid replacing state after every save. The next login receives canonical server state.
+      }
+      if(result?.state?.xp>state.xp){state.xp=result.state.xp;basePersist();renderProgress();}
+      if(!needsSync && Date.now()-lastCommunityRefresh>60000)refreshCommunity().catch(()=>{});
+    }catch(err){needsSync=true;text('cloudLastSave','⚠️ Cloud sync pending: '+err.message+' (local save is safe)')}
+    finally{syncBusy=false;if(needsSync&&connected&&token){if(syncTimer)clearTimeout(syncTimer);syncTimer=setTimeout(flushSync,7000)}}
+  }
+  async function refreshCommunity(){
+    const r=await fetch(API+'?action=community',{cache:'no-store'});
+    if(!r.ok)throw Error('Could not load cloud status');
+    const j=await r.json();publicData=j;lastCommunityRefresh=Date.now();
+    connected=Boolean(j.enabled);
+    accountUI();renderFeatured();renderGames();renderLeaders();
+    return j;
+  }
+  async function resumeAccount(){
+    if(!token||!connected)return;
+    try{
+      const r=await fetch(API+'?action=me',{headers:{authorization:'Bearer '+token},cache:'no-store'});
+      if(!r.ok)throw Error('Session expired');
+      const data=await r.json();
+      localStorage.setItem('gz2_before_cloud_'+(activeAccount||'guest'),JSON.stringify(state));
+      state={...state,...data.state};ensureState();activeAccount=data.name;localStorage.setItem('gz_cloud_name',activeAccount);basePersist();accountUI();renderAll();text('cloudLastSave','Last cloud save: '+(data.updatedAt||'available'));
+    }catch(err){
+      token='';activeAccount='';localStorage.removeItem('gz_cloud_session');localStorage.removeItem('gz_cloud_name');accountUI();toast('Please sign in again to access cloud saves. Local data was not removed.');
+    }
+  }
+  async function handleAccount(action){
+    if(!connected){toast('Cloud storage needs to be connected by the site owner first. Local games still work.');return}
+    const name=document.getElementById('cloudUser').value.trim(),password=document.getElementById('cloudPass').value;
+    const button=document.getElementById(action==='register'?'cloudRegister':'cloudLogin');
+    button.disabled=true;button.textContent='Connecting...';
+    try{
+      const data=await jsonCall(action,{name,password,...(action==='register'?{initialState:state}:{})});
+      if(!token)localStorage.setItem('gz2_before_cloud_'+name.toLowerCase(),JSON.stringify(state));
+      token=data.token;activeAccount=data.name;localStorage.setItem('gz_cloud_session',token);localStorage.setItem('gz_cloud_name',activeAccount);
+      state={...state,...data.state};ensureState();state.profile.name=activeAccount;
+      document.getElementById('cloudPass').value='';basePersist();accountUI();renderAll();
+      toast(action==='register'?'Account created — progress saved online!':'Welcome back, '+activeAccount+'!');
+      await refreshCommunity();
+    }catch(err){toast(err.message);text('cloudLastSave','⚠️ '+err.message)}
+    finally{button.disabled=false;button.textContent=action==='register'?'Create free account':'Sign in'}
+  }
+  document.getElementById('cloudRegister').addEventListener('click',()=>handleAccount('register'));
+  document.getElementById('cloudLogin').addEventListener('click',()=>handleAccount('login'));
+  document.getElementById('cloudLogout').addEventListener('click',async()=>{
+    if(needsSync)await flushSync();
+    const oldToken=token;
+    if(activeAccount)localStorage.setItem('gz2_backup_'+activeAccount.toLowerCase(),JSON.stringify(state));
+    token='';activeAccount='';needsSync=false;localStorage.removeItem('gz_cloud_session');localStorage.removeItem('gz_cloud_name');
+    try{if(connected)await jsonCall('logout',{},oldToken)}catch{}
+    state={xp:0,done:[],likes:{},lists:[],posts:[],profile:null,missionBonus:{},arcade:emptyArcade(),ratings:{},tierBoard:null};board=defaultBoard();basePersist();accountUI();renderAll();toast('Signed out. Previous player progress stays in their cloud account.');
+  });
+  window.addEventListener('online',()=>{refreshCommunity().then(()=>{if(token&&needsSync)flushSync()}).catch(()=>{})});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&needsSync)flushSync()});
+  document.getElementById('year').textContent=new Date().getFullYear();
+  // Recover unmatched open cards after a browser refresh.
+  if(state.arcade.memory.opened?.length===2 && state.arcade.memory.board?.length){
+    const m=state.arcade.memory;
+    if(m.board[m.opened[0]]===m.board[m.opened[1]])m.matched=[...new Set([...m.matched,...m.opened])];
+    m.opened=[];
+    if(m.matched.length===m.board.length){const finished=m.level;m.cleared=[...new Set([...m.cleared,finished])];m.level=Math.min(6,finished+1);m.board=[];m.matched=[];m.moves=0;}
+    persist();
+  }
+  renderAll();drawPlayCards();accountUI();localProfileBackup();
+  refreshCommunity().then(async()=>{if(token&&connected)await resumeAccount()}).catch(()=>{connected=false;accountUI();text('cloudLastSave','Offline: saves are available on this browser.');});
+})();
+
+</script><script>/* Zyvoqix 3.0: eight extra playable browser games. All records live under
+   state.arcade.extras and use the existing Zyvoqix save, backup and player model. */
+(() => {
+  'use strict';
+  const EXTRA = [
+    {id:'tictactoe',icon:'❎',title:'Tic Tac Toe',desc:'Challenge a smart computer opponent on the classic 3×3 board.',record:'Wins'},
+    {id:'snake',icon:'🐍',title:'Neon Snake',desc:'Collect glowing food, grow your snake and beat your personal best.',record:'Best score'},
+    {id:'merge',icon:'🔢',title:'2048 Puzzle',desc:'Slide and merge equal numbers to reach the famous 2048 tile.',record:'Best score'},
+    {id:'rps',icon:'✊',title:'Rock Paper Scissors',desc:'Pick your move and see if you can outsmart the computer.',record:'Wins'},
+    {id:'mole',icon:'🐹',title:'Whack-a-Mole',desc:'Catch the silly mole before the 20-second countdown ends.',record:'Best hits'},
+    {id:'scramble',icon:'🔤',title:'Word Scramble',desc:'Unscramble a mystery word using the hint. Build a winning streak.',record:'Best streak'},
+    {id:'colors',icon:'🎨',title:'Color Challenge',desc:'Choose the correct colour in a fast ten-round brain teaser.',record:'Best / 10'},
+    {id:'guess',icon:'🎲',title:'Number Hunt',desc:'Find the hidden number from 1 to 100 using fewer guesses.',record:'Fewest tries'}
+  ];
+  const W=15; const $=(sel,root=document)=>root.querySelector(sel); const $$=(sel,root=document)=>[...root.querySelectorAll(sel)];
+  const choose=a=>a[Math.floor(Math.random()*a.length)];
+  const randomInt=(min,max)=>Math.floor(Math.random()*(max-min+1))+min;
+  const escapeHTML=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  let active='',intervals=[],timeouts=[],snakeRuntime=null,moleRuntime=null,requestToken=0;
+  const timer=(fn,ms)=>{const id=setInterval(fn,ms);intervals.push(id);return id};
+  const later=(fn,ms)=>{const id=setTimeout(fn,ms);timeouts.push(id);return id};
+  function clearTimers(){intervals.forEach(clearInterval);timeouts.forEach(clearTimeout);intervals=[];timeouts=[];requestToken++;
+    if(active==='snake' && snakeRuntime?.playing){snakeRuntime.playing=false;get('snake').session=JSON.parse(JSON.stringify({...snakeRuntime,playing:false}));persist();}
+    if(active==='mole' && moleRuntime?.playing){moleRuntime.playing=false;const m=get('mole');m.partial=moleRuntime.score;persist()}
+  }
+  function get(id){
+    if(!state.arcade||typeof state.arcade!=='object')state.arcade={};
+    if(!state.arcade.extras||typeof state.arcade.extras!=='object'||Array.isArray(state.arcade.extras))state.arcade.extras={};
+    const record=state.arcade.extras[id];
+    if(!record||typeof record!=='object'||Array.isArray(record))state.arcade.extras[id]={best:0,plays:0,wins:0,draws:0};
+    return state.arcade.extras[id];
+  }
+  function save(){persist();updateRecords()}
+  function awardOnce(id){const mark='arcade-'+id;if(!state.done.includes(mark)){state.done.push(mark);addXP(15,EXTRA.find(g=>g.id===id)?.title||'Arcade game')}else save()}
+  function finish(id,value,{lower=false,win=false,draw=false}={}){
+    const r=get(id);r.plays=(r.plays||0)+1;
+    if(win)r.wins=(r.wins||0)+1;if(draw)r.draws=(r.draws||0)+1;
+    if(Number.isFinite(value)){
+      if(lower){if(value>0 && (!r.best||value<r.best))r.best=value}
+      else if(value>Number(r.best||0))r.best=value;
+    }
+    awardOnce(id);updateRecords();
+  }
+  const sID=id=>EXTRA.find(x=>x.id===id);
+  function recordLabel(g){const r=get(g.id);return `${g.record}: ${g.id==='guess'?(r.best?r.best:'—'):g.id==='tictactoe'||g.id==='rps'?(r.wins||0):(r.best||0)}`}
+  function gameCard(g){return `<article class="ng-card"><div class="ng-icon" aria-hidden="true">${g.icon}</div><h3>${g.title}</h3><p>${g.desc}</p><div class="ng-record" data-record="${g.id}">${recordLabel(g)}</div><button class="btn primary" type="button" data-extra="${g.id}" aria-label="Play ${g.title}">Play now ▶</button></article>`}
+  function inject(){
+    const arcade=$('#playGrid');if(!arcade)return;
+    const section=document.createElement('section');section.id='extraArcadeSection';section.innerHTML=`<div class="section-head"><div><div class="kicker">Eight new challenges · free to play</div><h2>More Arcade Games <span class="grad">★</span></h2></div><span class="new-game-tag">NEW • 8 GAMES</span></div><p class="premium-section-intro">No download. No account needed. Play right here and keep your scores on this browser. Save separate progress for each local gamer nickname.</p><div class="newgames-grid" id="extraArcadeGrid"></div>`;
+    arcade.after(section);$('#extraArcadeGrid').innerHTML=EXTRA.map(gameCard).join('');
+    const home=$('#page-home .section-head');
+    if(home){const preview=document.createElement('section');preview.id='premiumGameSection';preview.innerHTML=`<div class="section-head"><div><div class="kicker">Your arcade · 100% playable</div><h2>More games, more fun <span class="grad">✦</span></h2></div><button class="btn small" type="button" data-page="arcade">Play all 12 →</button></div><div class="newgames-grid" id="premiumGameGrid"></div>`;home.before(preview);$('#premiumGameGrid').innerHTML=EXTRA.slice(0,4).map(gameCard).join('')}
+    const score=$('#myScores');if(score){const e=document.createElement('div');e.id='extraSavedRecords';score.after(e)}
+    const hero=$('#page-home .hero');if(hero){const descr=$('.hero p',hero);if(descr){const badges=document.createElement('div');badges.className='hero-trustbar';badges.innerHTML='<span>🎮 12 free playable games</span><span>💾 Save your progress</span><span>🏆 Personal records</span>';descr.after(badges)}const art=$('.art',hero);if(art){art.insertAdjacentHTML('afterbegin','<div class="hero-brand-stamp"><img src="/legacy/brand/zyvoqix-logo.svg" alt="" loading="lazy"></div>')}}
+    const stats=$('#statGames');if(stats){stats.textContent='24';stats.classList.add('brand-stats');const label=stats.parentElement?.querySelector('span');if(label)label.textContent='12 arcade + 12 official links'}
+    const intro=$('#page-arcade .page-intro');if(intro)intro.textContent='12 real mini-games you can play right here on Zyvoqix. Your best scores and unfinished puzzles save automatically to your current browser profile. Cloud sync requires storage activation.';
+    updateRecords();
+  }
+  function updateRecords(){
+    for(const g of EXTRA)$$(`[data-record="${g.id}"]`).forEach(x=>x.textContent=recordLabel(g));
+    const records=$('#extraSavedRecords');if(records)records.innerHTML=EXTRA.map(g=>`<span class="mini-score">${g.icon} ${escapeHTML(g.title)}: <strong>${recordLabel(g).split(': ').pop()}</strong></span>`).join('');
+  }
+  function stage(title,subtitle,inner){$('#arcadeStage').innerHTML=`<div class="premium-arcade-game"><div class="ag-title"><h2>${title}</h2><button type="button" class="btn small" data-extra-back>← All Games</button></div><p class="ag-description">${subtitle}</p><div id="premiumGameInner">${inner}</div></div>`;}
+  function status(cells){return `<div class="ag-status">${cells.map(([name,val])=>`<span>${escapeHTML(name)} <strong>${escapeHTML(val)}</strong></span>`).join('')}</div>`;}
+  function say(message){const el=$('#agMessage');if(el)el.textContent=message;}
+  function render(){if(active==='tictactoe')drawTTT();else if(active==='snake')drawSnake();else if(active==='merge')draw2048();else if(active==='rps')drawRPS();else if(active==='mole')drawMole();else if(active==='scramble')drawScramble();else if(active==='colors')drawColors();else if(active==='guess')drawGuess()}
+  function open(id){if(!sID(id))return;clearTimers();if(id==='snake')snakeRuntime=null;if(id==='mole')moleRuntime=null;active=id;const s=get(id);if(s.id==null)s.id=id;go('arcade');render();
+    const node=$('#arcadeStage');if(node)node.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  // Clicking old Arcade games must stop these timers and allow the original controls to work as before.
+  document.addEventListener('click',e=>{
+    const newGame=e.target.closest('[data-extra]');if(newGame){e.preventDefault();open(newGame.dataset.extra);return}
+    if(e.target.closest('[data-extra-back]')){e.preventDefault();clearTimers();active='';$('#arcadeStage').innerHTML='<div class="empty">Choose one of the 12 games above to start playing.</div>';$('#extraArcadeSection')?.scrollIntoView({behavior:'smooth'});return}
+    if(e.target.closest('#playGrid [data-play]')||e.target.closest('[data-page]')){clearTimers();active=''}
+  },true);
+  window.addEventListener('pagehide',()=>{if(active)clearTimers()});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden && active==='snake' && snakeRuntime?.playing){clearTimers()}if(document.hidden && active==='mole' && moleRuntime?.playing){clearTimers()}});
+  document.addEventListener('click',e=>{if(e.target.closest('#localSavedNames [data-switch-name], #saveProfile, #cloudLogin, #cloudRegister, #cloudLogout, #chooseProgress, #importProgress'))setTimeout(updateRecords,80)},true);
+  new MutationObserver(()=>{for(const g of EXTRA){const e=$(`[data-record="${g.id}"]`);if(e&&e.textContent!==recordLabel(g))updateRecords()}}).observe($('#playGrid'),{childList:true});
+  function rpsWin(player,cpu){return (player==='rock'&&cpu==='scissors')||(player==='paper'&&cpu==='rock')||(player==='scissors'&&cpu==='paper')}
+  // TIC TAC TOE: Play vs friendly bot; game progress survives refresh.
+  function initTTT(){return {board:Array(9).fill(''),finished:false,message:'Your turn! You are X.'}}
+  function drawTTT(){const r=get('tictactoe');if(!r.game||!Array.isArray(r.game.board)||r.game.board.length!==9)r.game=initTTT();const m=r.game;
+    stage('❎ Tic Tac Toe','Make a line of three. You are X, the computer is O.',status([['Your wins',r.wins||0],['Draws',r.draws||0],['Rounds',r.plays||0]])+`<div class="game-tile-grid" style="grid-template-columns:repeat(3,minmax(75px,100px))">${m.board.map((v,i)=>`<button class="ttt-tile" type="button" data-ttt="${i}" data-value="${v}" ${v||m.finished?'disabled':''} aria-label="Cell ${i+1}${v?' '+v:''}">${v}</button>`).join('')}</div><div class="ag-message" id="agMessage" role="status">${escapeHTML(m.message)}</div><div class="ag-buttons"><button class="btn primary" type="button" id="newTTT">New round ↻</button></div>`);
+    $$('[data-ttt]').forEach(b=>b.addEventListener('click',()=>pickTTT(Number(b.dataset.ttt))));$('#newTTT').addEventListener('click',()=>{r.game=initTTT();save();drawTTT()});
+  }
+  function winner(board,p){return [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]].some(line=>line.every(i=>board[i]===p))}
+  function pickTTT(index){if(active!=='tictactoe')return;const r=get('tictactoe'),m=r.game;if(m.finished||m.board[index])return;m.board[index]='X';
+    if(winner(m.board,'X')){m.finished=true;m.message='You win! Brilliant move 🎉';finish('tictactoe',null,{win:true});drawTTT();return}
+    if(m.board.every(Boolean)){m.finished=true;m.message='A draw! Good match 🤝';finish('tictactoe',null,{draw:true});drawTTT();return}
+    const empty=m.board.map((v,i)=>!v?i:null).filter(x=>x!==null);
+    let cpu=empty.find(i=>{const b=m.board.slice();b[i]='O';return winner(b,'O')});
+    if(cpu===undefined)cpu=empty.find(i=>{const b=m.board.slice();b[i]='X';return winner(b,'X')});
+    if(cpu===undefined && empty.includes(4))cpu=4;
+    if(cpu===undefined)cpu=choose(empty);
+    m.board[cpu]='O';
+    if(winner(m.board,'O')){m.finished=true;m.message='Computer wins this round. Try again!';finish('tictactoe',null)}
+    else if(m.board.every(Boolean)){m.finished=true;m.message='It’s a draw!';finish('tictactoe',null,{draw:true})}
+    else{m.message='Your turn! Choose a square.';save()}
+    drawTTT();
+  }
+  // SNAKE: arrows, WASD and on-screen controls. Store paused session and best score.
+  const delta={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
+  function snakeFood(body){const occupied=new Set(body.map(p=>p.x+','+p.y));const free=[];for(let y=0;y<W;y++)for(let x=0;x<W;x++)if(!occupied.has(x+','+y))free.push({x,y});return free.length?choose(free):null}
+  function freshSnake(){const body=[{x:7,y:7},{x:6,y:7},{x:5,y:7}];return {body,food:snakeFood(body),dir:'right',next:'right',score:0,playing:false}}
+  function snapSnake(){const r=get('snake');r.session=JSON.parse(JSON.stringify({...snakeRuntime,playing:false}));save()}
+  function drawSnake(){const r=get('snake');if(!snakeRuntime){const s=r.session;snakeRuntime=s?.body?.length?{...s,playing:false}:freshSnake()}const v=snakeRuntime;
+    stage('🐍 Neon Snake','Collect the pink food. Use arrow keys, WASD or the direction controls.',status([['Score',v.score],['Record',r.best||0],['Games',r.plays||0]])+`<div id="snakeGrid" class="ag-snake-board" aria-label="Snake game board"></div><div class="ag-buttons"><button class="btn primary" id="snakeStart" type="button">${v.playing?'Pause ⏸':v.score?'Resume ▶':'Start ▶'}</button><button class="btn" id="snakeReset" type="button">New game ↻</button></div><div class="ag-dpad"><button class="btn" data-dir="up" aria-label="Up">▲</button><button class="btn" data-dir="left" aria-label="Left">◀</button><button class="btn" data-dir="down" aria-label="Down">▼</button><button class="btn" data-dir="right" aria-label="Right">▶</button></div><p class="ag-message" id="agMessage" role="status">${v.playing?'Collect the food!':'Press Start to play. Progress pauses when you leave.'}</p>`);
+    paintSnake();$('#snakeStart').addEventListener('click',()=>{if(snakeRuntime.playing){clearTimers();drawSnake()}else startSnake()});
+    $('#snakeReset').addEventListener('click',()=>{clearTimers();snakeRuntime=freshSnake();snapSnake();drawSnake()});
+    $$('[data-dir]').forEach(el=>el.addEventListener('click',()=>snakeTurn(el.dataset.dir)));
+    let sy=null;const grid=$('#snakeGrid');grid.addEventListener('touchstart',e=>{sy=[e.touches[0].clientX,e.touches[0].clientY]},{passive:true});grid.addEventListener('touchend',e=>{if(!sy)return;const dx=e.changedTouches[0].clientX-sy[0],dy=e.changedTouches[0].clientY-sy[1];if(Math.max(Math.abs(dx),Math.abs(dy))>20)snakeTurn(Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up'));sy=null},{passive:true});
+  }
+  function paintSnake(){const el=$('#snakeGrid');if(!el||!snakeRuntime)return;const v=snakeRuntime,body=new Set(v.body.map(p=>p.x+','+p.y));const head=v.body[0];let out='';for(let y=0;y<W;y++)for(let x=0;x<W;x++){const key=x+','+y;out+=`<span class="ag-snake-cell ${head.x===x&&head.y===y?'head':body.has(key)?'body':v.food?.x===x&&v.food?.y===y?'food':''}"></span>`}el.innerHTML=out;}
+  function snakeTurn(dir){if(!snakeRuntime)return;const old=delta[snakeRuntime.dir],next=delta[dir];if(!old||!next||old[0]+next[0]!==0||old[1]+next[1]!==0)snakeRuntime.next=dir}
+  function startSnake(){if(!snakeRuntime||snakeRuntime.playing)return;snakeRuntime.playing=true;$('#snakeStart').textContent='Pause ⏸';say('Collect the food!');timer(snakeStep,Math.max(95,155-(snakeRuntime.score*2)))}
+  function snakeStep(){if(active!=='snake'||!snakeRuntime?.playing)return;const v=snakeRuntime;v.dir=v.next;const [dx,dy]=delta[v.dir],head={x:v.body[0].x+dx,y:v.body[0].y+dy};const eats=v.food?.x===head.x&&v.food?.y===head.y;const blockers=eats?v.body:v.body.slice(0,-1);
+    if(head.x<0||head.x>=W||head.y<0||head.y>=W||blockers.some(p=>p.x===head.x&&p.y===head.y)){
+      v.playing=false;clearTimers();const score=v.score;get('snake').session=null;finish('snake',score);snakeRuntime=freshSnake();drawSnake();say('Game over! You collected '+score+' food. Play again!');return;
+    }
+    v.body.unshift(head);if(eats){v.score++;v.food=snakeFood(v.body);snapSnake();}else v.body.pop();
+    paintSnake();const el=$('#arcadeStage .ag-status');if(el)el.querySelector('strong').textContent=String(v.score);
+    if(!v.food){v.playing=false;clearTimers();get('snake').session=null;finish('snake',v.score);snakeRuntime=freshSnake();drawSnake();say('Perfect board! You won!')}
+  }
+  document.addEventListener('keydown',e=>{if(!$('#page-arcade.active'))return;if(['input','textarea'].includes(document.activeElement?.tagName?.toLowerCase()))return;const key={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right'}[e.key];if(!key)return;if(active==='snake'){e.preventDefault();snakeTurn(key)}else if(active==='merge'){e.preventDefault();move2048(key)} });
+  // 2048 PUZZLE: persistent board and score after every move.
+  function fresh2048(){const grid=Array(16).fill(0);grid[randomInt(0,15)]=2;const positions=grid.map((x,i)=>!x?i:null).filter(x=>x!==null);grid[choose(positions)]=2;return {grid,score:0,over:false,won:false}}
+  function draw2048(){const r=get('merge');if(!r.game||!Array.isArray(r.game.grid)||r.game.grid.length!==16)r.game=fresh2048();const g=r.game;
+    stage('🔢 2048 Puzzle','Use arrow keys or direction buttons. Merge matching tiles and reach 2048.',status([['Score',g.score],['Record',r.best||0],['Highest tile',Math.max(...g.grid)]])+`<div class="ag-2048" id="mergeBoard">${g.grid.map(v=>`<div class="v2048" data-v="${v}">${v||''}</div>`).join('')}</div><div class="ag-message" id="agMessage" role="status">${g.over?'No moves left. Start a new round.':g.won?'2048 reached! You can keep playing.':'Merge matching numbers to grow your score.'}</div><div class="ag-dpad"><button class="btn" data-merge="up">▲</button><button class="btn" data-merge="left">◀</button><button class="btn" data-merge="down">▼</button><button class="btn" data-merge="right">▶</button></div><div class="ag-buttons"><button class="btn primary" id="newMerge">New board ↻</button></div>`);
+    $$('[data-merge]').forEach(b=>b.addEventListener('click',()=>move2048(b.dataset.merge)));
+    $('#newMerge').addEventListener('click',()=>{if(!window.confirm('Start a new 2048 game? Your record remains saved.'))return;r.game=fresh2048();save();draw2048()});
+  }
+  function slideLine(line){let a=line.filter(Boolean),score=0;for(let i=0;i<a.length-1;i++){if(a[i]===a[i+1]){a[i]*=2;score+=a[i];a.splice(i+1,1)}}while(a.length<4)a.push(0);return {line:a,score}}
+  function move2048(dir){if(active!=='merge')return;const r=get('merge'),g=r.game;if(!g||g.over)return;const next=g.grid.slice();let gain=0;
+    for(let row=0;row<4;row++){
+      const indexes=Array.from({length:4},(_,i)=>['left','right'].includes(dir)?row*4+i:i*4+row);
+      if(['right','down'].includes(dir))indexes.reverse();
+      const changed=slideLine(indexes.map(i=>g.grid[i]));gain+=changed.score;
+      indexes.forEach((index,k)=>{next[index]=changed.line[k]});
+    }
+    if(next.every((x,i)=>x===g.grid[i]))return;
+    g.grid=next;g.score+=gain;const empty=g.grid.map((x,i)=>!x?i:null).filter(x=>x!==null);
+    if(empty.length){g.grid[choose(empty)]=Math.random()<.9?2:4}
+    if(!g.won&&g.grid.some(x=>x>=2048)){g.won=true;finish('merge',g.score)}
+    if(!g.grid.some(x=>!x)&&!canMerge(g.grid)){g.over=true;finish('merge',g.score)}
+    r.best=Math.max(r.best||0,g.score);save();draw2048();
+  }
+  function canMerge(g){for(let i=0;i<16;i++){if(i%4<3&&g[i]===g[i+1])return true;if(i<12&&g[i]===g[i+4])return true}return false}
+  // ROCK PAPER SCISSORS: round-based game, real tracked wins.
+  const RPS={rock:'✊',paper:'✋',scissors:'✌️'};
+  function drawRPS(message='Pick your move. First to five wins is a great challenge!'){
+    const r=get('rps');
+    stage('✊ Rock Paper Scissors','A fun quick duel against the computer. Try to build a win streak.',status([['Your wins',r.wins||0],['Best streak',r.best||0],['Rounds',r.plays||0]])+`<div class="ag-choice-grid">${Object.entries(RPS).map(([k,v])=>`<button class="btn" data-rps="${k}" type="button">${v}<br>${k[0].toUpperCase()+k.slice(1)}</button>`).join('')}</div><div id="agMessage" class="ag-message" role="status">${escapeHTML(message)}</div>`);
+    $$('[data-rps]').forEach(el=>el.addEventListener('click',()=>{
+      const pick=el.dataset.rps,cpu=choose(Object.keys(RPS)),win=rpsWin(pick,cpu),draw=pick===cpu;
+      r.streak=win?(r.streak||0)+1:0;
+      finish('rps',r.streak,{win,draw});
+      drawRPS(`You ${RPS[pick]} vs computer ${RPS[cpu]} — ${draw?'Draw 🤝':win?'You win! 🎉':'Computer wins this time.'}`);
+    }));
+  }
+  // WHACK-A-MOLE: accurately timed twenty-second session.
+  function drawMole(){const r=get('mole');if(!moleRuntime)moleRuntime={playing:false,score:r.partial||0,active:-1,seconds:20};const v=moleRuntime;
+    stage('🐹 Whack-a-Mole','Tap the glowing mole as often as possible in 20 seconds.',status([['Hits',v.score],['Record',r.best||0],['Time',v.seconds.toFixed(1)+'s']])+`<div class="ag-moles">${Array.from({length:9},(_,i)=>`<button class="ag-hole ${i===v.active?'target':''}" data-mole="${i}" type="button" aria-label="Hole ${i+1}">${i===v.active?'🐹':'🕳️'}</button>`).join('')}</div><div class="ag-buttons"><button class="btn primary" type="button" id="moleStart">${v.playing?'Playing…':v.score?'Restart ▶':'Start game ▶'}</button></div><div class="ag-message" id="agMessage" role="status">${v.playing?'Tap the mole!':'Hit Start when you are ready.'}</div>`);
+    $$('[data-mole]').forEach(b=>b.addEventListener('click',()=>{if(!moleRuntime?.playing||Number(b.dataset.mole)!==moleRuntime.active)return;moleRuntime.score++;moleRuntime.active=randomInt(0,8);paintMole()}));
+    $('#moleStart').addEventListener('click',()=>{if(moleRuntime?.playing)return;startMole()});
+  }
+  function paintMole(){if(!moleRuntime)return;$$('[data-mole]').forEach(b=>{const active=Number(b.dataset.mole)===moleRuntime.active;b.classList.toggle('target',active);b.textContent=active?'🐹':'🕳️'});const bars=$$('#arcadeStage .ag-status strong');if(bars[0])bars[0].textContent=moleRuntime.score;if(bars[2])bars[2].textContent=moleRuntime.seconds.toFixed(1)+'s'}
+  function startMole(){clearTimers();active='mole';moleRuntime={playing:true,score:0,active:randomInt(0,8),seconds:20};get('mole').partial=0;save();drawMole();let remaining=20;
+    timer(()=>{remaining=Math.max(0,remaining-.1);moleRuntime.seconds=remaining;paintMole();if(remaining<=0){const score=moleRuntime.score;moleRuntime.playing=false;clearTimers();get('mole').partial=0;finish('mole',score);moleRuntime={playing:false,score:0,active:-1,seconds:20};drawMole();say(`Time's up! You got ${score} hits. Try to beat your record!`)}},100);
+    timer(()=>{if(moleRuntime?.playing){let n=randomInt(0,8);if(n===moleRuntime.active)n=(n+1)%9;moleRuntime.active=n;paintMole()}},680);
+  }
+  // WORD SCRAMBLE: a collection of age-appropriate words with hints and streaks.
+  const WORDS=[['ROCKET','A vehicle that launches into space'],['PLAYER','Someone playing a game'],['CASTLE','A big fortified building'],['DRAGON','A mythical flying creature'],['PLANET','A world orbiting a star'],['PUZZLE','A challenge to solve'],['PIXEL','A tiny dot of digital colour'],['BUTTON','You press this to take action'],['TARGET','The thing you try to hit'],['GAMING','Playing computer or video games'],['SNAKE','A long slithering animal'],['GALAXY','A huge system of stars'],['COLOUR','Red, green or blue is one'],['SUPER','Another word for amazing'],['VICTORY','Winning a match'],['NUMBER','A countable value'],['SCHOOL','Where students learn'],['SCREEN','Where a digital image appears']];
+  function newWord(last){let list=WORDS.filter(x=>x[0]!==last),pair=choose(list);let letters=pair[0].split('');for(let n=0;n<8;n++)letters.sort(()=>Math.random()-.5);if(letters.join('')===pair[0])letters.reverse();return {word:pair[0],hint:pair[1],jumbled:letters.join(''),seenHint:false}}
+  function drawScramble(){const r=get('scramble');if(!r.current?.word)r.current=newWord();const q=r.current;
+    stage('🔤 Word Scramble','Rearrange the letters to discover the mystery word.',status([['Streak',r.streak||0],['Best streak',r.best||0],['Words solved',r.wins||0]])+`<div class="ag-letters">${q.jumbled.split('').map(l=>`<span class="ag-letter">${escapeHTML(l)}</span>`).join('')}</div><p class="ag-prompt">Hint: ${escapeHTML(q.hint)}</p><div class="ag-guess"><input class="ag-field" id="wordAnswer" aria-label="Your word answer" maxlength="18" autocomplete="off" placeholder="Type the word"><button class="btn primary" id="checkWord">Check ✓</button></div><div class="ag-buttons"><button class="btn" id="firstLetter">${q.seenHint?'Starts with '+escapeHTML(q.word[0]):'Reveal first letter'}</button><button class="btn" id="skipWord">Skip word ↻</button></div><div class="ag-message" id="agMessage" role="status">Solve it to add to your winning streak.</div>`);
+    $('#checkWord').addEventListener('click',checkWord);$('#wordAnswer').addEventListener('keydown',e=>{if(e.key==='Enter')checkWord()});$('#wordAnswer').focus();
+    $('#firstLetter').addEventListener('click',()=>{q.seenHint=true;save();drawScramble();say('The word starts with '+q.word[0])});
+    $('#skipWord').addEventListener('click',()=>{r.streak=0;r.current=newWord(q.word);save();drawScramble();say('New word! You can do it.')});
+  }
+  function checkWord(){const r=get('scramble'),q=r.current,answer=$('#wordAnswer').value.trim().toUpperCase();if(!answer){say('Type a word first.');return}
+    if(answer===q.word){r.streak=(r.streak||0)+1;r.current=newWord(q.word);finish('scramble',r.streak,{win:true});drawScramble();say('Correct! Keep your streak going 🎉')}
+    else{r.streak=0;save();say('Not quite — try again! Your streak has reset.')}
+  }
+  // COLOUR CHALLENGE: independent 10-round game with persisted question.
+  const COLOURS=[['RED','#ff6767'],['BLUE','#56baff'],['GREEN','#a1f957'],['PURPLE','#bf8cff'],['ORANGE','#ffb65e'],['PINK','#ff87c0'],['YELLOW','#ffe878'],['CYAN','#5ce7ea']];
+  function newColour(){const options=[...COLOURS].sort(()=>Math.random()-.5).slice(0,4);return {options:options.map(c=>c[0]),target:choose(options)[0]}}
+  function drawColors(){const r=get('colors');if(!r.game||!r.game.question)r.game={round:0,correct:0,question:newColour(),finished:false};const g=r.game;
+    if(g.finished){stage('🎨 Color Challenge','Ten quick rounds — test your eye for colour!',status([['This game',g.correct+'/10'],['Best',r.best+'/10'],['Games',r.plays||0]])+`<p class="ag-prompt">Finished! You got ${g.correct} of 10 colours right.</p><div class="ag-buttons"><button class="btn primary" id="newColor">Play again ▶</button></div>`);$('#newColor').addEventListener('click',()=>{r.game={round:0,correct:0,question:newColour(),finished:false};save();drawColors()});return}
+    const q=g.question;
+    stage('🎨 Color Challenge','Choose the colour shown in the prompt. Ten rounds per match.',status([['Question',(g.round+1)+'/10'],['Right',g.correct],['Best',r.best+'/10']])+`<p class="ag-prompt">Tap the tile that is <span class="grad">${q.target}</span></p><div class="ag-color-options">${q.options.map(name=>{const rgb=COLOURS.find(c=>c[0]===name)[1];return `<button class="ag-color" data-color="${name}" type="button" style="color:${rgb}">${name}</button>`}).join('')}</div><div class="ag-message" id="agMessage" role="status">Select one option above.</div>`);
+    $$('[data-color]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.color===g.question.target)g.correct++;g.round++;if(g.round>=10){g.finished=true;finish('colors',g.correct)}else{g.question=newColour();save()}drawColors();}));
+  }
+  // NUMBER HUNT: persistent mystery number and attempt counter.
+  function freshGuess(){return {target:randomInt(1,100),tries:0,history:[],finished:false}}
+  function drawGuess(){const r=get('guess');if(!r.game||typeof r.game.target!=='number')r.game=freshGuess();const g=r.game;
+    stage('🎲 Number Hunt','Guess the hidden number between 1 and 100. Each clue gets you closer.',status([['Guesses',g.tries],['Record',r.best?r.best+' tries':'—'],['Games',r.plays||0]])+`<p class="ag-prompt">${g.finished?'You found it! 🎉':'I am thinking of a number…'}</p><div class="ag-guess"><input id="guessValue" class="ag-field" type="number" min="1" max="100" step="1" placeholder="1 – 100" aria-label="Guess a number" ${g.finished?'disabled':''}><button class="btn primary" id="submitGuess" ${g.finished?'disabled':''}>Guess ✓</button></div><div class="ag-message" id="agMessage" role="status">${g.finished?'The number was '+g.target+'. Great job!':'Enter a number to get a higher / lower hint.'}</div><p class="ag-history">Previous guesses: ${g.history.length?g.history.map(escapeHTML).join(' · '):'None yet'}</p><div class="ag-buttons"><button class="btn" id="resetGuess">New mystery ↻</button></div>`);
+    $('#submitGuess').addEventListener('click',makeGuess);$('#guessValue').addEventListener('keydown',e=>{if(e.key==='Enter')makeGuess()});$('#resetGuess').addEventListener('click',()=>{r.game=freshGuess();save();drawGuess()});
+  }
+  function makeGuess(){const r=get('guess'),g=r.game;const v=Number($('#guessValue').value);if(!Number.isInteger(v)||v<1||v>100){say('Enter a whole number from 1 to 100.');return}g.tries++;g.history.push(v);
+    if(v===g.target){g.finished=true;finish('guess',g.tries,{lower:true,win:true});drawGuess();say('Found it in '+g.tries+' guesses! 🎉')}
+    else{save();drawGuess();say('Go '+(v<g.target?'HIGHER ▲':'LOWER ▼')+'! Try again.')}
+  }
+  // Expose a read-only friendly debugging hook for regression tests.
+  window.GameZonePremium={games:EXTRA.map(x=>x.id),getActive:()=>active,refreshRecords:()=>updateRecords(),version:'3.0'};
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',inject,{once:true});else inject();
+})();
+</script><script src="/legacy/v4.js"></script></body></html>

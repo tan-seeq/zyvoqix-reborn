@@ -1,0 +1,97 @@
+[
+  {
+    "id": "space-pirates",
+    "name": "Space Pirates",
+    "categories": [
+      "action",
+      "flying"
+    ],
+    "genre": "SPACE COMBAT",
+    "tag": "BABYLON.JS",
+    "author": "Babylon.js team",
+    "license": "Apache-2.0",
+    "kind": "عرض قتالي تفاعلي",
+    "device": "كمبيوتر · لمس",
+    "desktop": false,
+    "webgl2": false,
+    "description": "معارك سفن فضائية، صواريخ ومطاردات وسط الكويكبات. عرض تفاعلي من فريق Babylon.js.",
+    "controls": "الماوس للتوجيه · الزر الأيسر للإطلاق · راجع Controls داخل اللعبة. يدعم التحكم باللمس.",
+    "search": "فضاء طيران اكشن صواريخ سفن",
+    "source": "https://github.com/BabylonJS/SpacePirates",
+    "entry": "/games/space-pirates/index.html",
+    "cover": "/covers/space-pirates.webp",
+    "notice": "عرض Babylon.js 5.0 الأصلي؛ عُدلت مسارات الملفات والخطوط لتعمل من استضافة Zyvoqix.",
+    "runtimeMB": 37.3
+  },
+  {
+    "id": "kart-royale",
+    "name": "Kart Royale",
+    "categories": [
+      "racing"
+    ],
+    "genre": "KART RACING",
+    "tag": "3D RACING",
+    "author": "Ryan Campbell",
+    "license": "MIT",
+    "kind": "سباق كارت",
+    "device": "كيبورد",
+    "desktop": true,
+    "webgl2": true,
+    "description": "سباق كارت ثلاثي الأبعاد مع منافسين آليين، درِفت وتيربو، في مضمار يمر بالقرية والساحل.",
+    "controls": "الأسهم أو WASD للقيادة · Shift للدرِفت · Space لاستخدام الأدوات.",
+    "search": "سباق سيارات عربيات كارت درفت",
+    "source": "https://github.com/ryancampbell/kart-royale",
+    "entry": "/games/kart-royale/index.html",
+    "cover": "/covers/kart-royale.webp",
+    "notice": "الرسوم والأصوات مولدة من كود المشروع. نسخة ثابتة تضم المكتبات محليًا.",
+    "runtimeMB": 1.8
+  },
+  {
+    "id": "dust-corridor",
+    "name": "Dust Corridor",
+    "categories": [
+      "action"
+    ],
+    "genre": "TACTICAL FPS",
+    "tag": "FIRST-PERSON",
+    "author": "Leonxlnx",
+    "license": "MIT",
+    "kind": "تصويب ضد خصوم آليين",
+    "device": "كيبورد وماوس",
+    "desktop": true,
+    "webgl2": true,
+    "description": "قتال من منظور أول في حي سوق مفتوح. استخدم الغطاء والتصويب والقنابل ضد فرقة من الخصوم الآليين.",
+    "controls": "WASD حركة · الماوس للتوجيه والإطلاق · R تلقيم · Shift جري · B قنبلة · Esc إيقاف.",
+    "search": "تصويب حرب اكشن سلاح جنود",
+    "source": "https://github.com/Leonxlnx/claude-of-duty",
+    "entry": "/games/dust-corridor/index.html",
+    "cover": null,
+    "notice": "خريطة واحدة مع إعادة ظهور الخصوم. لا يحتاج سيرفر لعب أو تحميل موارد من مزود آخر.",
+    "runtimeMB": 0.9
+  },
+  {
+    "id": "sketchbook",
+    "name": "Sketchbook",
+    "categories": [
+      "sandbox",
+      "racing",
+      "flying"
+    ],
+    "genre": "DRIVE · FLY · EXPLORE",
+    "tag": "OPEN PLAYGROUND",
+    "author": "swift502 / Jakub Bláha",
+    "license": "MIT",
+    "kind": "عالم حر تجريبي",
+    "device": "كيبورد وماوس",
+    "desktop": true,
+    "webgl2": false,
+    "description": "انزل إلى العالم، اركب سيارة أو طائرة أو هليكوبتر وجرّب القيادة والطيران بحرية. ساحة تجريبية بدون مهام قصصية.",
+    "controls": "WASD للحركة · Shift جري · Space قفز · F للدخول والخروج من المركبات · الماوس للكاميرا.",
+    "search": "عالم مفتوح قيادة سيارات طيران هليكوبتر عربيات",
+    "source": "https://github.com/swift502/Sketchbook",
+    "entry": "/games/sketchbook/index.html",
+    "cover": "/covers/sketchbook.webp",
+    "notice": "ساحة فيزياء وقيادة من المشروع الأصلي، وليست لعبة مهام مكتملة. أُزيل تحميل خطوط Google.",
+    "runtimeMB": 30.1
+  }
+]

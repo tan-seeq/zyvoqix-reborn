@@ -1,0 +1,63 @@
+/* ZYVOQIX V7 — original lightweight browser WebGL 3D racing and flight prototypes.
+   No borrowed game code, no external library/CDN, no server GPU.
+   These are original simplified arcade simulations, not ports of third-party games. */
+const I=()=>new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]);
+const M=(a,b)=>{const o=new Float32Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++){let s=0;for(let k=0;k<4;k++)s+=a[k*4+r]*b[c*4+k];o[c*4+r]=s;}return o};
+const T=(x,y,z)=>{const a=I();a[12]=x;a[13]=y;a[14]=z;return a};
+const S=(x,y,z)=>{const a=I();a[0]=x;a[5]=y;a[10]=z;return a};
+const R=(y)=>{const a=I(),c=Math.cos(y),s=Math.sin(y);a[0]=c;a[2]=-s;a[8]=s;a[10]=c;return a};
+const P=(fov,aspect,n,f)=>{const q=1/Math.tan(fov/2),a=new Float32Array(16);a[0]=q/aspect;a[5]=q;a[10]=(f+n)/(n-f);a[11]=-1;a[14]=2*f*n/(n-f);return a};
+const N=(a)=>{const l=Math.hypot(...a)||1;return a.map(v=>v/l)};
+const L=(eye,target,up=[0,1,0])=>{const z=N(eye.map((v,i)=>v-target[i]));const x=N([up[1]*z[2]-up[2]*z[1],up[2]*z[0]-up[0]*z[2],up[0]*z[1]-up[1]*z[0]]);const y=[z[1]*x[2]-z[2]*x[1],z[2]*x[0]-z[0]*x[2],z[0]*x[1]-z[1]*x[0]];return new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-x.reduce((v,k,i)=>v+k*eye[i],0),-y.reduce((v,k,i)=>v+k*eye[i],0),-z.reduce((v,k,i)=>v+k*eye[i],0),1])};
+const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
+const colors={road:[.035,.07,.15],glass:[.06,.30,.57],blue:[.07,.55,1],cyan:[.04,.95,1],purple:[.55,.15,.95],pink:[1,.14,.58],lime:[.52,1,.34],gold:[1,.70,.21],white:[.76,.91,1],dark:[.055,.12,.28],terrain:[.06,.15,.31]};
+const cube=[];
+for(const [n,points] of [
+ [[0,0,1],[[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]]],
+ [[0,0,-1],[[1,-1,-1],[-1,-1,-1],[-1,1,-1],[1,1,-1]]],
+ [[1,0,0],[[1,-1,1],[1,-1,-1],[1,1,-1],[1,1,1]]],
+ [[-1,0,0],[[-1,-1,-1],[-1,-1,1],[-1,1,1],[-1,1,-1]]],
+ [[0,1,0],[[-1,1,1],[1,1,1],[1,1,-1],[-1,1,-1]]],
+ [[0,-1,0],[[-1,-1,-1],[1,-1,-1],[1,-1,1],[-1,-1,1]]]
+])for(const idx of [0,1,2,0,2,3])cube.push(...points[idx],...n);
+const vs=`attribute vec3 aPosition;attribute vec3 aNormal;
+uniform mat4 uMVP;uniform mat4 uModel;uniform vec3 uColor;uniform float uEmissive;
+varying vec3 vColor;varying float vFog;
+void main(){vec4 world=uModel*vec4(aPosition,1.);vec3 nn=normalize(mat3(uModel)*aNormal);float light=max(dot(nn,normalize(vec3(-.44,.85,.6))),0.);float rim=pow(1.-abs(nn.z),3.);vColor=uColor*(.38+.56*light)+uColor*(.08+rim*.14)+uColor*uEmissive*.74;vFog=clamp((-world.z-25.)/125.,0.,.72);gl_Position=uMVP*vec4(aPosition,1.);}`;
+const fs=`precision mediump float;varying vec3 vColor;varying float vFog;uniform vec3 uFog;void main(){vec3 rgb=mix(vColor,uFog,vFog);rgb=rgb/(rgb+vec3(.18));gl_FragColor=vec4(pow(rgb,vec3(.92)),1.);}`;
+function program(gl){const make=(type,source)=>{const sh=gl.createShader(type);gl.shaderSource(sh,source);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh));return sh};const pr=gl.createProgram();gl.attachShader(pr,make(gl.VERTEX_SHADER,vs));gl.attachShader(pr,make(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);if(!gl.getProgramParameter(pr,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(pr));return pr}
+export class GPUEngine{
+ constructor(canvas,onState,onFinish,onSave){this.canvas=canvas;this.onState=onState;this.onFinish=onFinish;this.onSave=onSave;this.keys={};this.last=0;this.frame=0;this.gl=null;this.sound=false;this.available=false;this.error='';this.playing=false;this.paused=false;this.over=false}
+ initGL(){if(this.gl)return true;try{const gl=this.canvas.getContext('webgl2',{alpha:false,antialias:true,powerPreference:'high-performance'})||this.canvas.getContext('webgl',{alpha:false,antialias:true});if(!gl)throw Error('This browser does not support WebGL');const pr=program(gl);gl.useProgram(pr);this.gl=gl;this.pr=pr;this.aPos=gl.getAttribLocation(pr,'aPosition');this.aNorm=gl.getAttribLocation(pr,'aNormal');this.uMvp=gl.getUniformLocation(pr,'uMVP');this.uModel=gl.getUniformLocation(pr,'uModel');this.uColor=gl.getUniformLocation(pr,'uColor');this.uEmissive=gl.getUniformLocation(pr,'uEmissive');this.uFog=gl.getUniformLocation(pr,'uFog');const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(cube),gl.STATIC_DRAW);gl.enableVertexAttribArray(this.aPos);gl.vertexAttribPointer(this.aPos,3,gl.FLOAT,false,24,0);gl.enableVertexAttribArray(this.aNorm);gl.vertexAttribPointer(this.aNorm,3,gl.FLOAT,false,24,12);gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);this.available=true;this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.paused=true;this.error='Graphics context was lost. Close and reopen the game.'});return true}catch(e){this.error=String(e.message||e).slice(0,180);this.available=false;return false}}
+ setup(def,saved){this.stop(false);this.def=def;this.available=this.initGL();this.mode=def.variant==='orbit'?'flight':'racing';this.restartState();if(saved&&saved.id===def.id&&saved.v===2){for(const k of ['score','distance','elapsed','lives','nextSpawn','shipX','shipY','speed']){if(Number.isFinite(saved[k]))this[k]=clamp(saved[k],-100000,100000)}this.lives=clamp(this.lives,1,5);if(Array.isArray(saved.entities))this.entities=saved.entities.slice(0,40).map(e=>({x:clamp(Number(e.x)||0,-6,6),y:clamp(Number(e.y)||0,-4,5),z:clamp(Number(e.z)||-80,-150,7),kind:String(e.kind||'obstacle').slice(0,16),hit:false}));}if(this.available)this.draw();this.onState?.({score:this.score,lives:this.lives,level:Math.floor(this.elapsed/18)+1});}
+ restartState(){this.score=0;this.distance=0;this.elapsed=0;this.lives=3;this.speed=24;this.shipX=0;this.shipY=1.6;this.vx=0;this.vy=0;this.invinc=0;this.fireCd=0;this.saveClock=0;this.spawnClock=0;this.entities=[];this.keys={};this.over=false;this.playing=false;this.paused=false;this.last=0;}
+ reset(){this.restartState();if(this.available)this.draw()}
+ restart(){this.reset();this.start()}
+ start(){if(!this.available){this.onFinish?.({game:this.def,score:this.score,won:false,level:1,error:this.error||'WebGL unavailable'});return}if(this.over)this.reset();this.paused=false;this.playing=true;this.last=performance.now();if(this.frame)cancelAnimationFrame(this.frame);this.frame=requestAnimationFrame(t=>this.loop(t))}
+ stop(save){if(save&&this.def&&this.available&&!this.over)this.save();this.playing=false;this.paused=false;if(this.frame)cancelAnimationFrame(this.frame);this.frame=0;this.keys={}}
+ togglePause(){if(this.over||!this.playing)return;this.paused=!this.paused;if(!this.paused)this.last=performance.now()}
+ key(k,isDown,trigger){this.keys[k]=isDown;if(trigger&&k==='fire'&&this.playing&&this.mode==='flight')this.shoot();if(trigger&&k==='up'&&this.playing&&this.mode==='racing')this.score+=2}
+ tapAt(x,y){if(!this.playing||this.paused)return;if(this.mode==='flight')this.shoot();else this.keys.up=true}
+ shoot(){if(this.fireCd>0)return;this.fireCd=.27;let found=null;for(const e of this.entities){if(e.kind!=='enemy'||e.z<-45||e.z>4)continue;if(Math.abs(e.x-this.shipX)<1.05&&Math.abs(e.y-this.shipY)<1.05){found=e;break}}if(found){this.entities=this.entities.filter(e=>e!==found);this.score+=120}else this.score+=2}
+ snapshot(){if(!this.def)return null;return {id:this.def.id,v:2,score:Math.round(this.score),distance:this.distance,elapsed:this.elapsed,lives:this.lives,nextSpawn:this.nextSpawn,shipX:this.shipX,shipY:this.shipY,speed:this.speed,entities:this.entities.slice(0,35),createdAt:Date.now()}}
+ save(){if(this.def)this.onSave?.(this.def.id,this.snapshot())}
+ spawn(){if(this.mode==='racing'){const lanes=[-2.25,-.75,.75,2.25];const x=lanes[Math.floor(Math.random()*4)];const kind=Math.random()<.30?'energy':'obstacle';this.entities.push({x,y:.55,z:-125,kind,hit:false})}else{const x=(Math.random()-.5)*7,y=.7+Math.random()*4;const kind=Math.random()<.45?'energy':'enemy';this.entities.push({x,y,z:-125,kind,hit:false})}}
+ loop(t){if(!this.playing)return;const dt=clamp((t-this.last)/1000||.016,0,.05);this.last=t;if(!this.paused)this.step(dt);this.draw();if(this.playing)this.frame=requestAnimationFrame(tt=>this.loop(tt))}
+ step(dt){this.elapsed+=dt;this.speed=clamp(this.speed+(this.keys.up&&this.mode==='racing'?17:-6)*dt,22,56);this.distance+=this.speed*dt;const dx=(Number(!!this.keys.right)-Number(!!this.keys.left))*7.5;this.vx=(this.vx+dx*dt)*Math.max(.05,1-6*dt);this.shipX=clamp(this.shipX+this.vx*dt*7,-3.15,3.15);if(this.mode==='flight'){const dy=(Number(!!this.keys.up)-Number(!!this.keys.down))*6;this.vy=(this.vy+dy*dt)*Math.max(.05,1-8*dt);this.shipY=clamp(this.shipY+this.vy*dt*7,.3,4.7);if(this.keys.fire)this.shoot()}this.fireCd=Math.max(0,this.fireCd-dt);this.invinc=Math.max(0,this.invinc-dt);this.spawnClock-=dt;if(this.spawnClock<=0){this.spawn();this.spawnClock=(this.mode==='racing'?1.7:1.25)*clamp(1-this.elapsed/300,.55,1.1)}for(const e of this.entities){e.z+=this.speed*dt;if(!e.hit&&e.z>=-2&&e.z<=2.8&&Math.abs(e.x-this.shipX)<(e.kind==='energy'?.72:.93)&& (this.mode==='racing'||Math.abs(e.y-this.shipY)<1)){e.hit=true;if(e.kind==='energy')this.score+=90;else if(this.invinc<=0){this.lives--;this.invinc=1.7}if(this.lives<=0){this.over=true;this.playing=false;this.onFinish?.({game:this.def,score:Math.round(this.score),won:false,level:Math.floor(this.elapsed/18)+1});break}}}this.entities=this.entities.filter(e=>e.z<8&&!e.hit);this.score+=dt*(this.mode==='racing'?this.speed*.7:12);if(this.elapsed>=105){this.over=true;this.playing=false;this.onFinish?.({game:this.def,score:Math.round(this.score),won:true,level:Math.floor(this.elapsed/18)+1})}this.saveClock+=dt;if(this.saveClock>=3){this.saveClock=0;this.save()}this.onState?.({score:Math.round(this.score),lives:Math.max(0,this.lives),level:Math.floor(this.elapsed/18)+1})}
+ drawBox(x,y,z,sx,sy,sz,col,em=0,ang=0){const gl=this.gl;let model=M(M(T(x,y,z),R(ang)),S(sx/2,sy/2,sz/2));gl.uniformMatrix4fv(this.uModel,false,model);gl.uniformMatrix4fv(this.uMvp,false,M(this.vp,model));gl.uniform3fv(this.uColor,colors[col]||col);gl.uniform1f(this.uEmissive,em);gl.drawArrays(gl.TRIANGLES,0,36)}
+ drawCar(x,z,main='blue',traffic=false){this.drawBox(x,.54,z,.83,.42,1.5,main,.45);this.drawBox(x,.93,z-.17,.66,.35,.7,'glass',0);this.drawBox(x-.37,.27,z-.47,.16,.4,.32,'dark');this.drawBox(x+.37,.27,z-.47,.16,.4,.32,'dark');this.drawBox(x-.37,.27,z+.48,.16,.4,.32,'dark');this.drawBox(x+.37,.27,z+.48,.16,.4,.32,'dark');this.drawBox(x-.23,.56,z-.78,.2,.12,.09,traffic?'pink':'cyan',1);this.drawBox(x+.23,.56,z-.78,.2,.12,.09,traffic?'pink':'cyan',1)}
+ drawJet(x,y,z,color='cyan'){this.drawBox(x,y,z,.64,.24,2.0,color,.35);this.drawBox(x,y+.08,z-.55,2.6,.09,.55,'blue',.5);this.drawBox(x,y+.36,z+.65,.12,.75,.5,'purple',.6);this.drawBox(x,y+.15,z+.17,.38,.2,.75,'glass');this.drawBox(x-.35,y,z+.95,.18,.14,.42,'pink',1);this.drawBox(x+.35,y,z+.95,.18,.14,.42,'pink',1)}
+ draw(){const gl=this.gl;if(!this.available||!gl)return;gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.clearColor(.018,.035,.095,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(this.pr);gl.uniform3fv(this.uFog,[.018,.035,.11]);const eye=this.mode==='racing'?[0,4.2,8.5]:[0,4.2,10],target=this.mode==='racing'?[0,.5,-28]:[0,1.6,-30];this.vp=M(P(Math.PI*.34,this.canvas.width/this.canvas.height,.1,250),L(eye,target));
+ if(this.mode==='racing'){
+  this.drawBox(0,-.45,-57,10,.55,166,'terrain');this.drawBox(0,-.10,-57,7.9,.08,166,'road');
+  for(let z=5;z>-147;z-=10){const offset=(this.distance%10);const zz=z+offset;this.drawBox(-3.9,.035,zz,.06,.055,5.5,'cyan',1);this.drawBox(3.9,.035,zz,.06,.055,5.5,'purple',1);for(const x of [-1.95,0,1.95])this.drawBox(x,.02,zz,.06,.035,4.1,'white',.18);for(const side of [-1,1]){this.drawBox(side*6.6,1.2,zz,.55,2.4,2.2,'dark',.1);this.drawBox(side*6.6,2.48,zz,.22,.07,2.4,side>0?'pink':'blue',1);}}
+  for(const e of this.entities)if(e.kind==='energy'){this.drawBox(e.x,.95,e.z,.7,.7,.20,'gold',1,this.elapsed*2)}else this.drawCar(e.x,e.z,'pink',true);
+  if(this.invinc<=0||Math.floor(this.elapsed*10)%2)this.drawCar(this.shipX,-.7,'cyan');
+ }else{
+  for(let i=0;i<26;i++){const z=-((i*6+this.distance*.25)%155),x=Math.sin(i*9.2)*14,y=-1+Math.cos(i*7.1)*8;this.drawBox(x,y,z,1.8+Math.sin(i)*.9,1.5,2.1,i%3?'terrain':'purple',.08)}
+  for(let i=0;i<36;i++){const z=-((i*5+this.distance*.58)%170),x=Math.sin(i*37)*12,y=Math.sin(i*22)*8;this.drawBox(x,y,z,.04,.04,.1,i%2?'white':'cyan',.7)}
+  for(const e of this.entities)if(e.kind==='energy'){this.drawBox(e.x,e.y,e.z,.95,.95,.16,'gold',1,this.elapsed*2);this.drawBox(e.x,e.y,e.z,.3,.3,.22,'cyan',1)}else this.drawJet(e.x,e.y,e.z,'pink');
+  if(this.invinc<=0||Math.floor(this.elapsed*10)%2)this.drawJet(this.shipX,this.shipY,-.6,'cyan');
+ }
+ }
+}

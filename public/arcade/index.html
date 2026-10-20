@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080e21">
+<meta name="description" content="Zyvoqix: 26 original playable browser games: action, racing, airplanes, adventure; discover more online games on their own trusted websites.">
+<meta property="og:title" content="ZYVOQIX | Gaming Universe">
+<meta property="og:description" content="26 original games you can play directly on the site. Action, racing, aircraft, and adventures.">
+<meta property="og:image" content="https://gamezone-play-rank-rise.vercel.app/assets/world.webp">
+<meta property="og:url" content="https://gamezone-play-rank-rise.vercel.app/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://gamezone-play-rank-rise.vercel.app/">
+<link rel="icon" type="image/png" href="/assets/icon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preload" as="image" href="/assets/zyvoqix-logo.webp" type="image/webp">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/upgrade.css">
+<title>ZYVOQIX | Gaming Universe</title>
+</head>
+<body>
+<div class="bg-grid" aria-hidden="true"></div>
+<header class="site-head"><div class="head-inner">
+  <a href="#home" class="mini-brand" data-view="home" aria-label="Zyvoqix home"><span class="brand-orbit">Z</span><span><strong>ZYVOQIX</strong><small>GAMING UNIVERSE</small></span></a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <button class="navlink active" data-view="home" data-i18n="home">Home</button>
+    <button class="navlink" data-view="play" data-i18n="play">Play now</button>
+    <button class="navlink" data-view="discover" data-i18n="discover">Game stores</button>
+    <button class="navlink" data-view="opensource">🎮 Open-source PC</button>
+    <button class="navlink" data-view="favorites" data-i18n="favorites">Favorites</button>
+    <button class="navlink" data-view="about" data-i18n="about">About</button>
+  </nav>
+  <div class="head-actions"><span class="live-mark" title="Original browser games"><span></span> <b>26 LIVE GAMES</b></span><button id="profileQuick" class="profile-button" data-view="profile" aria-label="Player profile"><span id="headerAvatar">G</span><span id="headerPlayer">Guest</span></button><button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button></div>
+</div></header>
+<main>
+<section id="view-home" class="view active">
+  <section class="hero cinematic"><div class="hero-light" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-pill"><span class="glow-dot"></span> <span data-i18n="heroPill">ENTER THE NEXT LEVEL</span></div>
+      <img class="hero-logo" src="/assets/zyvoqix-logo.webp" width="1320" height="528" alt="Zyvoqix original futuristic gaming logo" fetchpriority="high">
+      <h1 data-i18n="heroTitle">Your next gaming adventure begins here</h1>
+      <p class="hero-desc" data-i18n="heroDesc">26 playable games, action, cars, jets and adventures. No installs required.</p>
+      <div class="hero-cta"><button class="btn btn-main btn-lg" data-view="play" data-i18n="enterWorld">Enter the game world</button><button class="btn btn-glass btn-lg" data-view="opensource">⚡ ألعاب PC القوية</button></div>
+      <div class="hero-stats"><div><b>26</b><span data-i18n="insideGames">Inside the site</span></div><i></i><div><b>4</b><span data-i18n="mainTypes">Main genres</span></div><i></i><div><b>19</b><span data-i18n="trustedLinks">External discoveries</span></div></div>
+      <button class="scroll-prompt" data-view="play"><span data-i18n="scrollExplore">Browse games</span> <span aria-hidden="true">↓</span></button>
+    </div>
+  </section>
+  <div class="content-wrap">
+    <div class="section-heading"><div><span class="kicker">PLAY INSTANTLY</span><h2 data-i18n="featuredTitle">Featured adventures</h2><p data-i18n="featuredDesc">Original games that open inside Zyvoqix</p></div><button class="text-button" data-view="play" data-i18n="viewAll">See all games</button></div>
+    <div id="featuredCards" class="game-grid featured-grid"></div>
+    <div class="section-heading spaced"><div><span class="kicker">PICK YOUR WORLD</span><h2 data-i18n="categoryTitle">Choose your category</h2></div></div>
+    <div class="category-grid" id="homeCategories"></div>
+    <div class="banner-play"><div><span class="kicker">LEVEL UP</span><h2 data-i18n="battleBanner">Ready for your next high score?</h2><p data-i18n="battleBannerText">Your best records are saved to this browser for your own gamer name.</p></div><button class="btn btn-main" data-view="play" data-i18n="playNow">Play now</button></div>
+  </div>
+</section>
+<section id="view-play" class="view content-wrap section-page" aria-label="Playable games">
+  <div class="page-top"><span class="kicker">ZYVOQIX DIRECT PLAY</span><h1 data-i18n="playPageTitle">Play instantly. No downloads.</h1><p data-i18n="playPageDesc">All 26 games work on this site, with keyboard and touch controls.</p></div>
+  <div class="browser-toolbar"><div class="search-box"><span>⌕</span><input id="localSearch" type="search" placeholder="Search by game name" data-i18n-placeholder="searchPlaceholder" autocomplete="off" aria-label="Search in playable games"></div><div class="toolbar-right"><span class="availability"><span class="glow-dot"></span> <span data-i18n="playableHere">Available here</span></span><select id="localSort" class="field" aria-label="Sort games"><option value="featured" data-i18n="sortFeatured">Featured</option><option value="az" data-i18n="sortName">Name A-Z</option><option value="best" data-i18n="sortBest">My best</option></select></div></div>
+  <div id="localFilters" class="filter-row"></div>
+  <div class="result-line"><span id="localCount">26 games</span><span data-i18n="originalGames">Original games made for Zyvoqix</span></div>
+  <div id="localCards" class="game-grid"></div><div id="noLocal" class="no-results" hidden data-i18n="noMatches">No matching games</div>
+</section>
+<section id="view-discover" class="view content-wrap section-page" aria-label="External game library">
+ <div class="page-top"><span class="kicker">TRUSTED GAME STORES</span><h1 data-i18n="discoverTitle">More worlds to explore</h1><p data-i18n="discoverDesc">These links open games on their original platforms. Zyvoqix does not host those games or store their scores.</p></div>
+ <div class="external-note"><span>🔗</span><div><strong data-i18n="externalNoticeTitle">External game links</strong><p data-i18n="externalNotice">Clicking opens the actual provider in a new tab. Device support and login requirements may differ.</p></div></div>
+ <div class="browser-toolbar"><div class="search-box"><span>⌕</span><input id="externalSearch" type="search" placeholder="Search online games" data-i18n-placeholder="searchOutside" aria-label="Search external games"></div></div>
+ <div id="externalFilters" class="filter-row"></div><div class="result-line"><span id="externalCount">19 games</span><span data-i18n="realLinks">Verified platform names, clearly labeled</span></div>
+ <div id="externalCards" class="game-grid"></div><div id="noExternal" class="no-results" hidden data-i18n="noMatches">No matching games</div>
+</section>
+<section id="view-opensource" class="view content-wrap section-page" aria-label="Open-source PC games">
+<div class="page-top"><span class="kicker">OPEN-SOURCE · OFFICIAL RELEASES</span><h1>⚡ ألعاب كمبيوتر مفتوحة المصدر</h1><p>مكتبة رسمية للتحميل من المطورين الأصليين. <strong>هذه النسخ لا تعمل داخل Zyvoqix مباشرةً.</strong> ألعاب 3D الحصرية التي تعمل داخل المتصفح موجودة في Play now.</p></div>
+<div class="external-note"><span>🖥️</span><div><strong>تحميل رسمي — وليس بثًا أو تشغيلًا داخل المتصفح</strong><p>قد تحتاج مساحة تخزين أو جهازًا قويًا أو ملفات لعبة مرخصة. اتبع تعليمات كل مشروع ولا تُحمّل نسخًا معدلة من مواقع مجهولة.</p></div></div>
+<div class="browser-toolbar"><div class="search-box"><span>⌕</span><input id="ossSearch" type="search" placeholder="ابحث باسم اللعبة أو النوع" aria-label="بحث في الألعاب المفتوحة المصدر"></div><span class="availability">✓ Official developer links</span></div>
+<div id="ossFilters" class="filter-row"></div><div class="result-line"><span id="ossCount">10 verified entries</span><span>Download / Source — not playable here</span></div>
+<div id="ossCards" class="game-grid"></div><div id="noOss" class="no-results" hidden>لا توجد ألعاب مطابقة.</div>
+</section>
+<section id="view-favorites" class="view content-wrap section-page"><div class="page-top"><span class="kicker">MY COLLECTION</span><h1 data-i18n="favoritesTitle">Your favorite games</h1><p data-i18n="favoritesDesc">Mark any game with a heart to find it here later.</p></div><div id="favoriteCards" class="game-grid"></div><div id="noFavs" class="no-results" hidden data-i18n="noFavs">No favorites yet. Go explore games!</div></section>
+<section id="view-profile" class="view content-wrap section-page"><div class="page-top"><span class="kicker">MY GAMER ZONE</span><h1 data-i18n="profileTitle">Player profile & progress</h1><p data-i18n="profileDesc">Your name, scores and checkpoint saves stay in this browser. Export a backup anytime.</p></div>
+ <div class="profile-columns"><article class="glass-panel"><div class="profile-banner"><span class="big-avatar" id="profileAvatar">G</span><div><h2 id="profileDisplay">Guest</h2><p data-i18n="playerLocal">Local profile - this browser</p></div></div><label for="playerName" data-i18n="playerNameLabel">Player name</label><div class="profile-name-row"><input id="playerName" class="field" maxlength="20" autocomplete="off" placeholder="Your gamer tag"><button id="savePlayer" class="btn btn-main" data-i18n="saveName">Save name</button></div><div class="mini-stats"><div><span data-i18n="gamesPlayed">Games played</span><strong id="statPlayed">0</strong></div><div><span data-i18n="highScores">Best records</span><strong id="statRecords">0</strong></div><div><span data-i18n="favCount">Favorites</span><strong id="statFavorites">0</strong></div></div><div class="profile-tools"><button class="btn btn-outline" id="backupExport" data-i18n="export">Export backup</button><label class="btn btn-outline upload" for="backupImport" data-i18n="import">Import backup</label><input id="backupImport" type="file" accept="application/json,.json" hidden></div><div class="fineprint" data-i18n="localDisclosure">These scores are stored locally, not on an online leaderboard.</div></article>
+ <article class="glass-panel"><h2 data-i18n="scoreBoard">Your best scores</h2><div id="recordList"></div></article></div>
+ <div class="glass-panel" style="margin-top:20px"><h2 data-i18n="profileSwitcher">Saved player names on this device</h2><div id="playerSwitcher" class="profile-name-chips"></div></div>
+</section>
+<section id="view-about" class="view content-wrap section-page"><div class="page-top"><span class="kicker">ABOUT ZYVOQIX</span><h1 data-i18n="aboutPageTitle">A new universe of browser games</h1><p data-i18n="aboutIntro">A gaming website and interactive school ICT project featuring original HTML5 games.</p></div>
+ <div class="about-grid"><article class="glass-panel"><h2 data-i18n="howTitle">How to play</h2><p data-i18n="howBody">Choose Play Now, select a game and press Start. Use arrows or WASD to move and Space for action, or use touch controls on your phone.</p></article><article class="glass-panel"><h2 data-i18n="privacyTitle">Privacy & saved progress</h2><p data-i18n="privacyBody">Game records, favorites and nicknames are stored only on your device. We do not collect email addresses. External game links follow their providers' rules.</p></article><article class="glass-panel"><h2 data-i18n="copyrightTitle">Fair play & game rights</h2><p data-i18n="copyrightBody">Original Zyvoqix mini-games run here. Third-party games remain on their own official websites; links do not imply sponsorship or affiliation.</p></article><article class="glass-panel"><h2 data-i18n="schoolTitle">The ICT project</h2><p data-i18n="schoolBody">Built with HTML, CSS, JavaScript, WebGL and Canvas. Responsive layouts, event handling, game loops and browser storage demonstrate practical web-development skills.</p></article></div>
+</section>
+</main>
+<footer class="site-footer"><div class="content-wrap footer-inner"><div><strong>ZYVOQIX</strong><p data-i18n="footerMotto">Play fast. Explore far. Build your legend.</p></div><span><a style="color:#8acbff" href="/legacy/index.html" title="Previous 16 games and their original local saves">الأرشيف القديم · Legacy Arcade</a> · © 2026 ZYVOQIX · <span data-i18n="footerRights">Original browser arcade. Independent of other game publishers.</span></span><button data-view="about" class="footer-about" data-i18n="about">About</button></div></footer>
+<div class="game-shell" id="gameShell" role="dialog" aria-modal="true" aria-label="Play game" aria-hidden="true" hidden>
+  <div class="game-dialog"><div class="game-head"><div class="game-head-title"><span id="gameHeadIcon">🚀</span><div><span id="gameGenre">ACTION</span><strong id="gameTitle">Nebula Strike</strong></div></div><div class="game-head-actions"><button id="soundToggle" aria-label="Toggle sound" title="Sound">🔊</button><button id="pauseGame" aria-label="Pause game" title="Pause">⏸</button><button id="restartGame" aria-label="Restart game" title="Restart">↻</button><button id="closeGame" aria-label="Close game" title="Close">✕</button></div></div>
+  <div class="game-hud"><div><span data-i18n="score">Score</span><b id="gScore">0</b></div><div><span data-i18n="best">Best</span><b id="gBest">0</b></div><div><span data-i18n="lives">Lives</span><b id="gLives">3</b></div><div><span data-i18n="level">Level</span><b id="gLevel">1</b></div></div>
+  <div class="canvas-frame"><canvas id="gameCanvas" width="960" height="540" aria-label="Interactive game canvas" tabindex="0"></canvas><canvas id="gpuCanvas" width="960" height="540" tabindex="0" aria-label="3D WebGL game" hidden></canvas><div class="game-overlay" id="gameOverlay"><div class="overlay-badge">ZYVOQIX ORIGINAL GAME</div><h2 id="overlayTitle">Get ready</h2><p id="overlayDesc">Move and shoot</p><button id="overlayStart" class="btn btn-main btn-lg" data-i18n="startGame">Start Game</button></div></div>
+  <div class="game-bottom"><div class="game-tip"><span data-i18n="gameControls">Controls:</span> <span id="gameControls">Arrow keys + Space</span></div><div class="touch-pad"><div class="touch-directions"><button class="touch-key" data-key="left" aria-label="Move left">◀</button><button class="touch-key" data-key="up" aria-label="Move up">▲</button><button class="touch-key" data-key="down" aria-label="Move down">▼</button><button class="touch-key" data-key="right" aria-label="Move right">▶</button></div><button class="touch-key fire-key" data-key="fire" id="fireButton" aria-label="Action button">⚡ <span data-i18n="actionBtn">ACTION</span></button></div></div>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script type="module" src="/app.js"></script>
+</body></html>

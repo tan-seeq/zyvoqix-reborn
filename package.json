@@ -1,0 +1,12 @@
+{
+  "name": "zyvoqix-webgl-universe",
+  "version": "8.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-library.mjs"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.3.0"
+  }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gamezone-play-rank-rise.vercel.app/sitemap.xml
