@@ -1725,5 +1725,725 @@
         "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
       }
     }
+  },
+  {
+    "id": "voxel-musou",
+    "name": "Voxel Musou",
+    "author": "BubuAi / mike007jd",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "قاتل في أربعة فصول تاريخية بسبعة مقاتلين وجيوش مكعبات وضربات مركبة ومواجهات زعماء.",
+    "controls": "WASD أو الأسهم حركة · J هجوم · K ضربة شحن · Space قفز · L أو Shift تفاد · I ضربة Musou · Esc إيقاف. يدعم يد التحكم.",
+    "genre": "معارك المقاتلين",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Voxel Musou معارك المقاتلين action",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/mike007jd/voxel-musou/tree/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f",
+    "entry": "/games/voxel-musou/index.html",
+    "cover": "/covers/voxel-musou.webp",
+    "runtimeMB": 17.6,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Fight through four historical chapters with seven officers, large voxel armies, combos and boss encounters.",
+        "controls": "WASD / arrows move · J attack · K charge · Space jump · L / Shift dodge · I Musou · Esc pause. Gamepad supported.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "misty-bunny",
+    "name": "Misty Bunny",
+    "author": "Bynzski",
+    "license": "MIT",
+    "categories": [
+      "adventure",
+      "puzzle"
+    ],
+    "description": "استكشف منارة ومرصدا واجمع الأدلة المكتوبة وحل ثلاثة أقفال مترابطة في مغامرة من منظور أول.",
+    "controls": "WASD أو الأسهم حركة · الماوس للنظر · E فحص · F فانوس · J دفتر الأدلة · H تلميح · Esc تحرير المؤشر.",
+    "genre": "ألغاز المنارة",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Misty Bunny ألغاز المنارة adventure",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/Bynzski/misty-bunny/tree/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f",
+    "entry": "/games/misty-bunny/index.html",
+    "cover": "/covers/misty-bunny.webp",
+    "runtimeMB": 11.0,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Explore a lighthouse-observatory, collect written clues and solve three connected locks in a first-person mystery.",
+        "controls": "WASD / arrows walk · Mouse look · E examine · F lantern · J journal · H hint · Esc release pointer.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "operation-ironhold",
+    "name": "Operation Ironhold",
+    "author": "StarKnightt",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "طهر ساحة الحاويات من عشرة أعداء قبل انتهاء ثلاث دقائق، بأربع أسلحة وتغطية وتصويب وتحديات حركة.",
+    "controls": "WASD حركة · الماوس تصويب · الزر الأيسر إطلاق · الأيمن تقريب · R تعبئة · 1–4 أسلحة · Esc إيقاف.",
+    "genre": "عملية آيرونهولد",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Operation Ironhold عملية آيرونهولد action",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/StarKnightt/operation-ironhold/tree/4098330664d66085cb1775c0783597070c32172b",
+    "entry": "/games/operation-ironhold/index.html",
+    "cover": "/covers/operation-ironhold.webp",
+    "runtimeMB": 1.8,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Clear a container yard of ten hostiles before the three-minute timer ends. Four weapons, cover, aiming and movement challenges.",
+        "controls": "WASD move · Mouse aim · Left click fire · Right click aim down sights · R reload · 1–4 weapons · Esc pause.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "regolith",
+    "name": "REGOLITH",
+    "author": "winch",
+    "license": "MIT",
+    "categories": [
+      "adventure",
+      "flying"
+    ],
+    "description": "قد مركبة على القمر، افحص الأجسام المدفونة وأعد تشغيل محطات الاتصال واستكشف سر القاعدة الصامتة.",
+    "controls": "WASD قيادة · Space فرامل · G رادار · R ذراع العينات · زر الماوس الأيسر حفر · B محطة اتصال · E تفاعل · Tab سجل المهمة.",
+    "genre": "مهمة القمر",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "REGOLITH مهمة القمر adventure",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/winchxyz/moon-rover/tree/f5f25ba6bf7477c612b408b265c9275a4fd1200d",
+    "entry": "/games/regolith/index.html",
+    "cover": "/covers/regolith.webp",
+    "runtimeMB": 3.9,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Drive a lunar rover, survey buried objects, restore relay beacons and investigate a silent outpost.",
+        "controls": "WASD drive · Space brake · G radar · R sampling arm · Left click drill · B beacon · E interact · Tab codex.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "jungle-trail",
+    "name": "Jungle Trail",
+    "author": "Prasenjit / StarKnightt",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "تجول في غابة كثيفة حتى الأطلال والشلال. تجربة استكشاف برسوم مولدة، دون مهام قصصية.",
+    "controls": "WASD حركة · الماوس للنظر · Shift جري · Space قفز · 1–5 مواقع. يوجد تحكم لمس أساسي، وينصح بكارت رسوم كمبيوتر.",
+    "genre": "استكشاف الغابة",
+    "tag": "3D",
+    "kind": "تجربة استكشاف",
+    "search": "Jungle Trail استكشاف الغابة adventure",
+    "desktop": false,
+    "webgl2": true,
+    "device": "ينصح برسوم كمبيوتر · لمس أساسي",
+    "source": "https://github.com/StarKnightt/jungle-trail/tree/c15640d3a2b6f08ca68e4df98fdfc953ea8a070a",
+    "entry": "/games/jungle-trail/index.html",
+    "cover": "/covers/jungle-trail.webp",
+    "runtimeMB": 6.3,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Walk through a dense procedural jungle to overgrown ruins and a waterfall. An exploration experience without missions.",
+        "controls": "WASD move · Mouse look · Shift sprint · Space jump · 1–5 locations. Basic touch movement is included; a desktop GPU is recommended.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Exploration experience",
+        "device": "Desktop GPU recommended · basic touch",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "san-juan-kart",
+    "name": "Old San Juan Kart",
+    "author": "Nathaniel Silva",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "تسابق ضد عربات الكمبيوتر في مدينة سان خوان، وانجرف واجمع الأدوات وأتقن المسار.",
+    "controls": "WASD أو الأسهم قيادة · Shift انجراف · E أداة · C نظر للخلف. تظهر عجلة ودواسات لمس على الهاتف.",
+    "genre": "سباق سان خوان",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Old San Juan Kart سباق سان خوان racing",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/nasilvae/old-san-juan-kart/tree/f8468fecf4460fa330c9080e5897c29de928ad2e",
+    "entry": "/games/san-juan-kart/index.html",
+    "cover": null,
+    "runtimeMB": 1.3,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Race AI karts through a procedural recreation of Old San Juan, drift, collect items and master the track.",
+        "controls": "WASD / arrows drive · Shift drift · E item · C look back. Touch steering and pedals appear on phones.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "zephyr-reef-kart",
+    "name": "Zephyr Reef Grand Prix",
+    "author": "RobZombAI",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "تسابق على حلبة استوائية خيالية بقيادة كارت سريعة وتحكم للموبايل.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "جائزة زفير ريف",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Zephyr Reef Grand Prix جائزة زفير ريف racing",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/RobZombAI/zephyr-reef-kart/tree/ae13db2ad2973d28619ff931544e7f64b5aa6265",
+    "entry": "/games/zephyr-reef-kart/index.html",
+    "cover": null,
+    "runtimeMB": 4.3,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Race across a fantasy tropical circuit with arcade kart handling and mobile controls.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "eight-ball",
+    "name": "Eight Ball 3D",
+    "author": "Kevin Forte",
+    "license": "MIT",
+    "categories": [
+      "sports"
+    ],
+    "description": "صوب واضرب الكرات على طاولة بلياردو ثلاثية الأبعاد بفيزياء تصادم الكرات.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "بلياردو ثلاثي الأبعاد",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Eight Ball 3D بلياردو ثلاثي الأبعاد sports",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/Sk4rKr0w/8ball-threejs-game/tree/6d184a6f600ee4d01b89ce365dacf0965f3ece43",
+    "entry": "/games/eight-ball/index.html",
+    "cover": null,
+    "runtimeMB": 5.2,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Aim and shoot on a 3D billiards table with ball collisions and realistic table geometry.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "SPORTS",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "orbit-golf",
+    "name": "Orbit Golf",
+    "author": "Ron Picard",
+    "license": "MIT",
+    "categories": [
+      "sports",
+      "puzzle"
+    ],
+    "description": "العب ثمانية عشر مسارا للجولف في الفضاء حيث تؤثر الكواكب والكويكبات والثقوب السوداء وبوابات الانتقال على الكرة.",
+    "controls": "اسحب للتصويب وتحديد القوة ثم ارفع إصبعك للضرب. الأسهم للضبط · Space أو Enter ضربة · R إعادة المسار · Esc القائمة.",
+    "genre": "جولف الفضاء",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Orbit Golf جولف الفضاء sports",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/ronpicard/orbit-golf/tree/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73",
+    "entry": "/games/orbit-golf/index.html",
+    "cover": null,
+    "runtimeMB": 1.2,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Putt through eighteen space-themed holes where planets, asteroids, black holes and wormholes change the ball’s path.",
+        "controls": "Drag to aim and add power; release to putt. Arrows fine-tune · Space / Enter swing · R restart hole · Esc menu.",
+        "genre": "SPORTS",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "infinity-parking",
+    "name": "Infinity Parking",
+    "author": "CapyBlaze",
+    "license": "MIT",
+    "categories": [
+      "racing",
+      "puzzle"
+    ],
+    "description": "حل تحديات ركن السيارات والمساحات في بيئة ملونة ثلاثية الأبعاد.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "تحدي الركن",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Infinity Parking تحدي الركن racing",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/CapyBlaze/Infinity-Parking/tree/8c20b256e9c00e062f2d783950a8a5660bf7d321",
+    "entry": "/games/infinity-parking/index.html",
+    "cover": null,
+    "runtimeMB": 17.6,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Solve spatial parking challenges with cars in a colourful 3D environment.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "crossroad",
+    "name": "CrossRoad",
+    "author": "Doinel Atanasiu / hexianWeb",
+    "license": "MIT",
+    "categories": [
+      "arcade"
+    ],
+    "description": "اعبر الطرق والعوائق في تحدي أركيد ثلاثي الأبعاد، مع حفظ أفضل الجولات على هذا الجهاز.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "عبور الطريق",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "CrossRoad عبور الطريق arcade",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/hexianWeb/CrossRoad/tree/281df5af6c59b2a8d0b86b4eb6c773cef7b76ec8",
+    "entry": "/games/crossroad/index.html",
+    "cover": null,
+    "runtimeMB": 69.6,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Cross roads and hazards in a 3D arcade challenge. Best runs are saved on this device.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "ARCADE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "External database replaced with real scores stored on this device. No sample players. Source and attribution retained."
+      }
+    }
+  },
+  {
+    "id": "cuberun",
+    "name": "CubeRun",
+    "author": "Adam Karlsten",
+    "license": "MIT",
+    "categories": [
+      "adventure",
+      "arcade"
+    ],
+    "description": "وجه المكعب يمينا ويسارا على مسار عوائق ثلاثي الأبعاد وتجنب الاصطدام.",
+    "controls": "A أو السهم الأيسر للتحرك يسارا · D أو السهم الأيمن للتحرك يمينا. تتوفر أزرار على أجهزة اللمس.",
+    "genre": "رحلة المكعب",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "CubeRun رحلة المكعب adventure",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/akarlsten/cuberun/tree/b3581ac0fbaa4293c571d8935c11cb454b29be03",
+    "entry": "/games/cuberun/index.html",
+    "cover": null,
+    "runtimeMB": 18.4,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Guide a cube left and right through a 3D obstacle course and avoid collisions.",
+        "controls": "A / left arrow move left · D / right arrow move right. On-screen controls are available on touch devices.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original React gameplay bundled with esbuild; host service worker kept intact. Source and licenses retained. Personal-use display fonts removed and replaced with system fonts."
+      }
+    }
+  },
+  {
+    "id": "rubiks-cube",
+    "name": "Rubik Cube 3D",
+    "author": "Pengfei Wang",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "دور وجوه المكعب السحري واخلطها وحلها، مع اختيار حجم المكعب.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "المكعب السحري",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Rubik Cube 3D المكعب السحري puzzle",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/pengfeiw/rubiks-cube/tree/c30b46d057c7b52b3db4feea3f881174c2bdbd44",
+    "entry": "/games/rubiks-cube/index.html",
+    "cover": null,
+    "runtimeMB": 2.1,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Rotate, scramble and solve a 3D twisty cube with adjustable cube order.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "chess-3d",
+    "name": "Chess 3D",
+    "author": "Ernest Rudnicki",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "العب الشطرنج على لوحة ثلاثية الأبعاد مع حركة القطع والفيزياء ومنافس كمبيوتر.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "شطرنج ثلاثي الأبعاد",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Chess 3D شطرنج ثلاثي الأبعاد puzzle",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/Terminats/chess-3d/tree/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8",
+    "entry": "/games/chess-3d/index.html",
+    "cover": null,
+    "runtimeMB": 2.6,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Play chess on a 3D board with piece movement, physics and a computer opponent.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "hypeometry",
+    "name": "Hypeometry",
+    "author": "HypnosNova",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "استكشف مراحل ألغاز هندسية تعتمد على المنظور ومسارات تتصل بالخداع البصري.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "ألغاز المنظور",
+    "tag": "3D",
+    "kind": "مراحل ألغاز المنظور",
+    "search": "Hypeometry ألغاز المنظور puzzle",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/HypnosNova/Hypeometry2/tree/2c614595befdbef0ed32dbaa1d674f14e63e58e2",
+    "entry": "/games/hypeometry/index.html",
+    "cover": "/covers/hypeometry.webp",
+    "runtimeMB": 1.9,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Explore perspective-based geometric puzzle levels with paths that connect through optical illusions.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Perspective puzzle levels",
+        "device": "Computer · touch controls",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "puzzle-cylinder",
+    "name": "Puzzle Cylinder",
+    "author": "Jake Siegers",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "حرك ألغازا على أسطوانة ثلاثية الأبعاد وحاول إكمال تحدي التطابق.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "أسطوانة الألغاز",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Puzzle Cylinder أسطوانة الألغاز puzzle",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/JakeSiegers/PuzzleCylinder/tree/2a559160acb005bcae212840727028912937aadd",
+    "entry": "/games/puzzle-cylinder/index.html",
+    "cover": null,
+    "runtimeMB": 9.8,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Manipulate a cylindrical 3D puzzle and work through its matching challenge.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "glimmer-box",
+    "name": "Glimmer Box",
+    "author": "paw & ever / 17biubiu",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "وجه رفيقك الصغير وادفع الصناديق عبر مراحل ألغاز ثلاثية الأبعاد ملونة.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "صندوق الضوء",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Glimmer Box صندوق الضوء puzzle",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/17biubiu/glimmer-box-puzzle/tree/57175a5daec33dd4a34f4b9209fd78611cb168b6",
+    "entry": "/games/glimmer-box/index.html",
+    "cover": null,
+    "runtimeMB": 2.8,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Guide a small companion and push boxes through colourful 3D puzzle levels.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "tetra-tangle",
+    "name": "Tetra Tangle",
+    "author": "Michael Scornavacca",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "رتب القطع ثلاثية الأبعاد واجمعها في لغز يعتمد على إدراك المساحة.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "تركيب الأشكال",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Tetra Tangle تركيب الأشكال puzzle",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/scornz/tetra-tangle/tree/aa5d19fa2cff36c9c04e155d5e2d7f1110aa1680",
+    "entry": "/games/tetra-tangle/index.html",
+    "cover": "/covers/tetra-tangle.webp",
+    "runtimeMB": 4.0,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Arrange and combine 3D pieces in a spatial construction puzzle.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "perspectives",
+    "name": "Perspectives",
+    "author": "Juan Uys",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "غير زاوية نظرك لحل لغز هندسي بأجواء ثلاثية الأبعاد.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "وجهات النظر",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Perspectives وجهات النظر puzzle",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/juanuys/perspectives/tree/9d34062cfb87b7668b4e266ba4e7bab54573739c",
+    "entry": "/games/perspectives/index.html",
+    "cover": null,
+    "runtimeMB": 9.1,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Change your viewpoint to solve an atmospheric spatial puzzle in 3D.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
+  },
+  {
+    "id": "mortar-command",
+    "name": "Mortar Command",
+    "author": "Doug Murphy",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "قد الوحدات والمدفعية عبر ساحة معركة صحراوية ثلاثية الأبعاد.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "قيادة المدفعية",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Mortar Command قيادة المدفعية action",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/dgmurphy/mortarcommand/tree/2b39eff2bf9206ae57aab167c3b18c9f6b8d28de",
+    "entry": "/games/mortar-command/index.html",
+    "cover": "/covers/mortar-command.webp",
+    "runtimeMB": 13.4,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Command units and artillery across a 3D desert battlefield.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original React gameplay bundled with esbuild; host service worker kept intact. Source and licenses retained."
+      }
+    }
+  },
+  {
+    "id": "drakonas",
+    "name": "Drakonas",
+    "author": "Fellicht.nl / Casmo",
+    "license": "MIT",
+    "categories": [
+      "action",
+      "flying"
+    ],
+    "description": "حلق في حملة تصويب فضائية ثلاثية الأبعاد وواجه الأعداء القادمين.",
+    "controls": "اتبع تعليمات وأزرار التحكم داخل اللعبة.",
+    "genre": "دراكوناس",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Drakonas دراكوناس action",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/Casmo/Drakonas/tree/a85a35bc027f8f62df8245864507df1e49ad77ff",
+    "entry": "/games/drakonas/index.html",
+    "cover": null,
+    "runtimeMB": 19.7,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Fly through a 3D space-shooter campaign and fight incoming enemies.",
+        "controls": "Follow the in-game controls and instructions.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+      }
+    }
   }
 ]

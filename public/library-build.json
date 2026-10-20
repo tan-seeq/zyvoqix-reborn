@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "games": [
     {
       "id": "space-pirates",
@@ -250,6 +250,111 @@
       "id": "stardust-drifter",
       "upstreamCommit": "8c77f03c634099c1bff29fe908a91de12d8c6b15",
       "sha256": "0013082ec5edc51c81abaf097e30302671559173bdfe835b72f458c326148eb5"
+    },
+    {
+      "id": "voxel-musou",
+      "upstreamCommit": "aba5fb8f43b713e88e8ac3a3105e48f01941dc7f",
+      "sha256": "25375181d855b0c4dddc1c1cc019872a835a9930e1a80a640a27a025b3dd2931"
+    },
+    {
+      "id": "misty-bunny",
+      "upstreamCommit": "ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f",
+      "sha256": "3f5c82ae812865300130c409a4b9a9c76cfa72f95e0b50369144655cbdab7e9c"
+    },
+    {
+      "id": "operation-ironhold",
+      "upstreamCommit": "4098330664d66085cb1775c0783597070c32172b",
+      "sha256": "6942dda4d45af01232f9559d7a89242104f7280bcffa8300654cff4755c84648"
+    },
+    {
+      "id": "regolith",
+      "upstreamCommit": "f5f25ba6bf7477c612b408b265c9275a4fd1200d",
+      "sha256": "cc6b9db64d244a6b15877cef035651712ac8678b103c33fad0114ebf621ec13a"
+    },
+    {
+      "id": "jungle-trail",
+      "upstreamCommit": "c15640d3a2b6f08ca68e4df98fdfc953ea8a070a",
+      "sha256": "9697f9b228ee1fce85ef57764e0ba4c15c6623d32e20416580355bd8ddb36cb2"
+    },
+    {
+      "id": "san-juan-kart",
+      "upstreamCommit": "f8468fecf4460fa330c9080e5897c29de928ad2e",
+      "sha256": "522a2bbdd4b0c4449e6c76c53c7e9bce051aea0c466991ad312f97916371a53a"
+    },
+    {
+      "id": "zephyr-reef-kart",
+      "upstreamCommit": "ae13db2ad2973d28619ff931544e7f64b5aa6265",
+      "sha256": "f6e5ba2c499e568131fd5e609c768e911c27f5c0982fc8879bb7d878c5f6e459"
+    },
+    {
+      "id": "eight-ball",
+      "upstreamCommit": "6d184a6f600ee4d01b89ce365dacf0965f3ece43",
+      "sha256": "f7c5c7abe0b58061ab8e80186c180220358fd16f0f9142ab4f1e5d3faa6ff922"
+    },
+    {
+      "id": "orbit-golf",
+      "upstreamCommit": "c854d9829da8828d2a35f7c15c4dfbd51a6ebd73",
+      "sha256": "b28e7c183ed2331f01c7d57dee0dfd5ae6018a5bd302f437d748c8770d5c699a"
+    },
+    {
+      "id": "infinity-parking",
+      "upstreamCommit": "8c20b256e9c00e062f2d783950a8a5660bf7d321",
+      "sha256": "10c9d235f21cb247e7fd18cbe3d63880789f06b29c560a65cb9d5fb31b718565"
+    },
+    {
+      "id": "crossroad",
+      "upstreamCommit": "281df5af6c59b2a8d0b86b4eb6c773cef7b76ec8",
+      "sha256": "391f4a81a69755f6fa06db96dec7e6f6fc5f60d7cc5f31219668257ac72eac5f"
+    },
+    {
+      "id": "cuberun",
+      "upstreamCommit": "b3581ac0fbaa4293c571d8935c11cb454b29be03",
+      "sha256": "3a6185ecee6a72ea77db2a7d73854d92c9184e1ee7515e15ffd8373183602d3e"
+    },
+    {
+      "id": "rubiks-cube",
+      "upstreamCommit": "c30b46d057c7b52b3db4feea3f881174c2bdbd44",
+      "sha256": "eed8c9f05fbb0e75598f270cf5b2c54f72ba05a59c04f52d24227d4b231bd57d"
+    },
+    {
+      "id": "chess-3d",
+      "upstreamCommit": "7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8",
+      "sha256": "0a6106dc1ccfd1a1b896e70e5f01b4b581a4381ea5dd8cc9c2f8fc21a14de50d"
+    },
+    {
+      "id": "hypeometry",
+      "upstreamCommit": "2c614595befdbef0ed32dbaa1d674f14e63e58e2",
+      "sha256": "d4b5c8ebb02053bb7d51c586189ffc107f541db14ecf0be53d220b2be989526a"
+    },
+    {
+      "id": "puzzle-cylinder",
+      "upstreamCommit": "2a559160acb005bcae212840727028912937aadd",
+      "sha256": "fc2ff9969f792949b6aa0e660979fb9a6baf189cfb27e2f60b83c282293942b5"
+    },
+    {
+      "id": "glimmer-box",
+      "upstreamCommit": "57175a5daec33dd4a34f4b9209fd78611cb168b6",
+      "sha256": "28d7dd937082e76fdb6758d0564105be9fa79dafeff0a8068f3df239d6023637"
+    },
+    {
+      "id": "tetra-tangle",
+      "upstreamCommit": "aa5d19fa2cff36c9c04e155d5e2d7f1110aa1680",
+      "sha256": "073f9f3789a828998337e2b7a41f78482e3d570341d4dff92c03895ba66a9ce1"
+    },
+    {
+      "id": "perspectives",
+      "upstreamCommit": "9d34062cfb87b7668b4e266ba4e7bab54573739c",
+      "sha256": "f1c9909e3c0841c24adb8d0d9ed82091d06adae5a2a82cfc2cd4ece1669b3b90"
+    },
+    {
+      "id": "mortar-command",
+      "upstreamCommit": "2b39eff2bf9206ae57aab167c3b18c9f6b8d28de",
+      "sha256": "b9a2f8bb2f118ef178b38c10cd77bb91d0c97918ec2461787a69c382c5609980"
+    },
+    {
+      "id": "drakonas",
+      "upstreamCommit": "a85a35bc027f8f62df8245864507df1e49ad77ff",
+      "sha256": "577a3d30435d238470aeb9234e042e62d29c2fb22c926bbcdbc7048788d082b1"
     }
   ],
   "runtime": "same-origin static files"
