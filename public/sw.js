@@ -1,9 +1,1 @@
-/* Static shell + original games are offline-capable after first successful visit.
-   External games always require access to their providers and are never cached. */
-const VERSION='zyvoqix-arcade-v6-ultra-20261020';
-const SHELL=['/','/index.html','/styles.css','/app.js','/games.js','/arcade-pack.js','/ultra-catalog.js','/manifest.webmanifest','/assets/zyvoqix-hero-small.webp','/assets/zyvoqix-hero.webp','/assets/zyvoqix-brand.svg','/icons/zyvoqix-icon-192.png'];
-self.addEventListener('install',event=>event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
-self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('zyvoqix-')||key.startsWith('gamezone-')).filter(key=>key!==VERSION).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(url.origin!==self.location.origin||url.pathname.startsWith('/api/'))return;
- event.respondWith(fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();event.waitUntil(caches.open(VERSION).then(cache=>cache.put(event.request,copy)).catch(()=>{}))}return response}).catch(()=>caches.match(event.request).then(response=>response||(event.request.mode==='navigate'?caches.match('/index.html'):Response.error()))));
-});
+const CACHE='zyvoqix-portal-v8-1';self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['/','/index.html','/portal.css','/portal.js','/library.json','/play.html'])).then(()=>self.skipWaiting()))});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==location.origin)return;e.respondWith(fetch(e.request).then(r=>{if(r.ok){const cl=r.clone();caches.open(CACHE).then(c=>c.put(e.request,cl)).catch(()=>{})}return r}).catch(()=>caches.match(e.request)))})
