@@ -1,3 +1,1 @@
-{
- "id":"/","name":"ZYVOQIX - عالم الألعاب","short_name":"ZYVOQIX","description":"بوابة ألعاب الأكشن والسباقات والطيران","lang":"ar","dir":"rtl","start_url":"/","scope":"/","display":"standalone","background_color":"#070918","theme_color":"#070918","icons":[{"src":"/icons/zyvoqix-icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"/icons/zyvoqix-icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"}]
-}
+{"name":"ZYVOQIX - Gaming Universe","short_name":"ZYVOQIX","description":"26 playable browser games including WebGL 3D experiences with Canvas 2D fallback, plus official PC download listings.","start_url":"/","display":"standalone","background_color":"#070b18","theme_color":"#080e21","lang":"ar","dir":"rtl","icons":[{"src":"/assets/icon.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
