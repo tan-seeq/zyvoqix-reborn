@@ -1,6 +1,6 @@
 {
-  "version": 11,
-  "archiveCommit": "6bdac170aecdabc303d7ef7272be4661971f0382",
+  "version": 12,
+  "archiveCommit": "2e2928155df36518f9bd6285cfe195062446cd70",
   "games": [
     {
       "id": "space-pirates",
@@ -141,6 +141,424 @@
       ],
       "bytes": 15843405,
       "sourceArchive": true
+    },
+    {
+      "id": "stardust-isles",
+      "archive": "vendor/stardust-isles.tar.gz",
+      "sha256": "23305cee25316858a3a1094599783d2efafeaec4eac82242cf644d6b82157535",
+      "bytes": 6395266,
+      "upstreamCommit": "2c9473042be8a487e24bc4b3410b734444fa2b03",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "mineworld",
+      "archive": "vendor/mineworld.tar.gz",
+      "sha256": "97d3bdc5af18c6b28b2728547449b6d61aa5106e09b4bf317236bf3ef4997d9d",
+      "bytes": 6077373,
+      "upstreamCommit": "5ef2b328ea81524e12d8dbad3ced4af9ffaaeca2",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "hammas-3d",
+      "archive": "vendor/hammas-3d.tar.gz",
+      "sha256": "2a9b70801476595a27c35d9ea3bc60816d23d4a023c4812ae457044bba34bbfa",
+      "bytes": 471927,
+      "upstreamCommit": "e367a62dde2b1d3ea391b5d06407758838c1e179",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "roundcraft",
+      "archive": "vendor/roundcraft.tar.gz",
+      "sha256": "9c8694b9d6555d5d85e7ebfbb7c95ba6e1063a2c03fdc9dae38a6e2b0888168f",
+      "bytes": 268381,
+      "upstreamCommit": "86cf314c62b24629adf8cec0b7e08ad2d14849c1",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "decay",
+      "archive": "vendor/decay.tar.gz",
+      "sha256": "903a56f7fd5bc7f7ae2db3a863a1609fb1f434e6e9d149102f9a6b91dac81f27",
+      "bytes": 69383325,
+      "upstreamCommit": "31c1e23133780d741019f6281b37ad84fa536147",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "obbyverse",
+      "archive": "vendor/obbyverse.tar.gz",
+      "sha256": "7dc214465bb8d19fe028057720d5da3ceefb53a80f7722b00a6b09fdffa38b45",
+      "bytes": 19137931,
+      "upstreamCommit": "088bcb138017a1b81c6509593c7cedb4e7929a61",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "overdrive",
+      "archive": "vendor/overdrive.tar.gz",
+      "sha256": "2ff5c5b01c55aadce356e8b2d71e16e9ea8d74815279d5d9281e35ffa7a2112a",
+      "bytes": 46882585,
+      "upstreamCommit": "cf7be4b7a0c43f33596ee06e5c11564c28b13416",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "snack-hole",
+      "archive": "vendor/snack-hole.tar.gz",
+      "sha256": "fcb72a21f396b0a8236891c92ce543f80aa08d65dbb8ed624fecce14cf086fdf",
+      "bytes": 6443319,
+      "upstreamCommit": "270bdc403d776ebfbee485ad7ab740465ed24452",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "catapult-siege",
+      "archive": "vendor/catapult-siege.tar.gz",
+      "sha256": "3a5605c88636ab01f0e6d30c949d5e2cc832f039f3a983ee74f8889016ae75fc",
+      "bytes": 5059767,
+      "upstreamCommit": "5248c4de3fbe52065f582e6f43d3032eca58b5f2",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "tricky-track",
+      "archive": "vendor/tricky-track.tar.gz",
+      "sha256": "151c6bba7968527ee5202ab6a19539f085a70e40f20f886f91e6ba709fef37b8",
+      "bytes": 8873235,
+      "upstreamCommit": "8f899eb7638f3b09cbc379a8d03244484ccb2177",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "connect-four-3d",
+      "archive": "vendor/connect-four-3d.tar.gz",
+      "sha256": "4c2f705aab8fa11176b806cf218b4d2df33e9a78bc49587fa9456a2ea38058bf",
+      "bytes": 17864384,
+      "upstreamCommit": "6507f6fcc8e9a4bb63e2316fd00fe7f4d29f39b9",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "tower-of-hanoi",
+      "archive": "vendor/tower-of-hanoi.tar.gz",
+      "sha256": "f8f8b03f525294d1abf764714f2ed8cd8acb83fa41ece98a6603668d089eab95",
+      "bytes": 873654,
+      "upstreamCommit": "bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "fox-floe",
+      "archive": "vendor/fox-floe.tar.gz",
+      "sha256": "45ca2f434f47e8da3e525e011d21fc77584d18fde198ad88a6d2daeff19395e7",
+      "bytes": 3050092,
+      "upstreamCommit": "21b78f4befe471284f0ce0b4f5cf4b5e956e04a3",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "apex-formula",
+      "archive": "vendor/apex-formula.tar.gz",
+      "sha256": "4b219155db8e8cc98bf4fa85b823f9f08dc04a5935af89054aaffb7dbffff2d4",
+      "bytes": 988388,
+      "upstreamCommit": "e5292b85c9a8773fd2a5e2b55df570d5da963488",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "horror-house",
+      "archive": "vendor/horror-house.tar.gz",
+      "sha256": "034a7c07f393a8d165cdc72c86b4141ece8b55483fee319c92cbb65a816fea75",
+      "bytes": 205266,
+      "upstreamCommit": "c63aa7ca07109ac73736917db15543d363549400",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "dead-signal",
+      "archive": "vendor/dead-signal.tar.gz",
+      "sha256": "5d6989467972ce014af4e2027277712d8f568f00797722c8da4bc1ed142bf362",
+      "bytes": 401385,
+      "upstreamCommit": "9805c3ef6297e8f518fdfb75f58a7af599334013",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "turbo-kart-rally",
+      "archive": "vendor/turbo-kart-rally.tar.gz",
+      "sha256": "d53e8856c1c90e2316c8704ad6743d93f4f40bff7c7c524914de66b187292716",
+      "bytes": 1471059,
+      "upstreamCommit": "c52aca3f10c7995884c316810cac6514daa40e9c",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "voxelcraft-survival",
+      "archive": "vendor/voxelcraft-survival.tar.gz",
+      "sha256": "1668ef6a7fb9159587b6862848b541d6c23dc74c01ca33a846f456fe8287cb4b",
+      "bytes": 879426,
+      "upstreamCommit": "30e8a2a2f7c8be9450983fa1d57aa197e875faf6",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "sushi-paws",
+      "archive": "vendor/sushi-paws.tar.gz",
+      "sha256": "7b7de09bf8bc9494bd2081abd4f0d7568b964ca7796df053a792ee41452ab30f",
+      "bytes": 395498,
+      "upstreamCommit": "0e9ce991c9a834d0bc7a6d70af1d45620dd39e96",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "nightmare-trigger",
+      "archive": "vendor/nightmare-trigger.tar.gz",
+      "sha256": "f48501ba6066ab6fc5b570239c0e8d981ac16d7dac4d23a4d04f327d6d03c772",
+      "bytes": 490117,
+      "upstreamCommit": "a88826562bfad76705073b000140026231129972",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "obi-farm",
+      "archive": "vendor/obi-farm.tar.gz",
+      "sha256": "fb8540cdaa3cd89950eaae4f27c9bedece461030df0418efe59ccf11f7041582",
+      "bytes": 2531033,
+      "upstreamCommit": "9939d7d513769abb2f4c16b3512046077ada4198",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "apex-velocity",
+      "archive": "vendor/apex-velocity.tar.gz",
+      "sha256": "319eec54a91004ecca92a874b65c30c7abe5a0408ec6ccf1719abd2f198e2466",
+      "bytes": 251890,
+      "upstreamCommit": "ef8277af4520f5ae7c15989014e4000361db73d1",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "boat-chase",
+      "archive": "vendor/boat-chase.tar.gz",
+      "sha256": "f87c76f37ec32a5c57d6a23fd8b8f26ac508a7099783be854b8c30a1cbe73702",
+      "bytes": 2221006,
+      "upstreamCommit": "a466207df8ef724f98f279b0ec1f3b14f66cc4f6",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "desire-path",
+      "archive": "vendor/desire-path.tar.gz",
+      "sha256": "a78868aed6fa9c374e67f36c27c0cc09a326a0b4a897c0c885ac33e71fefcc77",
+      "bytes": 3123095,
+      "upstreamCommit": "0022da4c546d280c4ceca920fb2b2174c34f864f",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "mastermind-3d",
+      "archive": "vendor/mastermind-3d.tar.gz",
+      "sha256": "92ef185a05008b2a8bd78fe7ab79c88472ee25d43abf00550fbb5d638691d319",
+      "bytes": 1567370,
+      "upstreamCommit": "c10c5525376e3b94538b7f6f1e75a78f33590ca8",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "niulai-arena",
+      "archive": "vendor/niulai-arena.tar.gz",
+      "sha256": "c3dcca790727260d725ea75656ed7ef03a0271cb4733c2de3ee1cc381b98eff4",
+      "bytes": 1000034,
+      "upstreamCommit": "0a71c5a5944d6abca88393fb8825660fb70ffd0f",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "vibe-basketball",
+      "archive": "vendor/vibe-basketball.tar.gz",
+      "sha256": "76c6ea7c45294cdd4a1dd35505cd0d12f2d62ffb4d412473bcbedadfd7b97aa7",
+      "bytes": 2101609,
+      "upstreamCommit": "184a5b27ee259869744f0b32de9954ab7983c1bb",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "tiny-town",
+      "archive": "vendor/tiny-town.tar.gz",
+      "sha256": "a840f535be6e229072207a200245dbbda90b9fa55a9c1e249b9d3d2526a061d7",
+      "bytes": 12466632,
+      "upstreamCommit": "4bd0ce62918aff6a7ca118555920b18059ece734",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "neon-drift-kart",
+      "archive": "vendor/neon-drift-kart.tar.gz",
+      "sha256": "b3037d9c84ba53e261ad459e3ca8b634248e3cc379d8dad96133294630215724",
+      "bytes": 274315,
+      "upstreamCommit": "52c7c0e43adc0dc9b70390a51417dc51ce753ef9",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "3d-ping-pong",
+      "archive": "vendor/3d-ping-pong.tar.gz",
+      "sha256": "adebc31069d55cd4adc815d01a76fd2d5b0de7284167cb7fe784d3b40c062516",
+      "bytes": 1519263,
+      "upstreamCommit": "cf1af9d6921ef5e783dca3f9e36b5c0067aa6293",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "block-snake-3d",
+      "archive": "vendor/block-snake-3d.tar.gz",
+      "sha256": "85d06f3c6215c27df31863c90ea339d714eb3a03a9aae48210fa8f18cd5a145b",
+      "bytes": 1743067,
+      "upstreamCommit": "38b9546207bb0bd0783e174c9dd3f4ae7591ab83",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "genesis-defend",
+      "archive": "vendor/genesis-defend.tar.gz",
+      "sha256": "b6e7db10cf302d381bfd4bd5e78641ed2fd8791e8c0b355d66ff33b84c4f3c76",
+      "bytes": 318101,
+      "upstreamCommit": "f53db1cc2d835494dce22e319b303ffcc4bbfe54",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "valley",
+      "archive": "vendor/valley.tar.gz",
+      "sha256": "12255bd38bda94621d8e9aed2e09cbd46ce9573c90ca283852cc24705edffb7f",
+      "bytes": 349452,
+      "upstreamCommit": "0b02bfee93782bdf0f236b2bd469edb5da1e1222",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "voxel-island",
+      "archive": "vendor/voxel-island.tar.gz",
+      "sha256": "de3687c20f2a9d8a322ba08a0ac4e514fb93e1e0f9412c67fea80d5834a83ae8",
+      "bytes": 303464,
+      "upstreamCommit": "3d92745c58f5960115092cf51e8fa7af1f7f9f85",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "courier-city",
+      "archive": "vendor/courier-city.tar.gz",
+      "sha256": "3e769a360d3eeb4d9d6f2a0c02342cddbed327226c8b5e9eaa65b00d5b289a88",
+      "bytes": 820387,
+      "upstreamCommit": "43c70ea24c2b8a375dcd01d07c9a2496439c4324",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "neon-drift-city",
+      "archive": "vendor/neon-drift-city.tar.gz",
+      "sha256": "a0e10439b35591eaacee605368ca552c42ccc5e982498aa2d48b449b617d3573",
+      "bytes": 247557,
+      "upstreamCommit": "2210b0a3ddb76162dd2efa33af76196d000bdc6b",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "skyline-rush",
+      "archive": "vendor/skyline-rush.tar.gz",
+      "sha256": "b16a385187c253fe13f99db320399554c37341b371f34fdde8bbd73b5498171e",
+      "bytes": 1872175,
+      "upstreamCommit": "b8cd5ed13a577d89220f4d8ee07abce929d4f5c0",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "stardust-drifter",
+      "archive": "vendor/stardust-drifter.tar.gz",
+      "sha256": "0013082ec5edc51c81abaf097e30302671559173bdfe835b72f458c326148eb5",
+      "bytes": 2044632,
+      "upstreamCommit": "8c77f03c634099c1bff29fe908a91de12d8c6b15",
+      "required": [
+        "index.html",
+        "LICENSE.txt"
+      ]
     }
   ]
 }
