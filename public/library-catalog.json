@@ -433,5 +433,1297 @@
         "notice": "Optional analytics removed; touch movement and jump buttons added. Complete modified source offered under AGPL-3.0-or-later."
       }
     }
+  },
+  {
+    "id": "stardust-isles",
+    "name": "Stardust Isles",
+    "author": "Danzer1xxxxChan",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "استكشف جزرا عائمة وواجه الأعداء في عالم مولد.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "جزر النجوم",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Stardust Isles جزر النجوم adventure",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/Danzer1xxxxChan/Stardust_Isles/tree/2c9473042be8a487e24bc4b3410b734444fa2b03",
+    "entry": "/games/stardust-isles/index.html",
+    "cover": "/covers/stardust-isles.webp",
+    "runtimeMB": 1.2,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Explore floating islands and fight enemies in a procedural world.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "mineworld",
+    "name": "MineWorld",
+    "author": "EVEDensity",
+    "license": "MIT",
+    "categories": [
+      "sandbox"
+    ],
+    "description": "استكشف أرضا مكعبة واجمع الموارد وابن عالمك.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "عالم المناجم",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "MineWorld عالم المناجم sandbox",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/EVEDensity/MineWorld/tree/5ef2b328ea81524e12d8dbad3ced4af9ffaaeca2",
+    "entry": "/games/mineworld/index.html",
+    "cover": "/covers/mineworld.webp",
+    "runtimeMB": 6.9,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Explore voxel terrain, mine blocks and build your world.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "SANDBOX",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "hammas-3d",
+    "name": "Hammas 3D",
+    "author": "Jung217",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "لعبة تصويب ثلاثية الأبعاد بشخصيات هامستر وأربع أسلحة وزوايا كاميرا متعددة.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "معركة الهامستر",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Hammas 3D معركة الهامستر action",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/Jung217/Hammas3D/tree/e367a62dde2b1d3ea391b5d06407758838c1e179",
+    "entry": "/games/hammas-3d/index.html",
+    "cover": null,
+    "runtimeMB": 2.3,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Play a hamster-themed 3D shooter with four weapons and camera choices.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "roundcraft",
+    "name": "Roundcraft",
+    "author": "MarcusBiel",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "استكشف عالما دائريا من المكعبات في مغامرة ملونة.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "رحلة العالم الدائري",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Roundcraft رحلة العالم الدائري adventure",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/MarcusBiel/roundcraft/tree/86cf314c62b24629adf8cec0b7e08ad2d14849c1",
+    "entry": "/games/roundcraft/index.html",
+    "cover": null,
+    "runtimeMB": 1.4,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Explore a curved voxel world in a colourful 3D adventure.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "decay",
+    "name": "Decay",
+    "author": "RealAbdurRehman",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "واجه الزومبي واجمع المستلزمات وحاول البقاء في بيئة مدمرة.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "البقاء في المدينة",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Decay البقاء في المدينة action",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/RealAbdurRehman/decay/tree/31c1e23133780d741019f6281b37ad84fa536147",
+    "entry": "/games/decay/index.html",
+    "cover": null,
+    "runtimeMB": 88.4,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Face waves of zombies, gather supplies and survive in a ruined environment.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "obbyverse",
+    "name": "Obbyverse",
+    "author": "RealAbdurRehman",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "اقفز بين المنصات وتجاوز الحواجز المتحركة في مسار ثلاثي الأبعاد.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "تحدي الحواجز",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Obbyverse تحدي الحواجز adventure",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/RealAbdurRehman/obbyverse/tree/088bcb138017a1b81c6509593c7cedb4e7929a61",
+    "entry": "/games/obbyverse/index.html",
+    "cover": null,
+    "runtimeMB": 21.0,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Jump across platforms and moving obstacles in a 3D obstacle course.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "overdrive",
+    "name": "Overdrive",
+    "author": "RealAbdurRehman",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "قد السيارة وتجاوز العوائق وحاول إكمال المسار بفيزياء حركة السيارات.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "تحدي قيادة السيارات",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Overdrive تحدي قيادة السيارات racing",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/RealAbdurRehman/overdrive/tree/cf7be4b7a0c43f33596ee06e5c11564c28b13416",
+    "entry": "/games/overdrive/index.html",
+    "cover": null,
+    "runtimeMB": 50.1,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Drive through obstacles using vehicle physics and try to complete the course.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "snack-hole",
+    "name": "Snack Hole",
+    "author": "SamadiPour",
+    "license": "MIT",
+    "categories": [
+      "arcade"
+    ],
+    "description": "تحكم في حفرة تكبر كلما ابتلعت الأشياء في خرائط متنوعة.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "ابتلع المدينة",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Snack Hole ابتلع المدينة arcade",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/SamadiPour/snack-hole-game/tree/270bdc403d776ebfbee485ad7ab740465ed24452",
+    "entry": "/games/snack-hole/index.html",
+    "cover": "/covers/snack-hole.webp",
+    "runtimeMB": 6.9,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Control a growing hole and swallow city props across themed maps.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "ARCADE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "catapult-siege",
+    "name": "Catapult Siege",
+    "author": "Sina-Ghiasi",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "صوب بالمنجنيق وأسقط الأهداف باستخدام فيزياء المقذوفات.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "حصار المنجنيق",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Catapult Siege حصار المنجنيق action",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/Sina-Ghiasi/threejs-catapult-game/tree/5248c4de3fbe52065f582e6f43d3032eca58b5f2",
+    "entry": "/games/catapult-siege/index.html",
+    "cover": "/covers/catapult-siege.webp",
+    "runtimeMB": 6.3,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Aim a catapult and use projectile physics to knock down targets.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "tricky-track",
+    "name": "Tricky Track",
+    "author": "UstymUkhman",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "قد على مسار متعرج ثلاثي الأبعاد وتجنب السقوط من الطريق.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "المسار الصعب",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Tricky Track المسار الصعب racing",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/UstymUkhman/tricky-track/tree/8f899eb7638f3b09cbc379a8d03244484ccb2177",
+    "entry": "/games/tricky-track/index.html",
+    "cover": null,
+    "runtimeMB": 12.6,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Navigate a twisting 3D track and avoid falling off the road.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "connect-four-3d",
+    "name": "Connect Four 3D",
+    "author": "amir-hossein-khodaei",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "ضع القطع على لوحة ثلاثية الأبعاد ووصل أربع قطع من لونك.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "أربعة على التوالي",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Connect Four 3D أربعة على التوالي puzzle",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/amir-hossein-khodaei/connect4-webgl-mediapipe/tree/6507f6fcc8e9a4bb63e2316fd00fe7f4d29f39b9",
+    "entry": "/games/connect-four-3d/index.html",
+    "cover": "/covers/connect-four-3d.webp",
+    "runtimeMB": 28.3,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Drop pieces into a 3D board and connect four of your colour.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "tower-of-hanoi",
+    "name": "Tower of Hanoi",
+    "author": "anisches",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "انقل الأقراص بين الأبراج مع مراعاة ترتيب أحجامها.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "برج هانوي",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Tower of Hanoi برج هانوي puzzle",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/anisches/towerofHanoi/tree/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80",
+    "entry": "/games/tower-of-hanoi/index.html",
+    "cover": "/covers/tower-of-hanoi.webp",
+    "runtimeMB": 1.1,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Move stacked disks between towers while obeying the size rule.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "fox-floe",
+    "name": "Fox Floe",
+    "author": "atmirrr",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "وجه الثعلب على النهر الجليدي وتفاد العوائق.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "الثعلب والجليد",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Fox Floe الثعلب والجليد adventure",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/atmirrr/fox-floe/tree/21b78f4befe471284f0ce0b4f5cf4b5e956e04a3",
+    "entry": "/games/fox-floe/index.html",
+    "cover": "/covers/fox-floe.webp",
+    "runtimeMB": 5.6,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Guide a fox along an icy river and steer around hazards.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "apex-formula",
+    "name": "Apex Formula",
+    "author": "bridge-mind",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "قد سيارة فورمولا وتسابق على حلبة ثلاثية الأبعاد.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "سباق فورمولا",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Apex Formula سباق فورمولا racing",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/bridge-mind/apex-formula/tree/e5292b85c9a8773fd2a5e2b55df570d5da963488",
+    "entry": "/games/apex-formula/index.html",
+    "cover": null,
+    "runtimeMB": 1.8,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Drive a Formula-style car and race around a 3D circuit.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "horror-house",
+    "name": "Horror House",
+    "author": "bridge-mind",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "ابحث عن ثلاثة مفاتيح داخل منزل مسكون واعثر على طريق للخروج.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "الهروب من المنزل",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Horror House الهروب من المنزل adventure",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/bridge-mind/bridge-horror-house/tree/c63aa7ca07109ac73736917db15543d363549400",
+    "entry": "/games/horror-house/index.html",
+    "cover": null,
+    "runtimeMB": 0.7,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Search a haunted house for three keys and find a way out.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "dead-signal",
+    "name": "Dead Signal",
+    "author": "bridge-mind",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "استكشف منطقة خطرة وواجه الأعداء في لعبة تصويب وبقاء.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "إشارة الخطر",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Dead Signal إشارة الخطر action",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/tree/9805c3ef6297e8f518fdfb75f58a7af599334013",
+    "entry": "/games/dead-signal/index.html",
+    "cover": null,
+    "runtimeMB": 1.1,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Explore an exclusion zone and survive hostile encounters in an extraction shooter.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "turbo-kart-rally",
+    "name": "Turbo Kart Rally",
+    "author": "bridge-mind",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "تسابق بعربة كارت في مسار رالي ثلاثي الأبعاد.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "رالي الكارت",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Turbo Kart Rally رالي الكارت racing",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/bridge-mind/turbo-kart-rally/tree/c52aca3f10c7995884c316810cac6514daa40e9c",
+    "entry": "/games/turbo-kart-rally/index.html",
+    "cover": null,
+    "runtimeMB": 2.6,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Race a kart through a colourful 3D rally course.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "voxelcraft-survival",
+    "name": "Voxelcraft Survival",
+    "author": "bridge-mind",
+    "license": "MIT",
+    "categories": [
+      "sandbox"
+    ],
+    "description": "اجمع الموارد واصنع الأدوات وابن في عالم مكعبات للبقاء.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "بناء وبقاء",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Voxelcraft Survival بناء وبقاء sandbox",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/bridge-mind/voxelcraft/tree/30e8a2a2f7c8be9450983fa1d57aa197e875faf6",
+    "entry": "/games/voxelcraft-survival/index.html",
+    "cover": null,
+    "runtimeMB": 1.5,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Gather resources, craft and build in a voxel survival world.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "SANDBOX",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "sushi-paws",
+    "name": "Sushi Paws",
+    "author": "clydejuniorscripts",
+    "license": "MIT",
+    "categories": [
+      "arcade"
+    ],
+    "description": "نافس قططا يتحكم بها الكمبيوتر في تحدي سوشي على سير متحرك.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "تحدي السوشي",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Sushi Paws تحدي السوشي arcade",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/clydejuniorscripts/sushi-paws-conveyor-clash/tree/0e9ce991c9a834d0bc7a6d70af1d45620dd39e96",
+    "entry": "/games/sushi-paws/index.html",
+    "cover": null,
+    "runtimeMB": 0.9,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Compete with AI cats in a conveyor-belt sushi party game.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "ARCADE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "nightmare-trigger",
+    "name": "Nightmare Trigger",
+    "author": "devesh-talreja",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "واجه الوحوش في لعبة تصويب ثلاثية الأبعاد من منظور أول.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "معركة الكوابيس",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Nightmare Trigger معركة الكوابيس action",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/devesh-talreja/nightmare-trigger/tree/a88826562bfad76705073b000140026231129972",
+    "entry": "/games/nightmare-trigger/index.html",
+    "cover": null,
+    "runtimeMB": 1.3,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Fight monsters in a dark 3D first-person shooter.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "obi-farm",
+    "name": "Obi Farm",
+    "author": "drwjkirkpatrick-web",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "طارد أوبي في المزرعة وأمسكه قبل وصوله إلى الدجاج.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "مطاردة في المزرعة",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Obi Farm مطاردة في المزرعة adventure",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/drwjkirkpatrick-web/obi-farm-3d/tree/9939d7d513769abb2f4c16b3512046077ada4198",
+    "entry": "/games/obi-farm/index.html",
+    "cover": "/covers/obi-farm.webp",
+    "runtimeMB": 0.8,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Chase Obi around the farm and tag him before he reaches the chickens.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "apex-velocity",
+    "name": "Apex Velocity",
+    "author": "gpreethish08",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "تسابق على حلبة ثلاثية الأبعاد وحسن قيادتك.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "سرعة الحلبة",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Apex Velocity سرعة الحلبة racing",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/gpreethish08/apex-velocity-racing/tree/ef8277af4520f5ae7c15989014e4000361db73d1",
+    "entry": "/games/apex-velocity/index.html",
+    "cover": null,
+    "runtimeMB": 0.9,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Race on a 3D circuit and work to improve your driving.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "boat-chase",
+    "name": "Boat Chase",
+    "author": "hammadshakeelai",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "قد القارب بين القنوات واهرب من المطاردة.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "مطاردة القوارب",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Boat Chase مطاردة القوارب racing",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/hammadshakeelai/Boat-Chase/tree/a466207df8ef724f98f279b0ec1f3b14f66cc4f6",
+    "entry": "/games/boat-chase/index.html",
+    "cover": null,
+    "runtimeMB": 4.8,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Steer a boat through canals and escape pursuit.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "desire-path",
+    "name": "Desire Path",
+    "author": "jerrychan7",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "تسلق مسارا من العوائق ثلاثية الأبعاد وحاول الوصول للقمة.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "طريق التسلق",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Desire Path طريق التسلق adventure",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/jerrychan7/desire_path/tree/0022da4c546d280c4ceca920fb2b2174c34f864f",
+    "entry": "/games/desire-path/index.html",
+    "cover": null,
+    "runtimeMB": 4.6,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Climb a path of 3D obstacles and try to reach the top.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "mastermind-3d",
+    "name": "Mastermind 3D",
+    "author": "joeseesun",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "اكتشف تسلسل الألوان السري على لوحة ألغاز بكرات ثلاثية الأبعاد.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "شفرة الألوان",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Mastermind 3D شفرة الألوان puzzle",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/joeseesun/mastermind-3d/tree/c10c5525376e3b94538b7f6f1e75a78f33590ca8",
+    "entry": "/games/mastermind-3d/index.html",
+    "cover": null,
+    "runtimeMB": 3.4,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Crack a secret colour sequence using a 3D marble puzzle board.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "niulai-arena",
+    "name": "Niulai Arena",
+    "author": "liyupi",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "اختر مقاتلا وخض المعارك المحلية في ثلاث ساحات.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "ساحة القتال",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Niulai Arena ساحة القتال action",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/liyupi/niulai-game/tree/0a71c5a5944d6abca88393fb8825660fb70ffd0f",
+    "entry": "/games/niulai-arena/index.html",
+    "cover": null,
+    "runtimeMB": 2.0,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Choose a fighter and battle locally across three arenas.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "vibe-basketball",
+    "name": "Vibe Basketball",
+    "author": "mike007jd",
+    "license": "MIT",
+    "categories": [
+      "sports"
+    ],
+    "description": "العب مباراة كرة سلة أو جرب تحدي الرميات الثلاثية.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "تحدي كرة السلة",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Vibe Basketball تحدي كرة السلة sports",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/mike007jd/vibebasketball/tree/184a5b27ee259869744f0b32de9954ab7983c1bb",
+    "entry": "/games/vibe-basketball/index.html",
+    "cover": "/covers/vibe-basketball.webp",
+    "runtimeMB": 1.8,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Play a basketball match or try the three-point challenge.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "SPORTS",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "tiny-town",
+    "name": "Tiny Town",
+    "author": "nazariitaran",
+    "license": "MIT",
+    "categories": [
+      "sandbox"
+    ],
+    "description": "ابن الطرق وضع المباني وطور مدينتك الصغيرة.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "بناء المدينة",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Tiny Town بناء المدينة sandbox",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/nazariitaran/tiny-town-threejs-game/tree/4bd0ce62918aff6a7ca118555920b18059ece734",
+    "entry": "/games/tiny-town/index.html",
+    "cover": "/covers/tiny-town.webp",
+    "runtimeMB": 15.7,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Build roads, place buildings and grow your own small town.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "SANDBOX",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "neon-drift-kart",
+    "name": "Neon Drift Kart",
+    "author": "pacphi",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "تسابق بعربات كارت مضيئة على حلبات بأجواء النيون.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "سباق كارت النيون",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Neon Drift Kart سباق كارت النيون racing",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/pacphi/neon-drift/tree/52c7c0e43adc0dc9b70390a51417dc51ce753ef9",
+    "entry": "/games/neon-drift-kart/index.html",
+    "cover": null,
+    "runtimeMB": 1.1,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Race neon karts across synthwave-style tracks.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "3d-ping-pong",
+    "name": "3D Ping Pong",
+    "author": "rsamwilson2323-cloud",
+    "license": "MIT",
+    "categories": [
+      "sports"
+    ],
+    "description": "حرك المضرب ونافس الكمبيوتر في تنس طاولة ثلاثي الأبعاد.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "تنس الطاولة",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "3D Ping Pong تنس الطاولة sports",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/rsamwilson2323-cloud/3d-ping-pong-game/tree/cf1af9d6921ef5e783dca3f9e36b5c0067aa6293",
+    "entry": "/games/3d-ping-pong/index.html",
+    "cover": null,
+    "runtimeMB": 2.7,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Move your paddle and challenge a computer opponent in 3D table tennis.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "SPORTS",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "block-snake-3d",
+    "name": "Block Snake 3D",
+    "author": "rsamwilson2323-cloud",
+    "license": "MIT",
+    "categories": [
+      "arcade"
+    ],
+    "description": "وجه الثعبان المكعب واجمع الطعام وتجنب الاصطدام.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "الثعبان المكعب",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Block Snake 3D الثعبان المكعب arcade",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/rsamwilson2323-cloud/BLOCK-SNAKE-3D/tree/38b9546207bb0bd0783e174c9dd3f4ae7591ab83",
+    "entry": "/games/block-snake-3d/index.html",
+    "cover": null,
+    "runtimeMB": 2.7,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Guide a blocky snake, collect food and avoid collisions.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "ARCADE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "genesis-defend",
+    "name": "Genesis Defend",
+    "author": "rsamwilson2323-cloud",
+    "license": "MIT",
+    "categories": [
+      "action"
+    ],
+    "description": "ضع الأبراج ودافع ضد موجات الأعداء في عالم ثلاثي الأبعاد.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "الدفاع عن الأبراج",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Genesis Defend الدفاع عن الأبراج action",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/rsamwilson2323-cloud/open-world-tower-defense/tree/f53db1cc2d835494dce22e319b303ffcc4bbfe54",
+    "entry": "/games/genesis-defend/index.html",
+    "cover": null,
+    "runtimeMB": 1.0,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Place towers and defend against incoming waves in an open 3D world.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ACTION",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "valley",
+    "name": "Valley",
+    "author": "rsamwilson2323-cloud",
+    "license": "MIT",
+    "categories": [
+      "puzzle"
+    ],
+    "description": "استكشف الوادي وحل الألغاز باستخدام المكعبات وبوابات الانتقال.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "ألغاز الوادي",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Valley ألغاز الوادي puzzle",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/rsamwilson2323-cloud/valley/tree/0b02bfee93782bdf0f236b2bd469edb5da1e1222",
+    "entry": "/games/valley/index.html",
+    "cover": null,
+    "runtimeMB": 1.2,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Explore a valley and solve spatial puzzles with blocks and teleporters.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "PUZZLE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "voxel-island",
+    "name": "Voxel Island",
+    "author": "rsamwilson2323-cloud",
+    "license": "MIT",
+    "categories": [
+      "sandbox"
+    ],
+    "description": "شكل جزيرة مكعبات وابن منشآت واحفظ تقدمك محليا.",
+    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "genre": "جزيرة البناء",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Voxel Island جزيرة البناء sandbox",
+    "desktop": false,
+    "webgl2": true,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/rsamwilson2323-cloud/voxel-island-game/tree/3d92745c58f5960115092cf51e8fa7af1f7f9f85",
+    "entry": "/games/voxel-island/index.html",
+    "cover": null,
+    "runtimeMB": 1.0,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Shape a voxel island, build structures and keep progress locally.",
+        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "genre": "SANDBOX",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Computer · touch controls",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "courier-city",
+    "name": "Courier City",
+    "author": "shubhransh-gupta",
+    "license": "MIT",
+    "categories": [
+      "sandbox"
+    ],
+    "description": "استكشف المدينة بالسيارات والطائرات والمروحيات.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "مدينة التوصيل",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Courier City مدينة التوصيل sandbox",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/shubhransh-gupta/courier-city/tree/43c70ea24c2b8a375dcd01d07c9a2496439c4324",
+    "entry": "/games/courier-city/index.html",
+    "cover": null,
+    "runtimeMB": 2.4,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Explore a city using cars, aircraft and helicopters.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "SANDBOX",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "neon-drift-city",
+    "name": "Neon Drift City",
+    "author": "trustworthy-coder",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "قد في مدينة نيون واهرب من الشرطة وافتح سيارات جديدة.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "مطاردة مدينة النيون",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Neon Drift City مطاردة مدينة النيون racing",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/trustworthy-coder/Neon-Drift/tree/2210b0a3ddb76162dd2efa33af76196d000bdc6b",
+    "entry": "/games/neon-drift-city/index.html",
+    "cover": null,
+    "runtimeMB": 0.9,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Drive around a neon city, escape police and unlock vehicles.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "RACING",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "skyline-rush",
+    "name": "Skyline Rush",
+    "author": "zzuli-ljz",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "اقفز فوق أسطح المدينة في تحدي باركور من منظور أول.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "باركور الأسطح",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Skyline Rush باركور الأسطح adventure",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/zzuli-ljz/skyline-rush/tree/b8cd5ed13a577d89220f4d8ee07abce929d4f5c0",
+    "entry": "/games/skyline-rush/index.html",
+    "cover": null,
+    "runtimeMB": 2.8,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Jump across city rooftops in a first-person parkour challenge.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
+  },
+  {
+    "id": "stardust-drifter",
+    "name": "Stardust Drifter",
+    "author": "zzuli-ljz",
+    "license": "MIT",
+    "categories": [
+      "adventure"
+    ],
+    "description": "تنقل بين كواكب صغيرة في مغامرة ثلاثية الأبعاد تعتمد على الجاذبية.",
+    "controls": "استخدم تعليمات التحكم داخل اللعبة. بعض الألعاب تتطلب لوحة مفاتيح وماوس.",
+    "genre": "مغامرة الكواكب",
+    "tag": "3D",
+    "kind": "لعبة مستقلة",
+    "search": "Stardust Drifter مغامرة الكواكب adventure",
+    "desktop": true,
+    "webgl2": true,
+    "device": "كمبيوتر · لوحة مفاتيح وماوس",
+    "source": "https://github.com/zzuli-ljz/stardust-drifter/tree/8c77f03c634099c1bff29fe908a91de12d8c6b15",
+    "entry": "/games/stardust-drifter/index.html",
+    "cover": null,
+    "runtimeMB": 3.0,
+    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "i18n": {
+      "en": {
+        "description": "Travel across small planets in a gravity-based 3D adventure.",
+        "controls": "Use the in-game control instructions. Some games require keyboard and mouse.",
+        "genre": "ADVENTURE",
+        "tag": "3D",
+        "kind": "Independent game",
+        "device": "Keyboard & mouse",
+        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+      }
+    }
   }
 ]
