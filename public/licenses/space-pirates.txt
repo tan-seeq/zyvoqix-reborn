@@ -80,3 +80,5 @@ While redistributing the Work or Derivative Works thereof, You may choose to off
 
 ## External dependencies
 - jQuery PEP: https://github.com/jquery/PEP
+
+ZYVOQIX browser startup repair (2026-10-20): guard absent native host; preserve asset base URL; signal menu readiness and asynchronous startup errors.

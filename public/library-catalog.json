@@ -292,5 +292,146 @@
         "notice": "Runtime and source bundled locally with the original license. Internal menus use the developer’s language."
       }
     }
+  },
+  {
+    "id": "circuit-sprint",
+    "name": "Circuit Sprint",
+    "author": "KProtoType",
+    "license": "MIT",
+    "categories": [
+      "racing"
+    ],
+    "description": "قد سيارتك على حلبة ثلاثية الأبعاد، تابع اللفات ونقاط المرور وحاول تحسين زمنك.",
+    "controls": "الأسهم أو WASD قيادة · Space فرامل · R إعادة. أزرار تحكم للموبايل داخل اللعبة.",
+    "genre": "سباق حلبات",
+    "tag": "تحكم لمس",
+    "kind": "سباق ثلاثي الأبعاد",
+    "search": "سباق سيارات حلبة لمس circuit driving checkpoints laps",
+    "desktop": false,
+    "webgl2": false,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/KProtoType/polytrack-racing-game",
+    "sourceArchive": "/sources/circuit-sprint.tar.gz",
+    "entry": "/games/circuit-sprint/index.html",
+    "cover": null,
+    "runtimeMB": 0.7,
+    "notice": "مكتبة Three.js محفوظة محليا. عرض سباق مستقل عن لعبة PolyTrack الرسمية.",
+    "i18n": {
+      "en": {
+        "genre": "CIRCUIT RACING",
+        "tag": "TOUCH CONTROLS",
+        "kind": "3D circuit racer",
+        "description": "Drive a 3D circuit, pass checkpoints, complete laps and try to improve your time.",
+        "controls": "Arrow keys or WASD drive · Space brake · R reset. In-game mobile controls.",
+        "device": "Computer · touch controls",
+        "notice": "Three.js r128 bundled locally. Independent racing demo, not the official PolyTrack game."
+      }
+    }
+  },
+  {
+    "id": "bowling",
+    "name": "Bowling",
+    "author": "Ilia Grigorev",
+    "license": "GPL-3.0",
+    "categories": [
+      "sports"
+    ],
+    "description": "اضبط مكان الكرة ثم اسحبها وارمها لإسقاط القوارير. فيزياء تصادم وتسجيل لنتائج الجولات.",
+    "controls": "اسحب الكرة يمينا أو يسارا لاختيار المكان، ثم اسحب للأمام وارفع إصبعك للرمي. يعمل بالماوس أيضا.",
+    "genre": "بولينج",
+    "tag": "فيزياء ثلاثية الأبعاد",
+    "kind": "بولينج باللمس",
+    "search": "بولينج كرة رياضة لمس bowling ball pins sports",
+    "desktop": false,
+    "webgl2": false,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/iliagrigorevdev/bowling",
+    "sourceArchive": "/sources/bowling.tar.gz",
+    "entry": "/games/bowling/index.html",
+    "cover": "/covers/bowling.webp",
+    "runtimeMB": 3.1,
+    "notice": "ملفات التشغيل الأصلية محفوظة محليا، مع المصدر الكامل وترخيص GPL متاحين للتنزيل.",
+    "i18n": {
+      "en": {
+        "genre": "BOWLING",
+        "tag": "3D PHYSICS",
+        "kind": "Touch bowling",
+        "description": "Position the ball, then flick it down the lane to knock down the pins. Collision physics and round scoring.",
+        "controls": "Drag left or right to position the ball, then flick forward to bowl. Mouse controls also supported.",
+        "device": "Computer · touch controls",
+        "notice": "Original local runtime retained. Complete GPL source and license offered on this site."
+      }
+    }
+  },
+  {
+    "id": "contra-run",
+    "name": "ContraRun",
+    "author": "pstarwars2026 & contributors",
+    "license": "Apache-2.0",
+    "categories": [
+      "action",
+      "adventure"
+    ],
+    "description": "اجر واقفز واستخدم الاندفاع والأسلحة خلال ثلاث مناطق، وتغلب على الزعماء مع نقاط حفظ أثناء الرحلة.",
+    "controls": "WASD أو الأسهم حركة · Z/J/Ctrl إطلاق · X/K/Space قفز · Shift/C اندفاع · Enter بدء. أزرار لمس داخل اللعبة.",
+    "genre": "جري وتصويب",
+    "tag": "ثلاث مناطق",
+    "kind": "حملة أكشن 2.5D",
+    "search": "اكشن تصويب جري قفز زعماء حملة run gun shoot campaign",
+    "desktop": false,
+    "webgl2": false,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/pstarwars2026/contra-run",
+    "sourceArchive": "/sources/contra-run.tar.gz",
+    "entry": "/games/contra-run/index.html",
+    "cover": "/covers/contra-run.webp",
+    "runtimeMB": 2.8,
+    "notice": "الحملة الأصلية بثلاث مناطق مع Three.js وأصوات مولدة محليا. المصدر والإسناد الأصلي محفوظان.",
+    "i18n": {
+      "en": {
+        "genre": "RUN & GUN",
+        "tag": "THREE ZONES",
+        "kind": "2.5D action campaign",
+        "description": "Run, jump, dash and collect weapons through three campaign zones, defeat bosses and reach safe checkpoints.",
+        "controls": "WASD or arrows move · Z/J/Ctrl fire · X/K/Space jump · Shift/C dash · Enter start. In-game touch controls.",
+        "device": "Computer · touch controls",
+        "notice": "Original three-zone campaign, local Three.js bundle and synthesized soundtrack retained. Complete source and notices included."
+      }
+    }
+  },
+  {
+    "id": "beachy-ball",
+    "name": "Beachy Beachy Ball",
+    "author": "Michael Kolesidis",
+    "license": "AGPL-3.0-or-later",
+    "categories": [
+      "adventure"
+    ],
+    "description": "وجه كرة الشاطئ فوق المنصات، تجنب العوائق المتحركة ووصل إلى النجمة. مسارات جاهزة ووضع عشوائي.",
+    "controls": "WASD أو الأسهم حركة · Space قفز · Enter بدء · R إعادة. أضفنا أزرار لمس للحركة والقفز.",
+    "genre": "توازن وتحديات",
+    "tag": "كرة الشاطئ",
+    "kind": "منصات وفيزياء",
+    "search": "كرة توازن منصات قفز شاطئ ball balance platform physics",
+    "desktop": false,
+    "webgl2": false,
+    "device": "كمبيوتر · تحكم لمس",
+    "source": "https://github.com/michaelkolesidis/beachy-beachy-ball",
+    "sourceArchive": "/sources/beachy-ball.tar.gz",
+    "entry": "/games/beachy-ball/index.html",
+    "cover": "/covers/beachy-ball.webp",
+    "runtimeMB": 11.9,
+    "notice": "أزيل التحليل الخارجي وأضيفت أزرار لمس للحركة والقفز. المصدر المعدل متاح بالكامل بترخيص AGPL.",
+    "i18n": {
+      "en": {
+        "genre": "BALANCE & OBSTACLES",
+        "tag": "BEACH BALL",
+        "kind": "Physics platformer",
+        "description": "Guide a beach ball across platforms, avoid moving obstacles and reach the star. Includes tour and random-level modes.",
+        "controls": "WASD or arrows move · Space jump · Enter start · R restart. Added on-screen movement and jump buttons.",
+        "device": "Computer · touch controls",
+        "notice": "Optional analytics removed; touch movement and jump buttons added. Complete modified source offered under AGPL-3.0-or-later."
+      }
+    }
   }
 ]

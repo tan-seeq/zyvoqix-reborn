@@ -1,10 +1,10 @@
 {
-  "version": 9,
+  "version": 11,
   "games": [
     {
       "id": "space-pirates",
       "upstreamCommit": "8abceefbda9176be192e74ceb7030f5bd31d7ea5",
-      "sha256": "5e6e9cc5dbed08072bf1faca6a60bca027912c96dcb13e75a611da25d1808981"
+      "sha256": "201714eab38bcafb84da61d9025c95d779ea80b96c782c826b63471439a2e0e5"
     },
     {
       "id": "kart-royale",
@@ -40,6 +40,26 @@
       "id": "flight-sim",
       "upstreamCommit": "11d94d03a5b4b4947f6b6859c999bf0bb62451c0",
       "sha256": "ab6fb1646384430b2d0d43239bf94e9d3abda7f6b8f4a194ea07e36182526d9f"
+    },
+    {
+      "id": "circuit-sprint",
+      "upstreamCommit": "b896a92de290ecfbe4419d23c582bddaf9b64c8e",
+      "sha256": "dc833276de0bab07840192648482ffae7ddeb1d6c24bcb883075ac58310d330e"
+    },
+    {
+      "id": "bowling",
+      "upstreamCommit": "60fa6fe5283869c45515f614f6a99b181c63d499",
+      "sha256": "54146765477d3b280fb116c2899edfb65583a9e096bd1198d5a31fdf0da0f4ab"
+    },
+    {
+      "id": "contra-run",
+      "upstreamCommit": "5f75e3986017b33d9f6975f03ca8d1519a9ebce9",
+      "sha256": "9196cc24505435846e403419b383a49fa27b17e9635e419dc37206d9972d9c92"
+    },
+    {
+      "id": "beachy-ball",
+      "upstreamCommit": "1deb797f478794d6e9c336a4cad741b4afd8b160",
+      "sha256": "4ba8f38504d19c56d2829185dd12a67b4ed0ab974181ce057519221cb75e8e00"
     }
   ],
   "runtime": "same-origin static files"
