@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 210" fill="none">
+ <defs>
+  <linearGradient id="letters" x1="50" y1="45" x2="335" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#3f9bff"/><stop offset=".48" stop-color="#6070f5"/><stop offset="1" stop-color="#8543d9"/></linearGradient>
+  <linearGradient id="orbit" x1="20" y1="165" x2="375" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#4c7dff"/><stop offset=".6" stop-color="#a978f5"/><stop offset="1" stop-color="#ff9bd8"/></linearGradient>
+  <radialGradient id="planet" cx=".3" cy=".2" r=".9"><stop stop-color="#efb8ff"/><stop offset="1" stop-color="#a36ae9"/></radialGradient>
+  <linearGradient id="star" x1="350" y1="16" x2="350" y2="62" gradientUnits="userSpaceOnUse"><stop stop-color="#ffc0df"/><stop offset="1" stop-color="#d76feb"/></linearGradient>
+ </defs>
+ <ellipse cx="200" cy="112" rx="187" ry="46" transform="rotate(-18 200 112)" stroke="url(#orbit)" stroke-width="2.5"/>
+ <g fill="url(#letters)">
+  <path d="M45 50H77L100 86L123 50H155L115 112V154H85V112L45 50Z"/>
+  <path d="M151 50H180V88H213V50H242V154H213V114H180V154H151V50Z"/>
+  <path fill-rule="evenodd" d="M247 154L285 50H317L355 154H323L315 131H286L278 154H247ZM293 108H308L301 84L293 108Z" clip-rule="evenodd"/>
+ </g>
+ <path d="M70 90L95 121V151" stroke="white" stroke-opacity=".15" stroke-width="3"/>
+ <circle cx="72" cy="167" r="13" fill="url(#planet)"/>
+ <path d="M347 15C350 34 354 37 371 40C354 43 350 47 347 64C344 47 340 43 323 40C340 37 344 34 347 15Z" fill="url(#star)"/>
+</svg>
