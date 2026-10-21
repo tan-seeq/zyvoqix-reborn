@@ -4,8 +4,8 @@
   "description": "Independent browser games and 3D experiences, with English and Arabic site controls.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#070b18",
-  "theme_color": "#080e21",
+  "background_color": "#f2f7ff",
+  "theme_color": "#f2f7ff",
   "lang": "en",
   "dir": "ltr",
   "icons": [

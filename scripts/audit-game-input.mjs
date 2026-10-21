@@ -4,7 +4,8 @@ const root=path.resolve(import.meta.dirname,'..'),pub=path.join(root,'public');
 const catalog=JSON.parse(await fs.readFile(path.join(pub,'library-catalog.json'),'utf8'));
 const engineOnly=new Set(['connect-four-3d','infinity-parking','hypeometry','mortar-command']);
 async function files(dir){return(await Promise.all((await fs.readdir(dir,{withFileTypes:true})).map(e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]))).flat();}
-const report={version:16,scope:'Static audit of all pinned runtimes plus automated input regression tests; not physical-device gameplay certification.',games:[]};
+const release=JSON.parse(await fs.readFile(path.join(root,'library.lock.json'),'utf8'));
+const report={version:release.version,scope:'Static audit of all pinned runtimes plus automated input regression tests; not physical-device gameplay certification.',games:[]};
 for(const game of catalog){
  const dir=path.join(pub,'games',game.id),entry=await fs.readFile(path.join(dir,'index.html'),'utf8');
  assert(entry.includes('/game-input.js?v=16'),`${game.id}: missing input adapter`);

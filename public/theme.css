@@ -1,0 +1,237 @@
+/* ZYVOQIX V17 — Daylight. Cyan, violet, pink and gold from the original logo.
+   Shared by site pages only; game documents and canvases retain their own art. */
+:root{
+ color-scheme:light;
+ --page:#f2f7ff;--surface:#ffffff;--surface-soft:#f7f9ff;--surface-blue:#eaf5ff;
+ --text:#25324c;--text-soft:#53627c;--border:#d5dfef;--blue-strong:#0866c6;
+ --violet-strong:#6840c7;--pink-strong:#b5278c;--gold-strong:#85520a;
+ --brand-gradient:linear-gradient(115deg,#0866c6,#6840c7);
+ --brand-shadow:0 12px 32px #4265a412;--focus:#7040c9;
+ /* Existing page styles use these tokens with different names. */
+ --bg:var(--page);--bg2:#eaf3ff;--panel:var(--surface);--panel2:var(--surface-soft);
+ --ink:var(--text);--sub:var(--text-soft);--muted:var(--text-soft);--line:var(--border);
+ --sky:var(--blue-strong);--accent:var(--blue-strong);--blue:var(--blue-strong);
+ --cyan:#006b91;--purple:var(--violet-strong);--pink:var(--pink-strong);--gold:var(--gold-strong);
+ --shadow:0 14px 45px #4265a41c;
+}
+html{background:var(--page);accent-color:var(--violet-strong)}
+body{background:var(--page);color:var(--text)}
+::selection{background:#ded4ff;color:#302052}
+button,input,select,textarea{accent-color:var(--violet-strong)}
+input,select,textarea{color-scheme:light}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+ outline:3px solid var(--focus);outline-offset:4px;
+}
+input::placeholder,textarea::placeholder{color:#66758a;opacity:1}
+
+/* Navigation keeps the existing bilingual and phone menu behavior. */
+.top,.site-head,.admin-header{
+ background:#fffffff2;border-color:var(--border);box-shadow:0 3px 20px #4265a40b;
+ backdrop-filter:blur(16px);
+}
+.top::after,.site-head::after{
+ content:"";position:absolute;inset-inline:0;bottom:0;height:2px;pointer-events:none;
+ background:linear-gradient(90deg,#36c5e8,#7380ed 42%,#d956c6 78%,#e7bd59);
+}
+.brand,.admin-brand{color:var(--text)}
+.brand i,.admin-brand span{color:var(--violet-strong)}
+.top nav,.top nav a,.admin-header nav a{color:#485a77}
+.top nav a:hover,.top nav a[aria-current=page],.admin-header nav [aria-current=page]{color:var(--blue-strong)}
+.top small{color:var(--blue-strong);border-color:#a3c9ee;background:#eef8ff}
+.language-picker{background:#edf2ff;border-color:#d1dcee}
+.language-picker :is(button,a){color:#475777;background:transparent}
+.language-picker button[aria-pressed=true],.language-picker a[aria-current=page]{background:var(--brand-gradient);color:white}
+.menu-toggle,.profile-button{background:white;border-color:#bdcde5;color:var(--text)}
+.menu-toggle:hover{background:#ecf4ff}
+.mini-brand strong{background:var(--brand-gradient);background-clip:text;color:transparent}
+.mini-brand small,.live-mark{color:#526584}
+.navlink{color:#465c7d}
+.navlink:hover{color:var(--blue-strong);background:#edf5ff}
+.navlink.active{background:#e6edff;color:#3e43a6;box-shadow:inset 0 0 0 1px #c1cfee}
+.archive-language{background:#e9f3ff;border-color:#cbdced;color:#075c9c}
+.archive-language a{color:#075c9c}
+
+/* Bright, spacious welcome area. The real logo needs no blend mode on white. */
+.intro{
+ background:radial-gradient(ellipse at 12% 20%,#d5f4ff 0,transparent 50%),
+ radial-gradient(ellipse at 88% 20%,#eee0ff 0,transparent 48%),linear-gradient(180deg,#fbfcff,#edf4ff);
+ border-bottom:1px solid #dce6f4;
+}
+.intro::before{
+ background:linear-gradient(#7699d00d 1px,transparent 1px),linear-gradient(90deg,#7699d00d 1px,transparent 1px);
+ background-size:48px 48px;mask-image:linear-gradient(#0008,transparent);
+}
+.big-logo{mix-blend-mode:normal;filter:drop-shadow(0 14px 25px #4e68a91c)}
+.intro h1,.hero h1,.section-heading h2{color:var(--text);text-shadow:none}
+.intro p,.hero-desc,.section-heading-new p{color:var(--text-soft)}
+.eyebrow,.kicker{color:var(--violet-strong)}
+.intro .cta,.play,.primary,.btn-main{
+ background:var(--brand-gradient);color:white;border-color:transparent;
+ box-shadow:0 7px 18px #5a56cb22;
+}
+.intro .cta:hover,.play:hover,.primary:hover,.btn-main:hover{box-shadow:0 9px 24px #5a56cb35}
+.metrics{gap:12px;color:#54647e;flex-wrap:wrap}
+.metrics>span{padding:7px 14px;border:1px solid #d9e4f4;border-radius:12px;background:#ffffffc9}
+.metrics strong{color:var(--blue-strong)}
+.hero,.bg-grid{background:radial-gradient(ellipse at 10% 0,#daf4ff,transparent 55%),radial-gradient(ellipse at 95% 30%,#eee0ff,transparent 50%),#f2f7ff}
+.hero::before{background:linear-gradient(#f7fbffdf,#edf4fff2),url('/assets/world.webp') center/cover}
+.hero::after{background:radial-gradient(ellipse at 20% 50%,#67d9f225,transparent 50%),radial-gradient(ellipse at 80% 50%,#c48aff25,transparent 50%)}
+.hero-logo{filter:drop-shadow(0 16px 25px #5074b52a)}
+.hero-pill{background:#ffffffde;border-color:#b8cfee;color:#285e9a;box-shadow:0 6px 20px #4265a40d}
+.hero-stats b{color:var(--blue-strong);text-shadow:none}
+.hero-stats span,.scroll-prompt{color:#526889}
+.scroll-prompt:hover{color:var(--blue-strong)}
+
+/* Game library and game pages. Thumbnail colors belong to the game artwork. */
+.game,.credit,.related-card,.card,.game-facts,.hub-panel,.admin-card,.stat-grid article{
+ background:white;border-color:var(--border);color:var(--text);box-shadow:var(--brand-shadow);
+}
+.game{border-radius:21px}
+.game:hover,.card:hover{border-color:#9db8e7;box-shadow:0 16px 32px #4265a41f}
+.game h3,.game-title h3 a,.card h3,.related-card strong{color:var(--text)}
+.game p,.card-sub,.credit p,.game-facts p,.play-heading p{color:var(--text-soft)}
+.cover{background:#e6effa}
+.cover:after{background:linear-gradient(transparent,#ffffff00)}
+.cover .badge{background:#ffffffef;color:#35456c;border-color:#ffffffcf;box-shadow:0 3px 10px #25324c19}
+.cover .type{color:#fff;text-shadow:0 1px 5px #172540}
+.game-body{background:white}
+.pills{color:#4f6283}
+.pills span{background:#edf3fc;border:1px solid #dfe7f2}
+.pills span:nth-child(2){background:#f2ecfc;color:#65448e;border-color:#e4d8f4}
+.heart-new,.heart{color:#9b407d;background:#fff4fb;border-color:#edcce4}
+.heart-new[aria-pressed=true],.heart.on{color:#a11575;background:#fce2f2;border-color:#da9ac4}
+.license-link{color:#566782}
+.search,.field,.search-box,.hub input,.hub select,.hub textarea,.admin-body input,.admin-body select,.backup-section textarea{
+ background:white;border-color:#bacce4;color:var(--text);
+}
+.search-box{color:var(--blue-strong)}
+.search-box input{color:var(--text);background:transparent}
+.search-box input::placeholder{color:#63728a}
+.filter,.filter-chip{background:white;border-color:#cddbec;color:#475d7d}
+.filter:hover,.filter-chip:hover{background:#edf5ff;border-color:#92b5e1;color:#075ca8}
+.filter[aria-pressed=true],.filter-chip.active{background:var(--brand-gradient);color:white;border-color:transparent;box-shadow:0 5px 16px #5a56cb21}
+.library-toolbar{color:#50617c}
+.library-toolbar select{background:white;border-color:#bdcee6;color:var(--text)}
+.archive-banner{background:linear-gradient(110deg,#e9f6ff,#f2eaff);border-color:#d2def0}
+.archive-banner p{color:var(--text-soft)}
+.archive-banner a{background:white;color:#4c40a7;border-color:#c2cdea}
+.credit strong{color:var(--text)}
+.credit a,.game-facts a,.about-page a,.breadcrumbs a{color:#075ca8}
+.foot,.site-footer{background:#eaf1fc;border-color:#cfdbed;color:#50627e}
+.foot a,.site-footer p,.site-footer span,.footer-about{color:#4a6080}
+.empty{color:var(--text-soft)}
+.breadcrumbs{color:#596982}
+.game-stage{background:#edf3ff;border-color:#c8d7ec;box-shadow:var(--brand-shadow)}
+.game-poster{background:linear-gradient(130deg,#d4efff,#e6d9ff)}
+.game-poster img{opacity:.87}
+.game-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,#15264c70)}
+.game-poster strong{z-index:1;color:white;text-shadow:0 2px 16px #15264c}
+.game-controls,.player-bar,.player-help{background:#f8faff;color:var(--text);border-color:#d0dced}
+.game-controls button,.game-controls a,.page-favorite,.player-bar button,.player-bar a{
+ background:white;border-color:#b9cce5;color:#334b71;
+}
+.game-controls button.play{background:var(--brand-gradient);color:white}
+.page-favorite[aria-pressed=true]{background:#fce9f5;color:#a11575;border-color:#d9a6ca}
+.game-facts hr{border-color:var(--border)}
+.page-notice,.hub-note,.admin-notice{background:#eaf4ff;border-color:#bfd8f0;color:#365579}
+.game-launch-status,.game-status,.game-status.is-error{background:#f5f8fff5;color:var(--text)}
+.game-launch-status p,.game-status p{color:var(--text-soft)}
+.game-status a{color:#075ca8}
+.player{background:#eff5ff}
+.player-area{background:#e7effb}
+
+/* Player hub: rankings, tier lists, comments and missions. */
+.hub label,.hub-empty,.tier-preview{color:var(--text-soft)}
+.hub button.secondary,.hub .secondary,.tier-item{
+ background:#f0f5ff;border-color:#c6d7ec;color:#354e75;
+}
+.hub button[aria-pressed=true]{background:#e7e5fb;border-color:#8c80cf;color:#43378e}
+.hub-table th{color:#4b6081;background:#f2f6fd}
+.hub-table td:last-child{color:#075eac}
+.hub-table tbody tr:first-child{background:#fffbef}
+.hub-table tbody tr:first-child td:first-child{color:#85520a;font-weight:900}
+.hub-table tbody tr:nth-child(2){background:#f5f8fe}
+.hub-table tbody tr:nth-child(3){background:#fff7f0}
+.tier-row{border-color:#ccdaed}
+.tier-drop{background:#f9fbff}
+.tier-pool{border-color:#adc4e4;background:#f2f7ff}
+.tier-S{background:#ffb6d6}.tier-A{background:#ffd1a9}.tier-B{background:#ffe59d}.tier-C{background:#b1e9cf}.tier-D{background:#b6d8ff}
+.tier-letter{color:#343b55}
+.tier-selection,.hub-tag{color:#5c3fa0}
+.hub-status,.backup-status{background:#edf7ff;color:#244d73;border-color:#9fc5e4;box-shadow:var(--brand-shadow)}
+.comment time{color:#65738a}
+.comment p{color:#344762}
+.xp-number{color:var(--violet-strong)}
+.xp-progress{background:#e0e8f5}
+.xp-progress span{background:linear-gradient(90deg,#0c93cf,#8655d8,#ca54af)}
+.mission p{color:var(--text-soft)}
+.mission a,.hub .hub-link{color:#075ca8}
+
+/* Existing profiles / original arcade use the same palette and saved-data UI. */
+.btn{background:white;border-color:#b8cae4;color:#3f5578;box-shadow:none}
+.btn-main{background:var(--brand-gradient);color:white;border-color:transparent;box-shadow:0 6px 18px #5a56cb22}
+.btn-glass{background:#ffffffe8;color:#4e5497;border-color:#bdc9e8}
+.text-button{color:#075ca8}
+.card-meta,.card-meta b{color:#526584}
+.card-actions .outline-action{background:#edf4ff;color:#315c94;border-color:#bdd0e8}
+.corner-tag,.overlay-badge{background:#ffffffed;color:#36577e;border-color:#c1d2e7}
+.ext-tag{background:#fff5dd;color:#85520a;border-color:#e9cf95}
+.player-chip{background:white;color:#3d5880;border-color:#c0d0e8}
+.player-chip.active{background:var(--brand-gradient);color:white}
+.game-shell{background:#eff4fff2}
+.banner-play{background:linear-gradient(120deg,#e5f5ff,#f2e7ff);border-color:#c8d7ed;box-shadow:var(--brand-shadow)}
+.banner-play p,.result-line,.external-note p,.glass-panel p,.glass-panel label,.mini-stats span,.fineprint,.record-row small,.game-tip{color:var(--text-soft)}
+.result-line span:first-child{color:#3e5680}
+.availability{color:#187442}
+.no-results,.external-note,.glass-panel{background:white;border-color:#c6d7ed;color:var(--text);box-shadow:var(--brand-shadow)}
+.external-note strong{color:#354b70}
+.big-avatar{color:white}
+.mini-stats>div{background:#f1f5ff;border-color:#d5dff0}
+.mini-stats strong,.record-score{color:var(--violet-strong)}
+.record-row{border-color:var(--border)}
+.btn-outline{background:white;color:#355b88;border-color:#bdd1e7}
+.game-dialog{background:white;border-color:#c4d4eb;box-shadow:0 22px 70px #4265a429}
+.game-head,.game-hud,.game-bottom{background:#f3f7ff;border-color:#d2dff0;color:var(--text)}
+.game-head-title div span,.game-hud span{color:#506584}
+.game-head-actions button,.touch-key{background:white;border-color:#bdd0e8;color:#3f567e}
+.game-hud>div{border-color:#d4e0f0}
+.game-hud b{color:var(--violet-strong)}
+.game-overlay{background:linear-gradient(135deg,#f2f8fff2,#efe9fff5);color:var(--text)}
+.game-overlay p{color:var(--text-soft)}
+.touch-key.pressed,.touch-key:active,.fire-key{background:var(--brand-gradient);color:white}
+.oss-card .corner-tag{background:#ece7ff;color:#584188;border-color:#cec1ec}
+.oss-card .card-actions .btn{background:var(--brand-gradient);color:white}
+.nav-links{background:#fffffffa;border-color:var(--border)}
+
+/* Protected administration: change presentation only, keeping auth/CSP intact. */
+.admin-header{border-bottom:2px solid #ded5fa}
+.session-bar{background:#f8fbff;color:#52637d;border-color:var(--border)}
+.stat-grid strong{color:var(--violet-strong)}
+.admin-body button{background:#f0f5ff;color:#35557f;border-color:#bdd1e7}
+.admin-body .primary{background:var(--brand-gradient);color:white;border-color:transparent}
+.admin-body th{background:#eaf1fc;color:#405a7c}
+.health-ok{color:#187442}.health-bad{color:#ad274b}
+.admin-message{background:#fff3f6;color:#8f2442;border-color:#e9b1bf}
+.login-body{background:radial-gradient(ellipse at 12% 10%,#cfefff,transparent 58%),radial-gradient(ellipse at 90% 90%,#eadcff,transparent 55%),#f4f8ff}
+.login-card{background:#ffffffef;border-color:#d3dff0;box-shadow:0 24px 70px #4d62a21f}
+.login-card>p,.data-center .lead,.data-center .muted{color:var(--text-soft)}
+.login-card .eyebrow{color:var(--violet-strong)}
+#loginStatus{color:#a52349}
+.login-links{border-color:var(--border)}
+.backup-section{border-color:var(--border)}
+.backup-actions button{background:white;color:#35557f;border-color:#bdd1e7}
+.backup-actions .play{background:var(--brand-gradient);color:white}
+.backup-status.is-error{background:#fff0f4;color:#942747;border-color:#e2abc0}
+.backup-preview{border-color:#8caede}
+
+@media(max-width:760px){
+ .intro{padding-block:36px 34px}.big-logo{width:min(560px,94vw)}
+ .metrics{gap:8px}.metrics>span{padding:6px 9px}
+ .game,.hub-panel,.admin-card{box-shadow:0 6px 20px #4265a40b}
+ .top nav.is-open{background:#f8faff;border-radius:10px}
+}
+@media(prefers-reduced-motion:reduce){.hero-logo{animation:none}}
+.not-found{margin:0;padding:24px;box-sizing:border-box;min-height:100dvh}
+.not-found main{padding:30px 38px;border:1px solid var(--border);border-radius:22px;background:white;box-shadow:var(--brand-shadow)}
+.not-found h1{color:var(--violet-strong)}
+.not-found a{color:#075ca8;text-decoration:underline;text-underline-offset:4px}
