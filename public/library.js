@@ -1,3 +1,4 @@
+import {updateSiteLinks} from './site-navigation.js';
 import {screenMode} from './screen-mode.js';
 import './navigation.js';
 import {getLanguage,setLanguage,copy} from './language.js';
@@ -23,7 +24,7 @@ function render(){
 }
 function credits(){$('creditsGrid').innerHTML=games.map(base=>{const g=local(base);return `<article class="credit" id="credit-${g.id}"><strong>${escape(g.name)}</strong><p>${escape(g.author)} · ${escape(g.license)}</p><p>${escape(g.notice)}</p><a href="${g.source}" target="_blank" rel="noopener noreferrer">${t('originalSource')}</a> · <a href="/licenses/${g.id}.txt">${t('license')}</a>${g.sourceArchive?` · <a href="${g.sourceArchive}">${t('modifiedSource')}</a>`:''}</article>`;}).join('');}
 function applyLanguage(value){
- lang=setLanguage(value);
+ lang=setLanguage(value);updateSiteLinks(lang);
  const localePath=lang==='ar'?'/ar/':'/';
  if(['/', '/ar/', '/index.html'].includes(location.pathname)){
   if(location.pathname!==localePath)history.replaceState(null,'',localePath+location.search+location.hash);
