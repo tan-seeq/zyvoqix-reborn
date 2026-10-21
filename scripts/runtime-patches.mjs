@@ -59,12 +59,16 @@ export async function patchRuntime(id,dir){
      if(/^<!--|^<script|^<style/i.test(part))return part;
      for(const[from,to]of Object.entries(translations[id]||{}).sort((a,b)=>b[0].length-a[0].length))part=part.split(from).join(to.replaceAll('&','&amp;').replaceAll('"','&quot;'));
      return part;
-    }).replace(/lang="zh(?:-[^"]*)?"/i,'lang="en"');
+    }).replace(/lang="zh(?:-[^"]*)?"/i,'lang="en"').replace(/<html(?![^>]*\blang=)([^>]*)>/i,'<html lang="en"$1>');
    }
    if(!code.includes('/game-input.js'))code=code.replace(/<head[^>]*>/i,'$&<script src="/game-input.js?v=16"></script>');
    code=code.replace(/\/game-bridge\.js\?v=\d+/g,'/game-bridge.js?v=16');
    code=code.replace(/(<script\b[^>]*\bsrc=["'])([^"']+\.js)(["'])/gi,'$1$2?zyvoqixRelease=16$3');
-   if(id==='glimmer-box')code=code.replaceAll('defaultLocale:"zh"','defaultLocale:"en"').replaceAll('fallbackLocale:""','fallbackLocale:"en"');
+   if(id==='glimmer-box'){
+    code=code.replaceAll('defaultLocale:"zh"','defaultLocale:"en"').replaceAll('fallbackLocale:""','fallbackLocale:"en"');
+    if(!code.includes('/game-bridge.js'))code=code.replace(/<head[^>]*>/i,'$&<script src="/game-bridge.js?v=16"></script>');
+    if(path.basename(file)==='index.html')code=code.replace(/<head[^>]*>/i,'$&<script>if(location.pathname.endsWith("/index.html"))history.replaceState(null,"",location.pathname.slice(0,-10)+location.search+location.hash);</script>');
+   }
   }
   if(code!==original)await fs.writeFile(file,code);
  }

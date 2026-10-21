@@ -2305,7 +2305,7 @@
     "webgl2": true,
     "device": "كمبيوتر · تحكم لمس",
     "source": "https://github.com/17biubiu/glimmer-box-puzzle/tree/57175a5daec33dd4a34f4b9209fd78611cb168b6",
-    "entry": "/games/glimmer-box/index.html",
+    "entry": "/games/glimmer-box/",
     "cover": null,
     "runtimeMB": 2.8,
     "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",

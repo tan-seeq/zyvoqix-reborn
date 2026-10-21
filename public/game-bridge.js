@@ -24,7 +24,12 @@
   document.body.append(panel);};document.body?paint():document.addEventListener('DOMContentLoaded',paint,{once:true});
  }
  function error(detail){if(failed)return;failed=true;clearTimeout(timer);send('error',detail);if(parent===window)notice('error',detail);}
- window.addEventListener('error',e=>{if(e.message)error(e.message);else if(e.target?.tagName==='SCRIPT')error('Script failed to load: '+e.target.getAttribute('src'));},true);
+ window.addEventListener('error',e=>{
+  // Optional hosting feedback/extension scripts are not game dependencies.
+  const source=e.message?e.filename:e.target?.tagName==='SCRIPT'?e.target.src:null;
+  if(source)try{if(new URL(source,location.href).origin!==location.origin)return;}catch{return;}
+  if(e.message)error(e.message);else if(e.target?.tagName==='SCRIPT')error('Script failed to load: '+e.target.getAttribute('src'));
+ },true);
  window.addEventListener('unhandledrejection',e=>error(e.reason?.message||String(e.reason)));
  window.addEventListener('zyvoqix-game-error',e=>error(e.detail));
  window.addEventListener('zyvoqix-game-ready',()=>{if(failed)return;ready=true;clearTimeout(timer);panel?.remove();send('ready');});
