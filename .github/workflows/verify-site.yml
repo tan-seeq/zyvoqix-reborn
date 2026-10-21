@@ -2,7 +2,7 @@ name: Verify bilingual player experience
 on:
   push:
     branches: [library/self-hosted-v8]
-    paths: [api/**, server/**, package.json, package-lock.json, vercel.json, public/**, scripts/generate-game-pages.mjs, scripts/data-page-content.mjs, scripts/ironhold-mobile.mjs, scripts/templates/**, tests/**, library.lock.json, .github/workflows/verify-site.yml]
+    paths: [api/**, server/**, package.json, package-lock.json, vercel.json, public/**, scripts/generate-game-pages.mjs, scripts/data-page-content.mjs, scripts/ironhold-mobile.mjs, scripts/runtime-patches.mjs, scripts/game-english.json, scripts/templates/**, tests/**, library.lock.json, .github/workflows/verify-site.yml]
   workflow_dispatch:
 permissions:
   contents: read

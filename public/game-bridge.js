@@ -10,6 +10,9 @@
   const methods={getItem:k=>storage.getItem(prefix+k),setItem:(k,v)=>storage.setItem(prefix+k,String(v)),removeItem:k=>storage.removeItem(prefix+k),clear:()=>keys().forEach(k=>storage.removeItem(k)),key:i=>keys()[i]?.slice(prefix.length)||null};
   Object.defineProperty(window,'localStorage',{configurable:true,value:new Proxy({}, {get:(_,k)=>k==='length'?keys().length:methods[k]||(typeof k==='string'?methods.getItem(k):undefined),set:(_,k,v)=>{methods.setItem(k,v);return true;},deleteProperty:(_,k)=>{methods.removeItem(k);return true;},ownKeys:()=>keys().map(k=>k.slice(prefix.length)),getOwnPropertyDescriptor:()=>({enumerable:true,configurable:true})})});
  }catch{/* Browser storage restrictions are handled by the original game. */}
+ // Glimmer Box already ships a complete English locale. Apply it once, then
+ // respect later choices made in its own language picker; no game saves change.
+ if(gameId==='glimmer-box')try{if(!localStorage.getItem('zyvoqix_english_v16')){document.cookie='glimmer-locale=en; Path=/games/glimmer-box; SameSite=Lax; Max-Age=31536000';localStorage.setItem('zyvoqix_english_v16','1');}}catch{}
  const space=location.pathname.includes('/space-pirates/');let ready=false,failed=false,panel,timer;
  const send=(status,detail='')=>{if(parent!==window)parent.postMessage({type:'zyvoqix-game-status',status,detail:String(detail).slice(0,600)},location.origin);};
  function notice(kind,detail){

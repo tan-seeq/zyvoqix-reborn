@@ -1,4 +1,5 @@
 import {patchIronhold} from './ironhold-mobile.mjs';
+import {patchRuntime} from './runtime-patches.mjs';
 import { mkdir, readFile, writeFile, rm, cp, stat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -35,9 +36,10 @@ for (const game of config.games) {
   // Install the error bridge before any game script can throw.
   const index = path.join(dest,'index.html');
   let html = await readFile(index,'utf8');
-  if (!html.includes('/game-bridge.js')) html=html.replace(/<head[^>]*>/i,'$&<script src="/game-bridge.js?v=15"></script>');
+  if (!html.includes('/game-bridge.js')) html=html.replace(/<head[^>]*>/i,'$&<script src="/game-bridge.js?v=16"></script>');
   if(game.id==='operation-ironhold')html=patchIronhold(html);
   await writeFile(index,html);
+  await patchRuntime(game.id,dest);
   if(game.id==='operation-ironhold'){await mkdir(path.join(root,'public','sources'),{recursive:true});execFileSync('tar',['-czf',path.join(root,'public','sources','operation-ironhold-mobile.tar.gz'),'-C',dest,'.']);}
   if(game.sourceArchive){await mkdir(path.join(root,'public','sources'),{recursive:true});await cp(archive,path.join(root,'public','sources',game.id+'.tar.gz'));}
   for (const f of game.required) {
@@ -49,3 +51,4 @@ await writeFile(path.join(root,'public','library-build.json'), JSON.stringify({v
 await rm(path.join(root,'.library-build'), {recursive:true,force:true,maxRetries:8,retryDelay:200});
 
 await import('./generate-game-pages.mjs');
+await import('./audit-game-input.mjs');

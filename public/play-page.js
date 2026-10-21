@@ -14,7 +14,7 @@ function status(value,detail=''){
  if(value==='error'||value==='slow'){const b=document.createElement('button');b.className='play';b.textContent=t('retryGame');b.onclick=launch;box.append(b);}
 }
 function launch(){
- clearTimeout(timer);const frame=document.createElement('iframe');frame.title=game.name;frame.src=game.entry+'?zyvoqixRelease=15';frame.allow='fullscreen; gamepad; autoplay';frame.allowFullscreen=true;$('gameMount').replaceChildren(frame);$('startGame').hidden=true;$('restartGame').hidden=false;$('fullscreenGame').hidden=false;$('openDirectGame').hidden=false;$('openDirectGame').href=frame.src;status('loading');
+ clearTimeout(timer);const frame=document.createElement('iframe');frame.title=game.name;frame.src=game.entry+'?zyvoqixRelease=16';frame.allow='fullscreen; gamepad; autoplay';frame.allowFullscreen=true;$('gameMount').replaceChildren(frame);$('startGame').hidden=true;$('restartGame').hidden=false;$('fullscreenGame').hidden=false;$('openDirectGame').hidden=false;$('openDirectGame').href=frame.src;status('loading');
  frame.addEventListener('load',()=>frame.focus());timer=setTimeout(()=>status('slow'),60000);
  try{const v=JSON.parse(localStorage.getItem('zyvoqix_v13_recent')||'[]');const ids=Array.isArray(v)?v.filter(x=>typeof x==='string'):[];localStorage.setItem('zyvoqix_v13_recent',JSON.stringify([game.id,...ids.filter(x=>x!==game.id)].slice(0,12)));}catch{}
 }

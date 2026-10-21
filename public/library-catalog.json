@@ -455,7 +455,7 @@
     "entry": "/games/stardust-isles/index.html",
     "cover": "/covers/stardust-isles.webp",
     "runtimeMB": 1.2,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Explore floating islands and fight enemies in a procedural world.",
@@ -464,9 +464,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Keyboard & mouse",
-        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "mineworld",
@@ -489,7 +490,7 @@
     "entry": "/games/mineworld/index.html",
     "cover": "/covers/mineworld.webp",
     "runtimeMB": 6.9,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Explore voxel terrain, mine blocks and build your world.",
@@ -498,9 +499,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Computer · touch controls",
-        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "hammas-3d",
@@ -1237,7 +1239,7 @@
     "entry": "/games/desire-path/index.html",
     "cover": null,
     "runtimeMB": 4.6,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تنبيه توافق المتصفح بالإنجليزي. حقوق المطور محفوظة.",
     "i18n": {
       "en": {
         "description": "Climb a path of 3D obstacles and try to reach the top.",
@@ -1246,9 +1248,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Keyboard & mouse",
-        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+        "notice": "Browser compatibility warning translated to English. Original credits retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "mastermind-3d",
@@ -1271,7 +1274,7 @@
     "entry": "/games/mastermind-3d/index.html",
     "cover": null,
     "runtimeMB": 3.4,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Crack a secret colour sequence using a 3D marble puzzle board.",
@@ -1280,9 +1283,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Computer · touch controls",
-        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "niulai-arena",
@@ -1293,30 +1297,31 @@
       "action"
     ],
     "description": "اختر مقاتلا وخض المعارك المحلية في ثلاث ساحات.",
-    "controls": "استخدم أزرار التحكم على الشاشة أو خيارات لوحة المفاتيح الموضحة داخل اللعبة.",
+    "controls": "للاعب الأول A/D حركة وW قفز وSpace ضربة. اللاعب الثاني الأسهم وNumpad. تحتاج لوحة مفاتيح؛ اللعب المحلي وضد الكمبيوتر متاحان.",
     "genre": "ساحة القتال",
     "tag": "3D",
     "kind": "لعبة مستقلة",
     "search": "Niulai Arena ساحة القتال action",
-    "desktop": false,
+    "desktop": true,
     "webgl2": true,
-    "device": "كمبيوتر · تحكم لمس",
+    "device": "كمبيوتر · لوحة مفاتيح",
     "source": "https://github.com/liyupi/niulai-game/tree/0a71c5a5944d6abca88393fb8825660fb70ffd0f",
     "entry": "/games/niulai-arena/index.html",
     "cover": null,
     "runtimeMB": 2.0,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Choose a fighter and battle locally across three arenas.",
-        "controls": "Use the on-screen controls or the keyboard options shown in the game.",
+        "controls": "P1: A/D move, W jump, Space punch. P2: arrows and Numpad. Keyboard required; local two-player and AI modes are available.",
         "genre": "ACTION",
         "tag": "3D",
         "kind": "Independent game",
-        "device": "Computer · touch controls",
-        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+        "device": "Computer · keyboard",
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "vibe-basketball",
@@ -1679,7 +1684,7 @@
     "entry": "/games/skyline-rush/index.html",
     "cover": null,
     "runtimeMB": 2.8,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Jump across city rooftops in a first-person parkour challenge.",
@@ -1688,9 +1693,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Keyboard & mouse",
-        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "stardust-drifter",
@@ -1713,7 +1719,7 @@
     "entry": "/games/stardust-drifter/index.html",
     "cover": null,
     "runtimeMB": 3.0,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Travel across small planets in a gravity-based 3D adventure.",
@@ -1722,9 +1728,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Keyboard & mouse",
-        "notice": "Original source and asset credits retained. In-game menus use the developer’s language."
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "voxel-musou",
@@ -1747,7 +1754,7 @@
     "entry": "/games/voxel-musou/index.html",
     "cover": "/covers/voxel-musou.webp",
     "runtimeMB": 17.6,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "القوائم والحقول ثنائية اللغة بالإنجليزي. تبقى بعض الحوارات والزخارف التاريخية بالصيني.",
     "i18n": {
       "en": {
         "description": "Fight through four historical chapters with seven officers, large voxel armies, combos and boss encounters.",
@@ -1756,9 +1763,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Keyboard & mouse",
-        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+        "notice": "Menus and bilingual fields use English. Some story text and historical calligraphy remain Chinese."
       }
-    }
+    },
+    "menuLanguage": "en-partial"
   },
   {
     "id": "misty-bunny",
@@ -2092,7 +2100,7 @@
     "entry": "/games/crossroad/index.html",
     "cover": null,
     "runtimeMB": 69.6,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Cross roads and hazards in a 3D arcade challenge. Best runs are saved on this device.",
@@ -2101,9 +2109,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Computer · touch controls",
-        "notice": "External database replaced with real scores stored on this device. No sample players. Source and attribution retained."
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "cuberun",
@@ -2161,7 +2170,7 @@
     "entry": "/games/rubiks-cube/index.html",
     "cover": null,
     "runtimeMB": 2.1,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Rotate, scramble and solve a 3D twisty cube with adjustable cube order.",
@@ -2170,9 +2179,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Computer · touch controls",
-        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "chess-3d",
@@ -2229,7 +2239,7 @@
     "entry": "/games/hypeometry/index.html",
     "cover": "/covers/hypeometry.webp",
     "runtimeMB": 1.9,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Explore perspective-based geometric puzzle levels with paths that connect through optical illusions.",
@@ -2238,9 +2248,10 @@
         "tag": "3D",
         "kind": "Perspective puzzle levels",
         "device": "Computer · touch controls",
-        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "puzzle-cylinder",
@@ -2297,7 +2308,7 @@
     "entry": "/games/glimmer-box/index.html",
     "cover": null,
     "runtimeMB": 2.8,
-    "notice": "المصدر الأصلي وتراخيص الملفات محفوظة. قوائم اللعبة بلغة المطور.",
+    "notice": "تم تفعيل القوائم الإنجليزية أو ترجمتها. حقوق المطور وتراخيص الملفات محفوظة.",
     "i18n": {
       "en": {
         "description": "Guide a small companion and push boxes through colourful 3D puzzle levels.",
@@ -2306,9 +2317,10 @@
         "tag": "3D",
         "kind": "Independent game",
         "device": "Computer · touch controls",
-        "notice": "Runtime dependencies retained locally, deployment paths adapted and original source preserved."
+        "notice": "English menus enabled or translated. Original creator credits and licenses retained."
       }
-    }
+    },
+    "menuLanguage": "en"
   },
   {
     "id": "tetra-tangle",
